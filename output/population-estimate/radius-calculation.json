@@ -1,0 +1,66 @@
+{
+  "center": [
+    34.1717,
+    -118.3231
+  ],
+  "tracts": 3138,
+  "population_2010_by_county": {
+    "111": 662683,
+    "029": 19374,
+    "037": 9814509,
+    "059": 2430937,
+    "065": 286686,
+    "071": 745276
+  },
+  "population_2010_by_radius": {
+    "48": 13529836,
+    "50": 13959465,
+    "52": 14324849
+  },
+  "updatedEstimateByCounty": {
+    "111": {
+      "county": "Ventura County",
+      "population2010Inside": 662683,
+      "county2010": 823318,
+      "county2025": 830851,
+      "estimatedInside2025": 668746
+    },
+    "029": {
+      "county": "Kern County",
+      "population2010Inside": 19374,
+      "county2010": 839631,
+      "county2025": 927068,
+      "estimatedInside2025": 21392
+    },
+    "037": {
+      "county": "Los Angeles County",
+      "population2010Inside": 9814509,
+      "county2010": 9818605,
+      "county2025": 9694934,
+      "estimatedInside2025": 9690890
+    },
+    "059": {
+      "county": "Orange County",
+      "population2010Inside": 2430937,
+      "county2010": 3010232,
+      "county2025": 3149507,
+      "estimatedInside2025": 2543410
+    },
+    "065": {
+      "county": "Riverside County",
+      "population2010Inside": 286686,
+      "county2010": 2189641,
+      "county2025": 2544916,
+      "estimatedInside2025": 333202
+    },
+    "071": {
+      "county": "San Bernardino County",
+      "population2010Inside": 745276,
+      "county2010": 2035210,
+      "county2025": 2224091,
+      "estimatedInside2025": 814443
+    }
+  },
+  "updatedEstimateTotal": 14072083,
+  "method": "2010 tract internal points within 50 miles of 91506, scaled by each county population change to 2025. Assumes uniform county growth; tract boundaries not clipped."
+}

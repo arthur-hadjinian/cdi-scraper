@@ -123,7 +123,7 @@ export function nextSearches(db: DatabaseSync, limit?: number): SearchRow[] {
     FROM searches
     WHERE status IN ('pending', 'in_progress', 'error')
     ORDER BY
-      CASE status WHEN 'in_progress' THEN 0 WHEN 'error' THEN 1 ELSE 2 END,
+      CASE status WHEN 'in_progress' THEN 0 WHEN 'pending' THEN 1 ELSE 2 END,
       distance_miles ASC,
       zip ASC
     ${limit ? "LIMIT ?" : ""}

@@ -12,4 +12,6 @@ Supervisor restart cooldowns: 2, 5, 5, 5, then 60 minutes (five automatic restar
 
 Pagination recovery (October 9, 2026): use the site's page/group control first; check for changed records, retry locally after 35 seconds with up to 70 more seconds, and avoid duplicate clicks while a request is pending. Pagination HTTP errors and failed requests are logged. After three ordinary timeout attempts, leave the ZIP in `error` for recovery and continue other ZIPs. A pass with deferred ZIPs requests a supervised retry; it does not claim completion. Verification challenges and HTTP 403/429 still stop the run.
 
+Queue priority (October 9, 2026): resume the interrupted ZIP, then search untouched `pending` ZIPs before revisiting `error` ZIPs. Completed and capped ZIPs are excluded from this queue. Failed ZIPs remain saved for recovery; they must not be marked complete to improve progress numbers.
+
 Any ZIP reaching the site's 300-result limit is incomplete (`truncated`), even if all available groups have been collected. Spaced search centers provide approximate geographic coverage; do not equate queue completion with exhaustive results.
