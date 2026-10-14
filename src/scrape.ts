@@ -1,4 +1,4 @@
-import { mkdirSync } from "node:fs";
+import { mkdirSync, appendFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import type { Page } from "playwright";
 import { launchBrowser } from "./browser.js";
@@ -13,10 +13,12 @@ import {
   type AgentRow,
 } from "./db.js";
 import { writeMasterCsv } from "./export.js";
-import { buildGrid } from "./grid.js";
+import { buildGrid, milesBetween } from "./grid.js";
 import { queueCapRecovery, writeRecoveryReport } from './cap-recovery.js';
+import { queueAdaptiveRecovery } from './adaptive-recovery.js';
 import { humanPause, log, randomBetween, sleep } from "./human.js";
 import { advanceWithRetry, canDeferZip, isAccessBlock } from './pagination-retry.js';
+import { locationInputs, locationReference, qualifiedZip, validateLocation, observeGeocoder, clearSiteError, assertSiteDialog, type LocationEvidence } from './location-check.js';
 
 type Pagination = { start: number; end: number; total: number; text: string };
 type PageSnapshot = { pagination: Pagination | null; agents: AgentRow[]; noData: boolean; alert: string };
@@ -141,11 +143,20 @@ const nextButtonStateFn = new Function(`
 `) as () => string;
 
 async function readSnapshot(page: Page): Promise<PageSnapshot> {
-  return page.evaluate(readSnapshotFn);
+  for(let attempt=0;attempt<5;attempt++) {
+    try {return await page.evaluate(readSnapshotFn);} catch(error) {
+      if(attempt===4 || !/Execution context was destroyed|Cannot find context/i.test(String(error)))throw error;
+      await sleep(500);
+    }
+  }
+  throw new Error('Unable to read results after navigation');
 }
 
 async function assertSession(page: Page): Promise<void> {
-  const blocked = await page.evaluate(() => /captcha|verify you are human|access denied|too many requests/i.test(document.body?.innerText || ''));
+  const blocked = await page.evaluate(() => /captcha|verify you are human|access denied|too many requests/i.test(document.body?.innerText || '')).catch(error=>{
+    if(/Execution context was destroyed|Cannot find context/i.test(String(error)))return false;
+    throw error;
+  });
   if (blocked) throw new Error('Access denied or verification challenge; manual review required');
   const expired = await page.evaluate(sessionExpiredFn).catch(() => false);
   if (expired) throw new SessionExpiredError();
@@ -190,11 +201,17 @@ async function clickButton(page: Page, selector: string): Promise<void> {
   await button.click();
 }
 
-async function waitForFreshResults(page: Page): Promise<void> {
+async function waitForFreshResults(page: Page, validateGeocoder:()=>void = ()=>{}): Promise<void> {
   await page.evaluate(markWaitingFn);
   await clickButton(page, "#runSearch");
   const deadline = Date.now() + 70_000;
   while (Date.now() < deadline) {
+    assertSiteDialog(page);
+    validateGeocoder();
+    await assertSession(page);
+    const alert = await page.locator('.t-Alert-content,.a-Form-error').allTextContents().catch(()=>[]);
+    const message=alert.join(' ').trim();
+    if(message) throw new Error(`Site search error: ${message}`);
     const waiting = await page.evaluate(stillWaitingFn).catch(() => true);
     if (!waiting) break;
     await sleep(300);
@@ -213,10 +230,17 @@ async function waitForFreshResults(page: Page): Promise<void> {
   await humanPause([900, 1800]);
 }
 
-async function searchZip(page: Page, zip: string, config: AppConfig): Promise<PageSnapshot> {
-  if ((await page.locator("#P1_INSURANCE_TYPE").count()) === 0) {
-    await openSearch(page, config);
-  }
+async function searchZip(page: Page, zip: string, config: AppConfig, attempt:number): Promise<PageSnapshot> {
+  // A fresh form prevents stale result tables from being mistaken for this search.
+  await openSearch(page, config);
+  clearSiteError(page);
+  let evidence: LocationEvidence | undefined;
+  const expected=locationReference(zip);
+  const inputs=locationInputs(zip);
+  const input=inputs[Math.min(attempt-1,inputs.length-1)];
+  log(`Location input for ${zip}: ${input}`);
+  const detach=await observeGeocoder(page, value=>{evidence=value;log(`Geocoder ${zip}: ${value.status}, ${value.formatted || 'no location'}`);});
+  try {
   await nudge(page);
   await page.selectOption("#P1_INSURANCE_TYPE", config.insuranceType);
   await humanPause([350, 800]);
@@ -224,8 +248,8 @@ async function searchZip(page: Page, zip: string, config: AppConfig): Promise<Pa
   await humanPause([350, 800]);
   await page.selectOption("#P1_DISTANCE", config.distanceValue);
   await humanPause([400, 900]);
-  await typeZip(page, zip, config);
-  await waitForFreshResults(page);
+  await typeZip(page, input, config);
+  await waitForFreshResults(page,()=>{if(evidence)validateLocation(expected,evidence);});
 
   await assertSession(page);
   const appliedZip = await page.locator("#P1_ZIP").inputValue().catch(() => "");
@@ -234,10 +258,18 @@ async function searchZip(page: Page, zip: string, config: AppConfig): Promise<Pa
     const message = snapshot.alert || `Search for ${zip} did not return a result list`;
     throw new Error(message);
   }
-  if (appliedZip && appliedZip !== zip) {
+  if (appliedZip && /^\d{5}$/.test(appliedZip) && !input.startsWith(appliedZip)) {
     throw new Error(`Site searched ${appliedZip} instead of ${zip}`);
   }
+  if(!expected || !evidence) throw new Error('Missing geocoded location evidence; results not saved');
+  const offset=validateLocation(expected,evidence);
+  const center=await page.locator('#P1_CENTER').inputValue();
+  const [latitude,longitude]=center.split(',').map(Number);
+  if(!Number.isFinite(latitude)||!Number.isFinite(longitude)||Math.abs(latitude-evidence.latitude!)>0.001||Math.abs(longitude-evidence.longitude!)>0.001) throw new Error('Location mismatch: submitted center does not match observed geocoder');
+  appendFileSync(path.join(process.cwd(),'logs','location-checks.jsonl'),JSON.stringify({checked_at:new Date().toISOString(),zip,input,fallback:input!==qualifiedZip(zip),reference:expected,offset_miles:offset,...evidence})+'\n');
+  log(`Verified ${zip} in California; center offset ${offset.toFixed(2)} miles.`);
   return snapshot;
+  } finally {detach();}
 }
 
 async function clickNext(page: Page): Promise<boolean> {
@@ -312,9 +344,9 @@ async function clickNext(page: Page): Promise<boolean> {
   }
 }
 
-async function scrapeZip(page: Page, zip: string, config: AppConfig, db: ReturnType<typeof openDb>): Promise<void> {
+async function scrapeZip(page: Page, zip: string, config: AppConfig, db: ReturnType<typeof openDb>, attempt:number): Promise<void> {
   markSearch(db, zip, { status: "in_progress", error: null, pagesDone: 0, agentsSeen: 0 });
-  let snapshot = await searchZip(page, zip, config);
+  let snapshot = await searchZip(page, zip, config, attempt);
   let pagesDone = 0;
   let agentsSeen = 0;
 
@@ -385,8 +417,16 @@ async function main(): Promise<void> {
   const db = openDb();
   const grid = buildGrid(config.centerZip, config.coverageMiles, config.gridSpacingMiles);
   syncGrid(db, grid);
+  // Keep queue/recovery metadata consistent with the documented ZIP correction.
+  const corrected=locationReference('93031');
+  db.prepare('UPDATE searches SET latitude=?,longitude=?,distance_miles=? WHERE zip=?').run(corrected.latitude,corrected.longitude,milesBetween(locationReference(config.centerZip),corrected),'93031');
   queueCapRecovery(db, config.centerZip, config.coverageMiles);
-  const queue = nextSearches(db, config.maxZips);
+  const adaptiveAtStartup=queueAdaptiveRecovery(db,config.centerZip,config.coverageMiles);
+  if(adaptiveAtStartup)log(`Adaptive recovery appended ${adaptiveAtStartup} new centers to the queue.`);
+  const onlyZipIndex=process.argv.indexOf('--only-zip');
+  const onlyZip=onlyZipIndex>=0?process.argv[onlyZipIndex+1]:undefined;
+  if(onlyZipIndex>=0 && !/^\d{5}$/.test(onlyZip||''))throw new Error('--only-zip requires a five-digit ZIP');
+  const queue = onlyZip ? nextSearches(db).filter(row=>row.zip===onlyZip) : nextSearches(db, config.maxZips);
   const queued = new Set(queue.map(search => search.zip));
 
   log(
@@ -423,16 +463,16 @@ async function main(): Promise<void> {
           log(`Searching ${search.zip} ${search.city} (${search.distance_miles.toFixed(1)} mi)${attempt > 1 ? ` attempt ${attempt}` : ""}`);
           const started = Date.now();
           try {
-            await scrapeZip(page, search.zip, config, db);
+            await scrapeZip(page, search.zip, config, db, attempt);
           } finally {
             db.prepare('INSERT INTO search_effort(zip,seconds) VALUES(?,?) ON CONFLICT(zip) DO UPDATE SET seconds=seconds+excluded.seconds')
               .run(search.zip,(Date.now()-started)/1000);
             writeRecoveryReport(db);
           }
-          const added = queueCapRecovery(db, config.centerZip, config.coverageMiles);
+          const added = queueCapRecovery(db, config.centerZip, config.coverageMiles)+queueAdaptiveRecovery(db,config.centerZip,config.coverageMiles);
           writeRecoveryReport(db);
           if (added) log(`Queued ${added} nearby ZIP searches for capped areas; capped searches remain unresolved.`);
-          if (config.maxZips == null) {
+          if (config.maxZips == null && !onlyZip) {
             for (const followup of nextSearches(db)) {
               if (!queued.has(followup.zip)) { queue.push(followup); queued.add(followup.zip); }
             }
@@ -447,6 +487,8 @@ async function main(): Promise<void> {
               : `Problem on ${search.zip}: ${message}`,
           );
           await page.screenshot({ path: path.join(process.cwd(), "logs", "last-error.png"), fullPage: true }).catch(() => undefined);
+          const html=await page.content().catch(()=>null);
+          if(html)writeFileSync(path.join(process.cwd(),'logs','last-error.html'),html);
           markSearch(db, search.zip, { status: "error", error: message });
           if (isAccessBlock(message)) {
             giveUp = true;
@@ -454,9 +496,9 @@ async function main(): Promise<void> {
             break;
           }
           if (attempt >= config.maxAttempts) {
-            if (canDeferZip(message)) {
+            if (canDeferZip(message) || /geocod|location mismatch|missing geocoded|site search error/i.test(message)) {
               deferredZips += 1;
-              log(`Deferred ${search.zip} after ${config.maxAttempts} timeout attempts; saved data preserved, ZIP remains incomplete. Continuing other ZIPs.`);
+              log(`Deferred ${search.zip} after ${config.maxAttempts} failed attempts: ${message}. Saved data preserved; ZIP remains incomplete. Continuing other ZIPs.`);
               await openSearch(page, config);
               break;
             }
@@ -488,7 +530,7 @@ async function main(): Promise<void> {
   } else {
     log(`Finished this queue pass. ${deferredZips} ZIPs deferred for timeout recovery; ${unresolvedCaps} capped searches remain potentially incomplete.`);
     if (deferredZips) {
-      log('Timed out ZIPs remain queued; requesting a supervised recovery pass.');
+      log('Failed ZIPs remain queued; requesting a supervised recovery pass.');
       process.exitCode = 1;
     }
   }

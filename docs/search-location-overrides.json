@@ -1,0 +1,15 @@
+{
+  "93031": {
+    "latitude": 34.1975,
+    "longitude": -119.1763,
+    "inputs": ["93031, CA", "93036, CA", "Oxnard, CA"],
+    "basis": "The bundled ZIP table places this Oxnard PO-box ZIP offshore. ZIP-Codes.com lists its postal facility reference at 34.1975,-119.1763; CDI Google geocoding independently resolves 93031 to Oxnard. Require the usual five-mile offset, US/CA, and submitted-center checks against this corrected reference.",
+    "source": "https://www.zip-codes.com/zip-code/93031/zip-code-93031.asp",
+    "checked_on": "2026-10-14"
+  },
+  "90101": {
+    "inputs": ["90040, CA", "90022, CA", "90201, CA"],
+    "basis": "Bare/special 901xx inputs do not resolve to a usable center. Nearby physical ZIPs are used as substitute search centers; retain the original 90101 reference and usual five-mile offset checks. This is approximate recovery coverage, not a claim that 90101 is a current physical delivery ZIP.",
+    "checked_on": "2026-10-14"
+  }
+}

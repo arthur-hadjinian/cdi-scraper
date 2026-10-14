@@ -30,7 +30,7 @@ test('exhausted transition stays an error', async () => {
 });
 test('access blocks never become deferred timeouts', async () => {
   assert.equal(canDeferZip('Timed out waiting for the next page'), true);
-  for (const message of ['HTTP 429 timeout', '403 timed out', 'captcha timeout', 'access denied', 'broken selector']) {
+  for (const message of ['HTTP 429 timeout', '403 timed out', 'captcha timeout', 'access denied', 'Geocoding failed: OVER_QUERY_LIMIT', 'Geocoding failed: REQUEST_DENIED', 'broken selector']) {
     assert.equal(canDeferZip(message), false);
   }
   await assert.rejects(advanceWithRetry({changed: async () => { throw new Error('HTTP 429'); },

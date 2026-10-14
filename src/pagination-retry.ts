@@ -1,5 +1,5 @@
 export function isAccessBlock(message: string): boolean {
-  return /\b403\b|\b429\b|captcha|cloudflare|verify you are human|access denied/i.test(message);
+  return /\b403\b|\b429\b|captcha|cloudflare|verify you are human|access denied|OVER_QUERY_LIMIT|REQUEST_DENIED/i.test(message);
 }
 
 export function canDeferZip(message: string): boolean {

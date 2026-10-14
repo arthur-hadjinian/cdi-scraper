@@ -30,8 +30,8 @@ try {
         $runText = if (Test-Path -LiteralPath $attemptLog) { Get-Content -LiteralPath $attemptLog -Raw } else { '' }
         if (Test-Path -LiteralPath $stopFile) { Write-SupervisorLog 'Stop file found; no restart.'; break }
         if ($scraperExit -eq 0) { Write-SupervisorLog 'Scraper exited successfully; no restart.'; break }
-        $manualReview = $runText -match '(?i)\b403\b|\b429\b|cloudflare|captcha|verify you are human|verification challenge|access denied'
-        $timeout = $runText -match '(?i)timed out|timeout|ETIMEDOUT'
+        $manualReview = $runText -match '(?i)\b403\b|\b429\b|cloudflare|captcha|verify you are human|verification challenge|access denied|OVER_QUERY_LIMIT|REQUEST_DENIED'
+        $timeout = $runText -match '(?i)timed out|timeout|ETIMEDOUT|geocoding failed|location mismatch|site search error|missing geocoded'
         if ($manualReview -or -not $timeout) { Write-SupervisorLog "Stopped for manual review (exit $scraperExit). See $attemptLog"; break }
         if ($restart -ge $retrySeconds.Count) { Write-SupervisorLog "Restart budget exhausted after $($retrySeconds.Count) automatic restarts; manual review required."; break }
         $waitSeconds = $retrySeconds[$restart]

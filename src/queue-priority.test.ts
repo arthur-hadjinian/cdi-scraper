@@ -7,6 +7,7 @@ test('resume interrupted ZIP, prioritize untouched ZIPs, retain errors, skip fin
   const db = new DatabaseSync(':memory:');
   try {
     db.exec('CREATE TABLE searches (zip TEXT, city TEXT, latitude REAL, longitude REAL, distance_miles REAL, status TEXT, total_reported INTEGER, pages_done INTEGER, agents_seen INTEGER, error TEXT)');
+    db.exec('CREATE TABLE planned_searches (zip TEXT PRIMARY KEY, rank INTEGER)');
     const add = db.prepare('INSERT INTO searches(zip,status,distance_miles) VALUES(?,?,?)');
     add.run('interrupted', 'in_progress', 20);
     add.run('untouched-near', 'pending', 10);
@@ -16,5 +17,7 @@ test('resume interrupted ZIP, prioritize untouched ZIPs, retain errors, skip fin
     add.run('capped', 'truncated', 0);
     assert.deepEqual(nextSearches(db).map(x => x.zip), ['interrupted', 'untouched-near', 'untouched-far', 'failed-near']);
     assert.deepEqual(nextSearches(db, 2).map(x => x.zip), ['interrupted', 'untouched-near']);
+    db.prepare('INSERT INTO planned_searches VALUES(?,?)').run('untouched-far',1);
+    assert.deepEqual(nextSearches(db).map(x => x.zip), ['interrupted', 'untouched-far', 'untouched-near', 'failed-near']);
   } finally { db.close(); }
 });

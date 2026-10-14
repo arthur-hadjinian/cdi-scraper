@@ -15,6 +15,7 @@ document.getElementById('search').oninput=()=>{page=0;render()};document.getElem
 http.createServer((req,res)=>{
   res.setHeader('Cache-Control','no-store');
   if(req.url==='/data'){try{res.setHeader('Content-Type','application/json');res.end(JSON.stringify({csv:fs.readFileSync(csv,'utf8'),modified:fs.statSync(csv).mtime.toISOString()}))}catch{res.statusCode=503;res.end('CSV unavailable')}}
+  else if(req.url==='/scan-plan' || req.url==='/scan-plan/'){res.setHeader('Content-Type','text/html; charset=utf-8');try{res.end(fs.readFileSync(path.join(__dirname,'scan-plan','collection-map.html'),'utf8'))}catch{res.statusCode=503;res.end('Collection map unavailable')}}
   else if(req.url==='/'){res.setHeader('Content-Type','text/html; charset=utf-8');res.end(html)}
   else{res.statusCode=404;res.end()}
 }).listen(8766,'127.0.0.1',()=>console.log('Live sheet: http://127.0.0.1:8766'));

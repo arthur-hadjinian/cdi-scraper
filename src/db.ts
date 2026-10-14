@@ -77,6 +77,12 @@ export function openDb(): DatabaseSync {
       zip TEXT PRIMARY KEY,
       seconds REAL NOT NULL DEFAULT 0
     );
+    CREATE TABLE IF NOT EXISTS planned_searches (
+      zip TEXT PRIMARY KEY,
+      batch TEXT NOT NULL,
+      rank INTEGER NOT NULL,
+      queued_at TEXT NOT NULL
+    );
   `);
   return db;
 }
@@ -107,7 +113,8 @@ export function syncGrid(db: DatabaseSync, points: GridPoint[]): void {
     const pending = db.prepare(`SELECT zip FROM searches WHERE status = 'pending'`).all() as { zip: string }[];
     for (const row of pending) {
       const recovery = db.prepare('SELECT 1 FROM cap_recovery WHERE child_zip = ?').get(row.zip);
-      if (!keep.has(row.zip) && !recovery) removePending.run(row.zip);
+      const planned = db.prepare('SELECT 1 FROM planned_searches WHERE zip = ?').get(row.zip);
+      if (!keep.has(row.zip) && !recovery && !planned) removePending.run(row.zip);
     }
     db.exec("COMMIT");
   } catch (error) {
@@ -124,6 +131,7 @@ export function nextSearches(db: DatabaseSync, limit?: number): SearchRow[] {
     WHERE status IN ('pending', 'in_progress', 'error')
     ORDER BY
       CASE status WHEN 'in_progress' THEN 0 WHEN 'pending' THEN 1 ELSE 2 END,
+      COALESCE((SELECT rank FROM planned_searches p WHERE p.zip = searches.zip), 1000000),
       distance_miles ASC,
       zip ASC
     ${limit ? "LIMIT ?" : ""}
