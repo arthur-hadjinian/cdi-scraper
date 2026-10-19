@@ -1,0 +1,58 @@
+[
+  {
+    "zip": "90079",
+    "latitude": 34.040587,
+    "longitude": -118.255404,
+    "reason": "Coordinate sources disagree by more than five miles; removed from active plan at user request.",
+    "removed_at": "2026-10-14"
+  },
+  {
+    "zip": "90089",
+    "latitude": 34.020221,
+    "longitude": -118.286035,
+    "reason": "Coordinate sources disagree by more than five miles; removed from active plan at user request.",
+    "removed_at": "2026-10-14"
+  },
+  {
+    "zip": "90095",
+    "latitude": 34.071225,
+    "longitude": -118.443373,
+    "reason": "Coordinate sources disagree by more than five miles; removed from active plan at user request.",
+    "removed_at": "2026-10-14"
+  },
+  {
+    "zip": "90506",
+    "latitude": 33.884696,
+    "longitude": -118.329998,
+    "reason": "Coordinate sources disagree by more than five miles; removed from active plan at user request.",
+    "removed_at": "2026-10-14"
+  },
+  {
+    "zip": "91042",
+    "latitude": 34.322618,
+    "longitude": -118.23757,
+    "reason": "Coordinate sources disagree by more than five miles; removed from active plan at user request.",
+    "removed_at": "2026-10-14"
+  },
+  {
+    "zip": "91759",
+    "latitude": 34.263699,
+    "longitude": -117.699574,
+    "reason": "Coordinate sources disagree by more than five miles; removed from active plan at user request.",
+    "removed_at": "2026-10-14"
+  },
+  {
+    "zip": "93041",
+    "latitude": 34.106028,
+    "longitude": -119.098081,
+    "reason": "Coordinate sources disagree by more than five miles; removed from active plan at user request.",
+    "removed_at": "2026-10-14"
+  },
+  {
+    "zip": "93243",
+    "latitude": 34.7727,
+    "longitude": -118.791975,
+    "reason": "Coordinate sources disagree by more than five miles; removed from active plan at user request.",
+    "removed_at": "2026-10-14"
+  }
+]

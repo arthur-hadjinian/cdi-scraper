@@ -1,0 +1,341 @@
+{
+  "enabled": false,
+  "approved_by_user_at": null,
+  "batch": "region-expansion-preview-20261016",
+  "initial": [
+    {
+      "id": "expansion:90095",
+      "input": "90095, CA",
+      "city": "Los Angeles, CA 90095, USA",
+      "latitude": 34.070264,
+      "longitude": -118.4440562,
+      "distanceMiles": 9.84829881600776,
+      "kind": "omitted_zip",
+      "sourceZip": "90095",
+      "nearest_searched_miles": 1.738990328745969,
+      "verified_at": "2026-10-17T04:19:22.574Z"
+    },
+    {
+      "id": "expansion:90506",
+      "input": "90506, CA",
+      "city": "Torrance, CA 90506, USA",
+      "latitude": 33.8844585,
+      "longitude": -118.329392,
+      "distanceMiles": 19.849961449961494,
+      "kind": "omitted_zip",
+      "sourceZip": "90506",
+      "nearest_searched_miles": 1.1844548418061505,
+      "verified_at": "2026-10-17T04:19:25.207Z"
+    },
+    {
+      "id": "expansion:91042",
+      "input": "91042, CA",
+      "city": "Tujunga, CA 91042, USA",
+      "latitude": 34.296676,
+      "longitude": -118.2292712,
+      "distanceMiles": 10.163289507874827,
+      "kind": "omitted_zip",
+      "sourceZip": "91042",
+      "nearest_searched_miles": 4.565189391530668,
+      "verified_at": "2026-10-17T04:19:27.825Z"
+    },
+    {
+      "id": "expansion:91759",
+      "input": "91759, CA",
+      "city": "Mt Baldy, CA 91759, USA",
+      "latitude": 34.2602336,
+      "longitude": -117.7138785,
+      "distanceMiles": 35.341573935544986,
+      "kind": "omitted_zip",
+      "sourceZip": "91759",
+      "nearest_searched_miles": 8.71828504153929,
+      "verified_at": "2026-10-17T04:19:30.449Z"
+    },
+    {
+      "id": "expansion:city-agua-dulce",
+      "input": "Agua Dulce, CA",
+      "city": "Agua Dulce, CA 91390, USA",
+      "latitude": 34.4963443,
+      "longitude": -118.3261969,
+      "distanceMiles": 22.431699839803336,
+      "kind": "alternate_city",
+      "sourceZip": "91390",
+      "nearest_searched_miles": 7.4731771158121845,
+      "verified_at": "2026-10-17T04:19:56.636Z"
+    },
+    {
+      "id": "expansion:city-acton",
+      "input": "Acton, CA",
+      "city": "Acton, CA, USA",
+      "latitude": 34.4717405,
+      "longitude": -118.1972271,
+      "distanceMiles": 21.94008884923903,
+      "kind": "alternate_city",
+      "sourceZip": null,
+      "nearest_searched_miles": 0.8160204369012719,
+      "verified_at": "2026-10-17T04:19:59.257Z"
+    },
+    {
+      "id": "expansion:city-mount-baldy",
+      "input": "Mount Baldy, CA",
+      "city": "Mt Baldy, CA 91759, USA",
+      "latitude": 34.2363809,
+      "longitude": -117.6589752,
+      "distanceMiles": 38.212673652572995,
+      "kind": "alternate_city",
+      "sourceZip": "91759",
+      "nearest_searched_miles": 5.815055254160732,
+      "verified_at": "2026-10-17T04:20:01.897Z"
+    },
+    {
+      "id": "expansion:city-northridge",
+      "input": "Northridge, CA",
+      "city": "Northridge, Los Angeles, CA, USA",
+      "latitude": 34.2354576,
+      "longitude": -118.5361381,
+      "distanceMiles": 12.94637896453461,
+      "kind": "alternate_city",
+      "sourceZip": null,
+      "nearest_searched_miles": 0.9230975813575725,
+      "verified_at": "2026-10-17T04:20:14.941Z"
+    },
+    {
+      "id": "expansion:city-lancaster",
+      "input": "Lancaster, CA",
+      "city": "Lancaster, CA, USA",
+      "latitude": 34.703947,
+      "longitude": -118.1481016,
+      "distanceMiles": 38.10319393716163,
+      "kind": "alternate_city",
+      "sourceZip": null,
+      "nearest_searched_miles": 0.9032530416968388,
+      "verified_at": "2026-10-17T04:20:17.530Z"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "expansion:90223",
+      "input": "90223, CA",
+      "city": "Compton, CA 90223, USA",
+      "latitude": 33.89989,
+      "longitude": -118.2199049,
+      "distanceMiles": 19.688025202246386,
+      "kind": "remaining_postal_candidate",
+      "sourceZip": "90223",
+      "nearest_searched_miles": 1.1687735048715306,
+      "verified_at": "2026-10-17T04:19:38.293Z"
+    },
+    {
+      "id": "expansion:91329",
+      "input": "91329, CA",
+      "city": "Northridge, CA 91329, USA",
+      "latitude": 34.2239055,
+      "longitude": -118.5024461,
+      "distanceMiles": 10.86545685040699,
+      "kind": "remaining_postal_candidate",
+      "sourceZip": "91329",
+      "nearest_searched_miles": 1.2217324968125582,
+      "verified_at": "2026-10-17T04:19:43.541Z"
+    },
+    {
+      "id": "expansion:93539",
+      "input": "93539, CA",
+      "city": "Lancaster, CA 93539, USA",
+      "latitude": 34.6824502,
+      "longitude": -118.1656706,
+      "distanceMiles": 36.41251144868015,
+      "kind": "remaining_postal_candidate",
+      "sourceZip": "93539",
+      "nearest_searched_miles": 1.1077842661492208,
+      "verified_at": "2026-10-17T04:19:46.169Z"
+    },
+    {
+      "id": "expansion:93586",
+      "input": "93586, CA",
+      "city": "Quartz Hill, CA 93586, USA",
+      "latitude": 34.65,
+      "longitude": -118.22,
+      "distanceMiles": 33.566198404714875,
+      "kind": "remaining_postal_candidate",
+      "sourceZip": "93586",
+      "nearest_searched_miles": 3.3953423744917446,
+      "verified_at": "2026-10-17T04:19:51.419Z"
+    }
+  ],
+  "maxAdditional": 100,
+  "maxPerParent": 3,
+  "maxDepth": 3,
+  "minSpacingMiles": 0.75,
+  "maxNearbyMiles": 5,
+  "held": [
+    {
+      "key": "90079",
+      "input": "90079, CA",
+      "reason": "Less than 0.75 miles from an already searched center",
+      "evidence": {
+        "status": "OK",
+        "formatted": "Los Angeles, CA 90079, USA",
+        "country": "US",
+        "state": "CA",
+        "postal": "90079",
+        "latitude": 34.0405313,
+        "longitude": -118.2554032
+      },
+      "nearest_miles": 0.36643894869900784
+    },
+    {
+      "key": "90089",
+      "input": "90089, CA",
+      "reason": "Less than 0.75 miles from an already searched center",
+      "evidence": {
+        "status": "OK",
+        "formatted": "Los Angeles, CA 90089, USA",
+        "country": "US",
+        "state": "CA",
+        "postal": "90089",
+        "latitude": 34.0220127,
+        "longitude": -118.2892046
+      },
+      "nearest_miles": 0.5244540308929002
+    },
+    {
+      "key": "93041",
+      "input": "93041, CA",
+      "reason": "Less than 0.75 miles from an already searched center",
+      "evidence": {
+        "status": "OK",
+        "formatted": "NAS Point Mugu, CA 93041, USA",
+        "country": "US",
+        "state": "CA",
+        "postal": "93041",
+        "latitude": 34.1451995,
+        "longitude": -119.1942983
+      },
+      "nearest_miles": 0
+    },
+    {
+      "key": "93243",
+      "input": "93243, CA",
+      "reason": "Actual geocoded center outside the 50-mile radius",
+      "evidence": {
+        "status": "OK",
+        "formatted": "Lebec, CA 93243, USA",
+        "country": "US",
+        "state": "CA",
+        "postal": "93243",
+        "latitude": 34.7936796,
+        "longitude": -118.8363756
+      },
+      "nearest_miles": 18.218168374940486
+    },
+    {
+      "key": "91328",
+      "input": "91328, CA",
+      "reason": "Less than 0.75 miles from an already searched center",
+      "evidence": {
+        "status": "OK",
+        "formatted": "Northridge, CA 91328, USA",
+        "country": "US",
+        "state": "CA",
+        "postal": "91328",
+        "latitude": 34.24,
+        "longitude": -118.54
+      },
+      "nearest_miles": 0.6139614821125218
+    },
+    {
+      "key": "93584",
+      "input": "93584, CA",
+      "reason": "Less than 0.75 miles from an already searched center",
+      "evidence": {
+        "status": "OK",
+        "formatted": "Lancaster, CA 93584, USA",
+        "country": "US",
+        "state": "CA",
+        "postal": "93584",
+        "latitude": 34.6988639,
+        "longitude": -118.1419282
+      },
+      "nearest_miles": 0.6846726186981831
+    },
+    {
+      "key": "90888",
+      "input": "90888, CA",
+      "reason": "Geocoder did not identify the requested ZIP",
+      "evidence": {
+        "status": "OK",
+        "formatted": "California, USA",
+        "country": "US",
+        "state": "CA",
+        "latitude": 36.778261,
+        "longitude": -119.4179324
+      },
+      "nearest_miles": 144.52376771654264
+    },
+    {
+      "key": "city-lebec",
+      "input": "Lebec, CA",
+      "reason": "Actual geocoded center outside the 50-mile radius",
+      "evidence": {
+        "status": "OK",
+        "formatted": "Lebec, CA, USA",
+        "country": "US",
+        "state": "CA",
+        "latitude": 34.8416435,
+        "longitude": -118.8648189
+      },
+      "nearest_miles": 21.18466427066191
+    },
+    {
+      "key": "city-tujunga",
+      "input": "Tujunga, CA",
+      "reason": "Less than 0.75 miles from an already searched center",
+      "evidence": {
+        "status": "OK",
+        "formatted": "Sunland, Los Angeles, CA 91040, USA",
+        "country": "US",
+        "state": "CA",
+        "postal": "91040",
+        "latitude": 34.2596694,
+        "longitude": -118.3114218
+      },
+      "nearest_miles": 0.7217440216622449
+    },
+    {
+      "key": "city-san-gabriel",
+      "input": "San Gabriel, CA",
+      "reason": "Less than 0.75 miles from an already searched center",
+      "evidence": {
+        "status": "OK",
+        "formatted": "San Gabriel, CA, USA",
+        "country": "US",
+        "state": "CA",
+        "latitude": 34.09611110000001,
+        "longitude": -118.1058333
+      },
+      "nearest_miles": 0.5623424285588339
+    },
+    {
+      "key": "city-compton",
+      "input": "Compton, CA",
+      "reason": "Duplicates another proposed center within 0.75 miles",
+      "evidence": {
+        "status": "OK",
+        "formatted": "Compton, CA, USA",
+        "country": "US",
+        "state": "CA",
+        "latitude": 33.8959097,
+        "longitude": -118.2243901
+      },
+      "nearest_miles": 1.2193419875507425
+    }
+  ],
+  "notes": [
+    "PREVIEW ONLY: no searches queued and no recurring task created.",
+    "The runtime reads only approved-expansion-plan.json, which does not exist before approval.",
+    "Three sibling follow-ups maximum per parent counting existing adaptive siblings; productive parents from all phases eligible.",
+    "Initial gap probes are separate from the bounded follow-up pool.",
+    "Candidate pool is finite and contains only newly verified centers, not every unverified postal ZIP.",
+    "Read-only geocoder checks verify locations; they do not establish that each probe will produce agents."
+  ]
+}

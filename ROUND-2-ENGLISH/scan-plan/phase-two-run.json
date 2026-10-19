@@ -1,0 +1,8 @@
+{
+  "batch": "phase-two-20261014",
+  "started_at": "2026-10-14T16:32:58.165Z",
+  "starting_unique_agents": 52481,
+  "centers": 163,
+  "first_zip": "92676",
+  "settings": "Existing ROUND-2-ENGLISH/config.json and supervisor retries unchanged"
+}

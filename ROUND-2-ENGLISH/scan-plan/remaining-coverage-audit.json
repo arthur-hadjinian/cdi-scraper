@@ -1,0 +1,380 @@
+{
+  "checked_at": "2026-10-17T04:15:24.322Z",
+  "agents": {
+    "n": 67542
+  },
+  "searches": 536,
+  "statuses": [
+    {
+      "status": "complete",
+      "n": 35
+    },
+    {
+      "status": "skipped_location",
+      "n": 2
+    },
+    {
+      "status": "truncated",
+      "n": 499
+    }
+  ],
+  "validated_terminal_centers": 243,
+  "available_zip_reference_centers": 719,
+  "unused_zip_reference_centers": 187,
+  "unused_removed": 7,
+  "unused_too_close": 172,
+  "unused_with_spacing_and_capped_neighbor": 7,
+  "census_centers": 408,
+  "census_not_searched": [
+    {
+      "zip": "90079",
+      "latitude": 34.040587,
+      "longitude": -118.255404,
+      "city": "Los Angeles",
+      "searched": false,
+      "nearest": {
+        "zip": "90014",
+        "city": "Los Angeles",
+        "status": "truncated",
+        "verified": false,
+        "distance": 0.36374662813023106
+      }
+    },
+    {
+      "zip": "90089",
+      "latitude": 34.020221,
+      "longitude": -118.286035,
+      "city": "Los Angeles",
+      "searched": false,
+      "nearest": {
+        "zip": "90007",
+        "city": "Los Angeles",
+        "status": "truncated",
+        "verified": false,
+        "distance": 0.6371402517963574
+      }
+    },
+    {
+      "zip": "90095",
+      "latitude": 34.071225,
+      "longitude": -118.443373,
+      "city": "Los Angeles",
+      "searched": false,
+      "nearest": {
+        "zip": "90049",
+        "city": "Los Angeles",
+        "status": "truncated",
+        "verified": false,
+        "distance": 1.789734635164914
+      }
+    },
+    {
+      "zip": "90506",
+      "latitude": 33.884696,
+      "longitude": -118.329998,
+      "city": "Torrance",
+      "searched": false,
+      "nearest": {
+        "zip": "90249",
+        "city": "Gardena",
+        "status": "truncated",
+        "verified": false,
+        "distance": 1.193534290164
+      }
+    },
+    {
+      "zip": "91042",
+      "latitude": 34.322618,
+      "longitude": -118.23757,
+      "city": "Tujunga",
+      "searched": false,
+      "nearest": {
+        "zip": "91041",
+        "city": "Sunland",
+        "status": "truncated",
+        "verified": false,
+        "distance": 5.33603724193651
+      }
+    },
+    {
+      "zip": "91759",
+      "latitude": 34.263699,
+      "longitude": -117.699574,
+      "city": "Mt Baldy",
+      "searched": false,
+      "nearest": {
+        "zip": "92397",
+        "city": "Wrightwood",
+        "status": "complete",
+        "verified": false,
+        "distance": 8.065155174992004
+      }
+    },
+    {
+      "zip": "93041",
+      "latitude": 34.106028,
+      "longitude": -119.098081,
+      "city": "Port Hueneme",
+      "searched": false,
+      "nearest": {
+        "zip": "93042",
+        "city": "Point Mugu Nawc",
+        "status": "complete",
+        "verified": true,
+        "distance": 0.5084554126722736
+      }
+    },
+    {
+      "zip": "93243",
+      "latitude": 34.7727,
+      "longitude": -118.791975,
+      "city": "Lebec",
+      "searched": false,
+      "nearest": {
+        "zip": "93532",
+        "city": "Lake Hughes",
+        "status": "complete",
+        "verified": false,
+        "distance": 15.327618715370685
+      }
+    }
+  ],
+  "census_outside_search_circles": [
+    {
+      "zip": "91042",
+      "latitude": 34.322618,
+      "longitude": -118.23757,
+      "city": "Tujunga",
+      "searched": false,
+      "nearest": {
+        "zip": "91041",
+        "city": "Sunland",
+        "status": "truncated",
+        "verified": false,
+        "distance": 5.33603724193651
+      }
+    },
+    {
+      "zip": "91390",
+      "latitude": 34.545587,
+      "longitude": -118.420095,
+      "city": "Santa Clarita",
+      "searched": true,
+      "nearest": {
+        "zip": "91390",
+        "city": "Santa Clarita",
+        "status": "complete",
+        "verified": false,
+        "distance": 8.054303069104193
+      }
+    },
+    {
+      "zip": "91702",
+      "latitude": 34.280333,
+      "longitude": -117.866141,
+      "city": "Azusa",
+      "searched": true,
+      "nearest": {
+        "zip": "93553",
+        "city": "Pearblossom",
+        "status": "complete",
+        "verified": true,
+        "distance": 7.048190868582056
+      }
+    },
+    {
+      "zip": "91750",
+      "latitude": 34.178468,
+      "longitude": -117.774405,
+      "city": "La Verne",
+      "searched": true,
+      "nearest": {
+        "zip": "91740",
+        "city": "Glendora",
+        "status": "truncated",
+        "verified": false,
+        "distance": 5.758988373201866
+      }
+    },
+    {
+      "zip": "91759",
+      "latitude": 34.263699,
+      "longitude": -117.699574,
+      "city": "Mt Baldy",
+      "searched": false,
+      "nearest": {
+        "zip": "92397",
+        "city": "Wrightwood",
+        "status": "complete",
+        "verified": false,
+        "distance": 8.065155174992004
+      }
+    },
+    {
+      "zip": "93243",
+      "latitude": 34.7727,
+      "longitude": -118.791975,
+      "city": "Lebec",
+      "searched": false,
+      "nearest": {
+        "zip": "93532",
+        "city": "Lake Hughes",
+        "status": "complete",
+        "verified": false,
+        "distance": 15.327618715370685
+      }
+    }
+  ],
+  "capped_searches": 499,
+  "original_caps_not_adaptively_reassessed": {
+    "n": 297
+  },
+  "completed_low_yield_caps": 75,
+  "remaining_candidates": [
+    {
+      "zip": "93034",
+      "city": "Oxnard",
+      "latitude": 34.0324,
+      "longitude": -119.1343,
+      "distanceMiles": 47.39829230767059,
+      "removed": false,
+      "nearest": {
+        "zip": "93042",
+        "city": "Point Mugu Nawc",
+        "status": "complete",
+        "verified": true,
+        "distance": 5.823167834542653
+      },
+      "capped_neighbors": 0
+    },
+    {
+      "zip": "90223",
+      "city": "Compton",
+      "latitude": 33.8958,
+      "longitude": -118.2201,
+      "distanceMiles": 19.954510979820302,
+      "removed": false,
+      "nearest": {
+        "zip": "90221",
+        "city": "Compton",
+        "status": "truncated",
+        "verified": true,
+        "distance": 1.241628980787508
+      },
+      "capped_neighbors": 16
+    },
+    {
+      "zip": "91328",
+      "city": "Northridge",
+      "latitude": 34.2283,
+      "longitude": -118.5368,
+      "distanceMiles": 12.823068439500512,
+      "removed": false,
+      "nearest": {
+        "zip": "91325",
+        "city": "Northridge",
+        "status": "truncated",
+        "verified": false,
+        "distance": 1.136317331891488
+      },
+      "capped_neighbors": 26
+    },
+    {
+      "zip": "91329",
+      "city": "Northridge",
+      "latitude": 34.2283,
+      "longitude": -118.5368,
+      "distanceMiles": 12.823068439500512,
+      "removed": false,
+      "nearest": {
+        "zip": "91325",
+        "city": "Northridge",
+        "status": "truncated",
+        "verified": false,
+        "distance": 1.136317331891488
+      },
+      "capped_neighbors": 26
+    },
+    {
+      "zip": "93539",
+      "city": "Lancaster",
+      "latitude": 34.698,
+      "longitude": -118.1367,
+      "distanceMiles": 37.88388119294671,
+      "removed": false,
+      "nearest": {
+        "zip": "93534",
+        "city": "Lancaster",
+        "status": "truncated",
+        "verified": false,
+        "distance": 0.8584187746241391
+      },
+      "capped_neighbors": 1
+    },
+    {
+      "zip": "93584",
+      "city": "Lancaster",
+      "latitude": 34.698,
+      "longitude": -118.1367,
+      "distanceMiles": 37.88388119294671,
+      "removed": false,
+      "nearest": {
+        "zip": "93534",
+        "city": "Lancaster",
+        "status": "truncated",
+        "verified": false,
+        "distance": 0.8584187746241391
+      },
+      "capped_neighbors": 1
+    },
+    {
+      "zip": "93586",
+      "city": "Lancaster",
+      "latitude": 34.698,
+      "longitude": -118.1367,
+      "distanceMiles": 37.88388119294671,
+      "removed": false,
+      "nearest": {
+        "zip": "93534",
+        "city": "Lancaster",
+        "status": "truncated",
+        "verified": false,
+        "distance": 0.8584187746241391
+      },
+      "capped_neighbors": 1
+    },
+    {
+      "zip": "90888",
+      "city": "Far",
+      "latitude": 33.77,
+      "longitude": -118.18,
+      "distanceMiles": 28.941002992158314,
+      "removed": false,
+      "nearest": {
+        "zip": "90814",
+        "city": "Long Beach",
+        "status": "truncated",
+        "verified": true,
+        "distance": 0.789152628280224
+      },
+      "capped_neighbors": 15
+    }
+  ],
+  "coarse_land_circle_sampling": {
+    "sample_spacing_miles": 1,
+    "land_points": 6053,
+    "points_within_any_terminal_search_circle": 4596,
+    "points_within_validated_terminal_circle": 3252,
+    "gap_quadrants": {
+      "southwest": 41,
+      "northeast": 692,
+      "northwest": 724
+    },
+    "warning": "Approximate land-area point coverage only. Includes mountains; not population coverage or completeness of capped results."
+  },
+  "notes": [
+    "Skipped centers count as known but not successful geographic coverage.",
+    "ZIP/ZCTA centers are geographic proxies; an unsearched ZIP can overlap searched areas.",
+    "Adaptive decisions are one-time and permit only one child per parent; limits do not exhaust the candidate pool."
+  ]
+}

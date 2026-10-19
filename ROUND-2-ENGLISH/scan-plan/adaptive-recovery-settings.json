@@ -1,0 +1,8 @@
+{
+  "enabled": true,
+  "batch": "phase-two-20261014",
+  "maxAdditional": 100,
+  "maxDepth": 3,
+  "maxNearbyMiles": 5,
+  "minSpacingMiles": 0.75
+}

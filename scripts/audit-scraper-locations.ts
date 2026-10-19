@@ -1,0 +1,31 @@
+import {DatabaseSync,backup} from 'node:sqlite';
+import {mkdirSync,writeFileSync,existsSync} from 'node:fs';
+import {createRequire} from 'node:module';
+import {milesBetween} from '../src/grid.js';
+const zipcodes=createRequire(import.meta.url)('zipcodes');
+const db=new DatabaseSync('data/agents.db');
+const backupPath='data/agents-before-location-fix-20261013.db';
+if(!existsSync(backupPath))await backup(db,backupPath);
+const center=zipcodes.lookup('91506');
+const rows=db.prepare('SELECT license_number,name,address,license_url FROM agents').all();
+const counts:Record<string,number>={};
+const audit=rows.map(row=>{
+ const address=String(row.address||'');
+ const postal=address.match(/\b(\d{5})(?:-?\d{4})?\s*$/)?.[1];
+ const point=postal?zipcodes.lookup(postal):undefined;
+ const distance=point?milesBetween(center,point):null;
+ const state=point?.state;
+ const flag=!point?'ADDRESS_LOCATION_UNKNOWN':state!=='CA'?'ADDRESS_OUTSIDE_CA':distance!>55?'ADDRESS_BEYOND_55_MILES':'ADDRESS_WITHIN_APPROXIMATE_SEARCH_AREA';
+ counts[flag]=(counts[flag]||0)+1;
+ return {license_number:row.license_number,name:row.name,address,postal:postal||null,estimated_miles:distance,flag};
+});
+// Old zero-result searches had no captured geocoder evidence. Recheck them;
+// do not discard agents or reset searches that already returned records.
+const recheck=db.prepare("SELECT zip FROM searches WHERE status='complete' AND agents_seen=0").all();
+db.prepare("UPDATE searches SET status='pending',error='Legacy zero-result search needs verified California center' WHERE status='complete' AND agents_seen=0").run();
+mkdirSync('exports/location-audit',{recursive:true});
+writeFileSync('exports/location-audit/legacy-address-audit.json',JSON.stringify(audit));
+const summary={checked_at:new Date().toISOString(),saved_records:rows.length,backup:backupPath,address_flags:counts,requeued_zero_result_zips:recheck.map(x=>x.zip),limitations:['Address ZIP approximates location; it is not an exact street geocode.','These are geography review flags, not recruiting eligibility or approval decisions.','Historical source centers are unverified unless a new location-checks.jsonl entry records a validated run.','No saved agents were removed. Existing capped searches remain potentially incomplete.']};
+writeFileSync('exports/location-audit/summary.json',JSON.stringify(summary,null,2));
+console.log(JSON.stringify(summary));
+db.close();

@@ -1,0 +1,2665 @@
+<!doctype html>
+<html lang="en" data-visualize-standalone>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Collection Expansion Preview</title>
+<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
+
+</head>
+<body>
+<iframe id="codex-visualization" sandbox="allow-scripts" referrerpolicy="no-referrer" title="Collection Expansion Preview" data-srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot; data-visualize-standalone&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
+&lt;title&gt;Collection Expansion Preview&lt;/title&gt;
+&lt;style&gt;:root {
+  color-scheme: light dark;
+  background-color: var(
+    --background,
+    var(--color-background-primary, light-dark(rgb(255 255 255), rgb(24 24 24)))
+  ) !important;
+
+  /* Agent-facing contract; keep in sync with SKILL.md. */
+  --background: var(
+    --color-background-primary,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --card: color-mix(in oklab, var(--foreground) 5%, var(--background));
+  --card-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --popover: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255), rgb(45 45 45))
+  );
+  --popover-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --primary: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --primary-foreground: var(
+    --color-text-inverse,
+    light-dark(rgb(255 255 255), rgb(13 13 13))
+  );
+  --secondary: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255 / 96%), rgb(54 54 54 / 96%))
+  );
+  --secondary-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --muted: color-mix(in srgb, var(--foreground) 10%, transparent);
+  --muted-foreground: var(
+    --color-text-secondary,
+    light-dark(rgb(26 28 31 / 49.4%), rgb(255 255 255 / 49.8%))
+  );
+  --accent: var(
+    --color-background-info,
+    light-dark(rgb(229 242 255), rgb(13 39 63))
+  );
+  --accent-foreground: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --destructive: var(
+    --color-text-warning,
+    light-dark(rgb(226 85 7), rgb(255 133 73))
+  );
+  --border: var(
+    --color-border-secondary,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+  --input: var(
+    --color-border-primary,
+    light-dark(
+      rgb(26 28 31 / 11.8%),
+      color-mix(in oklab, rgb(0 0 0) 10%, transparent)
+    )
+  );
+  --ring: var(
+    --color-ring-primary,
+    light-dark(rgb(51 156 255), rgb(131 195 255 / 76%))
+  );
+  --font-size-base: var(--font-text-md-size, 16px);
+  --blue: light-dark(rgb(51 156 255), rgb(51 156 255));
+  --orange: light-dark(rgb(226 85 7), rgb(251 106 34));
+  --green: light-dark(rgb(0 162 64), rgb(64 201 119));
+  --red: light-dark(rgb(224 46 42), rgb(255 103 100));
+  --purple: light-dark(rgb(146 79 247), rgb(173 123 249));
+  --yellow: light-dark(rgb(255 195 0), rgb(255 210 64));
+  --viz-series-1: var(--primary);
+  --viz-series-2: light-dark(rgb(243 136 59), rgb(245 154 86));
+  --viz-series-3: light-dark(rgb(93 201 119), rgb(116 213 139));
+  --viz-series-4: light-dark(rgb(235 119 177), rgb(240 143 192));
+  --viz-series-5: light-dark(rgb(155 121 236), rgb(170 145 239));
+  --viz-series-6: light-dark(rgb(58 185 177), rgb(90 203 194));
+
+  /* Internal implementation variables; not part of the agent contract. */
+  --font-sans:
+    -apple-system-body, ui-sans-serif, -apple-system, system-ui, &quot;Segoe UI&quot;,
+    Helvetica, &quot;Apple Color Emoji&quot;, Arial, sans-serif, &quot;Segoe UI Emoji&quot;,
+    &quot;Segoe UI Symbol&quot;;
+  --font-mono:
+    ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;,
+    monospace;
+  --font-size-normal: max(11px, var(--font-size-base));
+  --font-size-tooltip: calc(var(--font-size-base) - 1px);
+  --font-size-small: max(11px, calc(var(--font-size-base) - 2px));
+  --font-size-h1: calc(var(--font-size-normal) * 1.7142857143);
+  --font-size-h2: calc(var(--font-size-normal) * 1.4285714286);
+  --font-size-h3: calc(var(--font-size-normal) * 1.2857142857);
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --icon-size: 16px;
+  --line-height-normal: calc(var(--font-size-normal) * 1.5);
+  --line-height-tooltip: calc(var(--font-size-tooltip) * 1.4285714286);
+  --line-height-small: calc(var(--font-size-small) + 4px);
+  --corner-shape: round;
+  --radius: var(--border-radius-lg, 8px);
+  --radius-sm: calc(var(--radius) * 0.5);
+  --radius-md: calc(var(--radius) * 0.75);
+  --radius-lg: var(--radius);
+  --radius-2xl: calc(var(--radius) * 2);
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
+  --checkmark-image: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 17 17&#x27;%3E%3Cpath d=&#x27;M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z&#x27;/%3E%3C/svg%3E&quot;);
+
+  /* Legacy aliases; not part of the current agent contract. */
+  --viz-bg: transparent;
+  --viz-panel: var(--card);
+  --viz-border: var(--border);
+  --viz-text: var(--foreground);
+  --viz-muted: var(--muted-foreground);
+  --viz-accent: var(--primary);
+  --viz-accent-text: var(--primary-foreground);
+  --viz-accent-bg: var(--accent);
+  --viz-font-size: var(--font-size-base);
+  --viz-warning: var(--destructive);
+}
+
+:root[data-theme=&quot;light&quot;] {
+  color-scheme: light;
+}
+
+:root[data-theme=&quot;dark&quot;] {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html &gt; body {
+  /* Preserve MCP aliases for older inline renderers without creating :root cycles. */
+  --color-background-primary: var(
+    --background,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --color-text-primary: var(
+    --foreground,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --color-border-secondary: var(
+    --border,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+
+  margin: 0;
+  padding: var(--visualize-paint-gutter, 0px);
+  color: var(--foreground);
+  background: transparent !important;
+  font-family: var(--font-sans) !important;
+  -webkit-font-smoothing: antialiased;
+  font-size: var(--font-size-base);
+  line-height: calc(var(--font-size-base) * 1.625);
+  font-weight: var(--font-weight-normal);
+}
+
+.cursor-interaction {
+  cursor: var(--cursor-interaction, pointer);
+}
+
+a {
+  color: color-mix(in srgb, var(--viz-accent) 80%, var(--viz-text) 20%);
+  cursor: var(--cursor-interaction, pointer);
+  text-decoration: none;
+  text-underline-offset: 2px;
+  font-weight: inherit;
+}
+
+a:is(:hover, :focus-visible) {
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 0.5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block: 0;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+.table {
+  font-family: var(--font-sans);
+}
+
+h1 {
+  font-size: calc(var(--font-size-base) * 1.5);
+  line-height: 1.3333333333;
+}
+
+h2 {
+  font-size: calc(var(--font-size-base) * 1.25);
+  line-height: 1.4;
+}
+h3 {
+  font-size: calc(var(--font-size-base) * 1.125);
+  line-height: 1.5555555556;
+}
+h4 {
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+}
+h5,
+h6 {
+  font-size: var(--font-size-base);
+  line-height: calc(var(--font-size-base) * 1.625);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+strong,
+th {
+  font-weight: 600;
+}
+
+code:not(pre code) {
+  display: inline;
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  corner-shape: var(--corner-shape);
+  background: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  word-break: break-word;
+}
+pre,
+pre code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.table {
+  width: 100%;
+  color: var(--foreground);
+  font: inherit;
+  text-align: start;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: calc(var(--font-size-base) * 0.875);
+  line-height: calc(var(--font-size-base) * 1.625);
+  font-family: var(--font-sans);
+}
+
+.table :is(th, td) {
+  padding-block: 10px;
+  padding-inline: 0 24px;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid var(--border);
+  text-align: start;
+  vertical-align: top;
+  border-bottom-color: color-mix(in srgb, var(--foreground) 5%, transparent);
+}
+.table :is(th, td):not(:last-child) {
+  padding-inline-end: calc(var(--font-size-base) * 1.5);
+}
+
+.table-responsive &gt; .table :is(th, td) {
+  overflow-wrap: break-word;
+}
+
+.table :is(th, td):last-child {
+  padding-inline-end: 0;
+}
+
+.table :is(caption, thead th) {
+  font-weight: 600;
+}
+
+.table thead :is(th, td) {
+  border-bottom-color: var(--border-strong, var(--input));
+  padding-block: calc(var(--font-size-base) / 2);
+  line-height: var(--font-size-base);
+}
+
+.table tbody tr:last-child :is(th, td) {
+  border-bottom: 0;
+}
+.table tbody :is(th, td) {
+  padding-block: calc(var(--font-size-base) * 0.625);
+}
+
+.table.table-sm :is(th, td) {
+  padding-block: 8px;
+}
+
+.table.table-sm :is(th, td):not(:last-child) {
+  padding-inline-end: 16px;
+}
+
+.table :is(.text-end, [align=&quot;right&quot;]) {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.table :is(.text-center, [align=&quot;center&quot;]) {
+  text-align: center;
+}
+
+.table .text-nowrap {
+  white-space: nowrap;
+}
+
+#widget {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  background: transparent !important;
+}
+
+.card {
+  min-width: 0;
+  padding: 12px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  border-radius: var(--radius-2xl);
+  corner-shape: var(--corner-shape);
+  color: var(--card-foreground);
+  background: var(--card);
+}
+
+.widget {
+  min-width: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-lg);
+  corner-shape: var(--corner-shape);
+  box-shadow: 0 0 0 0.5px var(--border-strong, var(--border));
+  color: var(--foreground);
+  background: var(--background);
+}
+
+#widget &gt; :not(.card, .widget, .progress) {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: max-content;
+  max-width: min(
+    20rem,
+    var(--tooltip-available-width, calc(100vw - 10px)),
+    calc(100vw - 10px)
+  );
+  max-height: min(
+    var(--tooltip-available-height, calc(100vh - 10px)),
+    calc(100vh - 10px)
+  );
+  border: 1px solid var(--border);
+  corner-shape: var(--corner-shape);
+  overflow-wrap: break-word;
+  white-space: normal;
+  pointer-events: none;
+  user-select: none;
+  font-family: var(--font-sans);
+  padding: 5px 12px;
+  border-color: color-mix(
+    in oklab,
+    light-dark(var(--primary-foreground), var(--foreground)) 5%,
+    transparent
+  );
+  border-radius: var(--radius-2xl);
+  color: light-dark(var(--primary-foreground), var(--foreground));
+  background: light-dark(var(--foreground), var(--popover));
+  box-shadow: 0 8px 18px rgb(15 23 42 / 20%);
+  letter-spacing: -0.15px;
+  font-size: calc(var(--font-size-base) * 14 / 16);
+  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
+  font-weight: 600;
+  line-height: 18px;
+  text-align: center;
+}
+
+.viz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max(180px, 24%), 1fr));
+  gap: 10px;
+}
+
+.viz-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.viz-stat-value {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+.viz-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  margin-block: 6px;
+  border: 0;
+  background: var(--border);
+}
+
+.nav {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 4px;
+}
+
+.progress {
+  display: flex;
+  height: 8px;
+  margin-block: calc((var(--line-height-normal, 1.5em) - 8px) / 2);
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+}
+
+.progress-bar:only-child {
+  border-radius: var(--radius-full);
+}
+
+.progress-bar {
+  height: 100%;
+  flex-shrink: 0;
+  border: 0;
+  background: var(--viz-series-1);
+}
+
+.viz-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  color: color-mix(in srgb, var(--foreground) 40%, var(--muted-foreground));
+  background: color-mix(in srgb, var(--foreground) 5%, transparent);
+  font-family: var(--font-sans);
+  font-size: calc(var(--font-size-base) * 14 / 16);
+  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
+  font-weight: var(--font-weight-normal);
+  line-height: 1;
+}
+
+small,
+.text-small {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.text-muted {
+  color: var(--muted-foreground);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.viz-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.viz-controls &gt; .form-label {
+  display: grid;
+  min-width: min(100%, 260px);
+  flex: 1 1 280px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 2px 12px;
+  margin-bottom: 0;
+}
+
+.viz-controls &gt; .form-label &gt; :is(.form-control, .form-range, .form-select) {
+  grid-column: 1 / -1;
+}
+
+.btn,
+.nav-link,
+.form-check-input,
+.form-control,
+.form-range,
+.form-select {
+  font: inherit;
+}
+
+/* Match inline alignment without overriding a containing flex or grid layout. */
+.btn,
+.nav-link,
+.form-control,
+.form-select,
+.form-range,
+.form-check {
+  vertical-align: middle;
+}
+
+.btn,
+.nav-link {
+  appearance: button;
+  display: inline-flex;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0 8px;
+  -webkit-app-region: no-drag;
+  border: 1px solid var(--input);
+  corner-shape: var(--corner-shape);
+  cursor: var(--cursor-interaction, pointer);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-font-smoothing: inherit;
+  font-family: var(--font-sans);
+  height: fit-content;
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  padding-inline: var(--control-spacing, 12px);
+  border-color: transparent;
+  border-radius: var(--radius-full);
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--foreground) 5%, transparent);
+  font-size: calc(var(--font-size-base) * 14 / 16);
+  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
+  font-weight: var(--font-weight-normal);
+  line-height: 18px;
+}
+
+.btn {
+  border-color: var(--border);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+}
+
+.btn:is(.btn-block, .viz-tile) {
+  inline-size: 100%;
+}
+
+.btn.viz-tile {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+a.btn {
+  cursor: var(--cursor-interaction, pointer);
+  text-decoration: none;
+}
+
+.btn:not(:disabled):hover {
+  background: light-dark(
+    color-mix(in srgb, var(--foreground) 5.5%, transparent),
+    color-mix(in srgb, var(--foreground) 8%, transparent)
+  );
+}
+
+.nav-link:not(:disabled):not([aria-disabled=&quot;true&quot;]):hover {
+  background: color-mix(in srgb, var(--foreground) 10%, transparent);
+}
+
+.btn-primary {
+  border-color: var(--border);
+  color: var(--primary-foreground);
+  background: var(--foreground);
+  background-clip: border-box;
+}
+
+.btn-primary .text-muted {
+  color: color-mix(in srgb, var(--primary-foreground) 50%, transparent);
+}
+
+.btn-primary:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 80%, transparent);
+  background-clip: border-box;
+}
+
+.btn-ghost {
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.btn-ghost:not(:disabled):hover {
+  color: var(--muted-foreground);
+  background: light-dark(
+    color-mix(in srgb, var(--foreground) 5.5%, transparent),
+    color-mix(in srgb, var(--foreground) 8%, transparent)
+  );
+}
+
+.nav-pills .nav-link {
+  min-width: 0;
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.nav-justified .nav-link {
+  flex: 1 1 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.nav-pills .nav-link.active {
+  color: var(--foreground);
+  background: var(--muted);
+}
+
+/* Shared preview chrome; product styles stay inside each variant. */
+.viz-dotted-background {
+  background-image: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--foreground) 14%, transparent) 0.8px,
+    transparent 0.8px
+  );
+  background-position: center;
+  background-size: 16px 16px;
+}
+
+.viz-carousel {
+  position: relative;
+  min-width: 0;
+}
+
+.viz-carousel:has(&gt; .viz-carousel-controls) {
+  min-height: calc(60px + var(--viz-carousel-picker-height, 0px));
+  padding-bottom: 60px;
+}
+
+.viz-carousel &gt; [data-variant][hidden] {
+  display: none !important;
+}
+
+.viz-carousel &gt; [data-variant] {
+  isolation: isolate;
+}
+
+.viz-carousel-controls {
+  --viz-carousel-hover: light-dark(
+    color-mix(in srgb, var(--foreground) 5.4%, transparent),
+    color-mix(in srgb, var(--foreground) 7.8%, transparent)
+  );
+  position: absolute;
+  z-index: 2;
+  bottom: 8px;
+  left: 50%;
+  display: flex;
+  width: max-content;
+  /* Leave room for the host&#x27;s design-controls launcher at the trailing edge. */
+  max-width: calc(100% - 96px);
+  align-items: center;
+  gap: 0;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-sans);
+  /* Match the settings dropdown chrome independently of the content font size. */
+  font-size: 13px;
+  font-weight: var(--font-weight-normal);
+  line-height: 18px;
+  transform: translateX(-50%);
+  user-select: none;
+}
+
+/* Keep authored mockup button styles out of the shared carousel chrome. */
+.viz-carousel-controls button,
+.viz-carousel-picker &gt; summary {
+  display: flex !important;
+  height: auto !important;
+  min-height: 30px;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px;
+  padding: 0 6px !important;
+  -webkit-app-region: no-drag;
+  border: 0 !important;
+  border-radius: 14px !important;
+  color: inherit !important;
+  background: transparent !important;
+  font: inherit !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.viz-carousel-controls &gt; button,
+.viz-carousel-picker &gt; summary {
+  position: relative;
+  isolation: isolate;
+}
+
+.viz-carousel-controls &gt; button {
+  --icon-size: 16px;
+  width: 30px !important;
+  padding: 0 !important;
+}
+
+.viz-carousel-picker &gt; summary {
+  padding-inline: 12px !important;
+}
+
+.viz-carousel-controls .viz-carousel-caret {
+  width: 14px;
+  height: 14px;
+  flex: none;
+  margin: 0;
+  color: inherit;
+  transform: rotate(180deg);
+}
+
+.viz-carousel-controls &gt; button &gt; svg,
+.viz-carousel-controls .viz-carousel-caret,
+.viz-carousel-count {
+  opacity: 0.5;
+}
+
+.viz-carousel-controls &gt; button::before,
+.viz-carousel-picker &gt; summary::before {
+  position: absolute;
+  z-index: -1;
+  inset: 3px;
+  border-radius: 12px;
+  content: &quot;&quot;;
+  pointer-events: none;
+}
+
+.viz-carousel-controls &gt; button:hover::before,
+.viz-carousel-picker &gt; summary:hover::before {
+  background: var(--viz-carousel-hover);
+}
+
+.viz-carousel-controls &gt; button,
+.viz-carousel-controls [data-lucide],
+.viz-carousel-controls .lucide {
+  flex-shrink: 0;
+}
+
+.viz-carousel-picker {
+  min-width: 0;
+}
+
+.viz-carousel-picker &gt; summary {
+  min-width: 0;
+  list-style: none;
+}
+
+.viz-carousel-picker &gt; summary::-webkit-details-marker {
+  display: none;
+}
+
+.viz-carousel-count {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.viz-carousel-name {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.viz-carousel-options {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 4px);
+  left: 0;
+  display: flex;
+  max-height: 240px;
+  flex-direction: column;
+  gap: 2px;
+  overflow: auto;
+  padding: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--background);
+  box-shadow: 0 4px 12px light-dark(rgb(0 0 0 / 6%), rgb(0 0 0 / 25%));
+}
+
+.viz-carousel-options &gt; button {
+  border-radius: max(0px, calc(var(--radius-lg) - 5px)) !important;
+  width: 100% !important;
+  min-height: 28px;
+  justify-content: flex-start !important;
+  padding: 4px 8px !important;
+  font-size: var(--font-size-small) !important;
+  text-align: start;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.viz-carousel-options &gt; [aria-current=&quot;true&quot;],
+.viz-carousel-options &gt; button:hover {
+  background: var(--viz-carousel-hover) !important;
+}
+
+.btn:disabled,
+.nav-link:disabled,
+.nav-link[aria-disabled=&quot;true&quot;] {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+[data-lucide] {
+  stroke-width: 1.6;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--foreground);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  corner-shape: var(--corner-shape);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  height: calc(12px + 2 * var(--control-spacing, 12px));
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  padding-inline: calc(4px + var(--control-spacing, 12px) / 2);
+  border-color: var(--input);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--popover) 96%, transparent);
+  font-size: calc(var(--font-size-base) * 14 / 16);
+  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
+  font-weight: var(--font-weight-normal);
+  line-height: 1.4285714286;
+}
+.form-control:is(
+  [type=&quot;file&quot;],
+  [type=&quot;date&quot;],
+  [type=&quot;datetime-local&quot;],
+  [type=&quot;month&quot;],
+  [type=&quot;week&quot;],
+  [type=&quot;color&quot;]
+) {
+  height: calc(12px + 2 * var(--control-spacing, 12px));
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  line-height: 18px;
+}
+.form-control:is(
+  [type=&quot;date&quot;],
+  [type=&quot;datetime-local&quot;],
+  [type=&quot;month&quot;],
+  [type=&quot;week&quot;]
+) {
+  padding-inline: var(--control-spacing, 12px);
+}
+
+.form-control::placeholder {
+  color: var(--muted-foreground);
+}
+
+.form-control[type=&quot;file&quot;] {
+  overflow: hidden;
+  cursor: var(--cursor-interaction, pointer);
+  padding: 0;
+}
+
+.form-control[type=&quot;file&quot;]::file-selector-button {
+  padding: 0 8px;
+  border: 0;
+  border-right: 1px solid var(--input);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: inherit;
+  font: inherit;
+  min-height: calc(10px + 2 * var(--control-spacing, 12px));
+  padding-inline: var(--control-spacing, 12px);
+  margin-inline-end: var(--control-spacing, 12px);
+}
+
+.form-control[type=&quot;file&quot;]:not(:disabled):hover::file-selector-button {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-control-color[type=&quot;color&quot;] {
+  width: 40px;
+  height: calc(12px + 2 * var(--control-spacing, 12px));
+  padding: 3px;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch {
+  border: 0;
+  border-radius: calc(var(--radius-lg) - 4px);
+  corner-shape: var(--corner-shape);
+}
+
+textarea.form-control {
+  height: auto;
+  resize: vertical;
+  min-height: 96px;
+  padding: 8px 10px;
+}
+
+.form-control:focus-visible {
+  border-color: var(--ring);
+  box-shadow: none;
+}
+.form-control:disabled {
+  color: var(--muted-foreground);
+  background: color-mix(in srgb, var(--foreground) 5%, transparent);
+  opacity: 1;
+}
+.form-control[aria-invalid=&quot;true&quot;] {
+  border-color: var(--red);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--red) 20%, transparent);
+}
+
+.form-control:disabled,
+.form-select:disabled {
+  cursor: not-allowed;
+}
+
+.form-select {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: fit-content;
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  margin: 0;
+  /* The secondary icon role is 14px at compact density and 16px at web density. */
+  --icon-size: calc(10px + var(--control-spacing, 12px) / 2);
+  /* Settings dropdowns retain a 12px inset and a 4px text-to-chevron gap. */
+  padding: 0 calc(16px + var(--icon-size)) 0 12px;
+  outline: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  corner-shape: var(--corner-shape);
+  color: var(--foreground);
+  background-color: var(--secondary);
+  background-image:
+    linear-gradient(
+      45deg,
+      transparent calc(50% - 0.6px),
+      var(--muted-foreground) calc(50% - 0.6px) calc(50% + 0.6px),
+      transparent calc(50% + 0.6px)
+    ),
+    linear-gradient(
+      135deg,
+      transparent calc(50% - 0.6px),
+      var(--muted-foreground) calc(50% - 0.6px) calc(50% + 0.6px),
+      transparent calc(50% + 0.6px)
+    );
+  background-position:
+    calc(100% - 12px - var(--icon-size) / 2) 50%,
+    calc(100% - 12px - var(--icon-size) * 0.18) 50%;
+  background-repeat: no-repeat;
+  background-size: calc(var(--icon-size) * 0.32) calc(var(--icon-size) * 0.32);
+  cursor: var(--cursor-interaction, default);
+  font-size: calc(var(--font-size-base) * 14 / 16);
+  font-size: round(nearest, calc(var(--font-size-base) * 14 / 16), 1px);
+  font-weight: var(--font-weight-normal);
+  line-height: 18px;
+}
+
+.form-select option {
+  color: var(--popover-foreground);
+  background-color: var(--popover);
+}
+
+.form-select:not(:disabled):hover {
+  background-color: light-dark(
+    color-mix(in srgb, var(--foreground) 5.5%, transparent),
+    color-mix(in srgb, var(--foreground) 8%, transparent)
+  );
+}
+
+.form-select:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+.form-select:disabled {
+  opacity: 0.4;
+}
+
+.form-check {
+  display: flex;
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  align-items: center;
+  gap: 6px;
+}
+
+.form-check-input {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  margin: 0;
+  border: 1px solid var(--input);
+  color: var(--primary-foreground);
+  background-color: transparent;
+  cursor: var(--cursor-interaction, default);
+  transition:
+    background-color 150ms,
+    border-color 150ms,
+    box-shadow 150ms;
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;] {
+  corner-shape: round;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  width: calc(10px + var(--control-spacing, 12px) / 2);
+  height: calc(10px + var(--control-spacing, 12px) / 2);
+  border-color: var(--border-strong, var(--input));
+  border-radius: calc(var(--radius-sm) / 2);
+  background-color: transparent;
+  color: var(--foreground);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input:not(:disabled):not(:checked):hover {
+  background-color: var(--card);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;checkbox&quot;]:is(:checked, :indeterminate) {
+  border-color: var(--border-strong, var(--input));
+  background-color: color-mix(in srgb, var(--popover) 96%, transparent);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;checkbox&quot;]:checked::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-foreground);
+  content: &quot;&quot;;
+  mask: var(--checkmark-image) center / 12px 12px no-repeat;
+  background-color: var(--foreground);
+}
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;checkbox&quot;]:indeterminate::before {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 65%;
+  height: 6.65%;
+  margin: auto;
+  border-radius: var(--radius-full);
+  background: var(--foreground);
+  mask: none;
+  content: &quot;&quot;;
+}
+
+.form-check-input[type=&quot;radio&quot;] {
+  border-radius: var(--radius-full);
+  width: 16px;
+  height: 16px;
+  border: 0;
+  box-shadow: inset 0 0 0 1px var(--input);
+}
+
+.form-check-input[type=&quot;radio&quot;]:checked {
+  border: 0;
+  background: radial-gradient(
+    circle,
+    var(--primary-foreground) 0 3px,
+    var(--foreground) 3px
+  );
+  box-shadow: none;
+}
+
+.form-check:not(.form-switch) .form-check-input:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;]:focus-visible {
+  border-color: var(--ring);
+  outline: none;
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+}
+.form-check:not(.form-switch) .form-check-input[type=&quot;radio&quot;]:disabled,
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;radio&quot;]:disabled
+  + .form-check-label {
+  opacity: 0.5;
+}
+
+.form-switch .form-check-input:disabled,
+.form-switch .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-check-label {
+  color: var(--foreground);
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-switch .form-check-input {
+  position: relative;
+  width: 32px;
+  height: 20px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+  box-shadow: none;
+  transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 1px solid light-dark(var(--primary-foreground), var(--foreground));
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  content: &quot;&quot;;
+  transform: translate(2px, -50%);
+  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
+  border-color: #fff;
+  background: #fff;
+}
+
+.form-switch .form-check-input:checked {
+  background: var(--blue);
+}
+
+.form-switch .form-check-input:checked::before {
+  transform: translate(14px, -50%);
+}
+
+.form-switch .form-check-input:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+  outline: none;
+}
+
+.form-range {
+  appearance: none;
+  display: block;
+  width: 100%;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  accent-color: var(--primary);
+  height: calc(12px + 2 * var(--control-spacing, 12px));
+  min-height: calc(12px + 2 * var(--control-spacing, 12px));
+  outline: none;
+  border-radius: var(--radius-full);
+  color: var(--foreground);
+  background: transparent;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  background: var(--form-range-track, var(--border));
+  height: 2px;
+  border-radius: var(--radius-full);
+}
+
+.form-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  margin-top: -9px;
+  border-color: transparent;
+  background: currentColor;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Outline the native track and thumb, preserving the larger input hit area. */
+.form-range:focus-visible::-webkit-slider-runnable-track {
+  outline: 2px auto Highlight;
+  outline-color: -webkit-focus-ring-color;
+}
+
+.form-range::-moz-range-track {
+  background: var(--form-range-track, var(--border));
+  height: 2px;
+  border-radius: var(--radius-full);
+}
+
+.form-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  border-color: transparent;
+  background: currentColor;
+  box-shadow: var(--shadow-sm);
+}
+
+.form-range:focus-visible::-moz-range-thumb {
+  outline: 2px solid Highlight;
+  outline-offset: 2px;
+}
+
+.form-range:disabled {
+  opacity: 1;
+  cursor: default;
+}
+
+.btn:not(.btn-primary, .viz-tile):is(
+  [aria-pressed=&quot;true&quot;],
+  [aria-selected=&quot;true&quot;],
+  .is-selected
+) {
+  border-color: transparent;
+  color: var(--primary-foreground);
+  background: var(--blue);
+}
+
+.btn.viz-tile:is([aria-pressed=&quot;true&quot;], [aria-selected=&quot;true&quot;], .is-selected) {
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.btn:focus-visible,
+.nav-link:focus-visible {
+  outline-offset: 2px;
+  outline: none;
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.viz-carousel-controls :is(button, summary):focus-visible {
+  outline: 2px solid var(--ring) !important;
+  outline-offset: 2px !important;
+}
+
+/* Web recipes are the default, including on renderers without inline style queries. */
+@supports (border-radius: if(style(--corner-shape: round): 1px; else: 2px)) {
+  /* Match the host&#x27;s proportional text-sm scale at every text preference. */
+  .tooltip,
+  .viz-badge,
+  .btn,
+  .nav-link,
+  .form-control,
+  .form-select {
+    font-size: if(
+      style(--corner-shape: round): round(
+          nearest,
+          calc(var(--font-size-base) * 14 / 16),
+          1px
+        );
+        else: round(nearest, calc(var(--font-size-base) * 13 / 14), 1px)
+    );
+  }
+
+  .btn,
+  .nav-link,
+  .form-select {
+    border-radius: if(
+      style(--corner-shape: round): var(--radius-full); else: var(--radius-lg)
+    );
+  }
+
+  .form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;] {
+    border-radius: if(
+      style(--corner-shape: round): calc(var(--radius-sm) / 2);
+        else: calc(var(--radius-lg) * 0.4)
+    );
+  }
+
+  .tooltip {
+    font-weight: if(
+      style(--corner-shape: round): 600; else: var(--font-weight-normal)
+    );
+  }
+}
+
+@media (pointer: coarse) {
+  .viz-carousel:has(&gt; .viz-carousel-controls) {
+    min-height: calc(76px + var(--viz-carousel-picker-height, 0px));
+    padding-bottom: 76px;
+  }
+
+  .btn,
+  .nav-link,
+  .viz-carousel-controls button,
+  .viz-carousel-picker &gt; summary,
+  .form-control,
+  .form-select {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* Keep small-screen WebKit from zooming when a text field receives focus. */
+  .form-control,
+  .form-select {
+    font-size: max(16px, calc(var(--font-size-base) * 14 / 16));
+    font-size: max(
+      16px,
+      round(nearest, calc(var(--font-size-base) * 14 / 16), 1px)
+    );
+  }
+  .form-control:is(
+    [type=&quot;file&quot;],
+    [type=&quot;date&quot;],
+    [type=&quot;datetime-local&quot;],
+    [type=&quot;month&quot;],
+    [type=&quot;week&quot;],
+    [type=&quot;time&quot;],
+    [type=&quot;color&quot;]
+  ) {
+    height: 44px;
+    min-height: 44px;
+    font-size: max(16px, calc(var(--font-size-base) * 14 / 16));
+    font-size: max(
+      16px,
+      round(nearest, calc(var(--font-size-base) * 14 / 16), 1px)
+    );
+  }
+
+  .form-control[type=&quot;file&quot;]::file-selector-button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .form-control-color[type=&quot;color&quot;] {
+    width: 44px;
+    height: 44px;
+  }
+
+  .form-control:is(
+    [type=&quot;date&quot;],
+    [type=&quot;datetime-local&quot;],
+    [type=&quot;month&quot;],
+    [type=&quot;time&quot;],
+    [type=&quot;week&quot;]
+  ) {
+    min-width: 0;
+    max-width: 100%;
+    padding-block: 8px;
+  }
+
+  .form-check {
+    min-height: 44px;
+    padding-inline: 15px;
+  }
+
+  .form-check-input {
+    position: relative;
+  }
+
+  .form-check-input::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 44px;
+    height: 44px;
+    content: &quot;&quot;;
+    transform: translate(-50%, -50%);
+  }
+
+  .form-check-label {
+    display: inline-flex;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+  }
+
+  .form-range {
+    height: 44px;
+    touch-action: pan-y;
+  }
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#widget &gt; svg {
+  width: 100%;
+}
+
+/* Model-authored chart rules can otherwise stretch icons after these styles load. */
+svg.lucide {
+  display: block;
+  width: var(--icon-size) !important;
+  height: var(--icon-size) !important;
+  flex: none;
+  margin: 0 !important;
+  stroke-width: 1.6;
+}
+
+.text-warning,
+.text-destructive {
+  color: var(--destructive);
+}
+
+html&gt;body{padding:0}&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;script type=&quot;application/json&quot; id=&quot;codex-visualization-widget-state&quot;&gt;__CODEX_VISUALIZATION_WIDGET_STATE__&lt;/script&gt;
+&lt;script&gt;(() =&gt; {
+  const root = document.documentElement;
+  const mediaQuery = globalThis.matchMedia(&quot;(prefers-color-scheme: dark)&quot;);
+  const apply = Reflect.apply;
+  const isArray = Array.isArray;
+  const hasOwn = Object.hasOwn;
+  const parentWindow = globalThis.parent;
+  const stringify = JSON.stringify;
+  const parse = JSON.parse;
+  const encode = TextEncoder.prototype.encode.bind(new TextEncoder());
+  const initialStateElement = document.getElementById(
+    &quot;codex-visualization-widget-state&quot;,
+  );
+  const initialGlobals = parse(initialStateElement?.textContent ?? &quot;{}&quot;);
+  initialStateElement?.remove();
+  /** @type {Record&lt;string, unknown&gt; | null} */
+  let state = initialGlobals.widgetState ?? null;
+  const statePersistence = initialGlobals.statePersistence ?? &quot;none&quot;;
+  let nextStateRequestId = 0;
+  /** @type {Map&lt;number, { resolve: () =&gt; void; reject: (error: Error) =&gt; void; timeout: ReturnType&lt;typeof globalThis.setTimeout&gt;; serializedState: string }&gt;} */
+  const pendingStateWrites = new Map();
+  const persistenceError = () =&gt;
+    Object.assign(
+      new Error(&quot;The host could not persist the widget state update&quot;),
+      {
+        code: -32000,
+        data: { code: &quot;widget_state_persistence_failed&quot;, retryable: false },
+      },
+    );
+  /**
+   * @param {object} prototype
+   * @param {string} property
+   */
+  const getPrototypeGetter = (prototype, property) =&gt; {
+    // oxlint-disable-next-line typescript/unbound-method -- invoked through captured Reflect.apply
+    const getter = Object.getOwnPropertyDescriptor(prototype, property)?.get;
+    if (getter == null) {
+      throw new Error(`Missing ${property} getter`);
+    }
+    return getter;
+  };
+  const getMessageData = getPrototypeGetter(MessageEvent.prototype, &quot;data&quot;);
+  const getMessagePorts = getPrototypeGetter(MessageEvent.prototype, &quot;ports&quot;);
+  const getMessageSource = getPrototypeGetter(MessageEvent.prototype, &quot;source&quot;);
+  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
+  const addHostMessageListener = MessagePort.prototype.addEventListener;
+  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
+  const postHostMessage = MessagePort.prototype.postMessage;
+  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
+  const startHostPort = MessagePort.prototype.start;
+  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
+  const stopMessagePropagation = Event.prototype.stopImmediatePropagation;
+  /** @type {MessagePort | null} */
+  let hostPort = null;
+  const postToHost = (type, payload) =&gt; {
+    if (hostPort != null) {
+      apply(postHostMessage, hostPort, [{ type, ...payload }]);
+    }
+  };
+  const openExternal = ({ href }) =&gt; {
+    if (globalThis.navigator.userActivation?.isActive === true) {
+      postToHost(&quot;open-external&quot;, { href });
+    }
+  };
+  const sendFollowUpMessage = ({ context, prompt, title }) =&gt; {
+    if (globalThis.navigator.userActivation?.isActive === true) {
+      postToHost(&quot;follow-up&quot;, { context, prompt, title });
+    }
+    return Promise.resolve();
+  };
+  /**
+   * @param {Record&lt;string, unknown&gt; | ((previous: Record&lt;string, unknown&gt; | null) =&gt; Record&lt;string, unknown&gt;)} next
+   * @returns {Promise&lt;void&gt;}
+   */
+  const setWidgetState = async (next) =&gt; {
+    const nextState = typeof next === &quot;function&quot; ? next(state) : next;
+    if (
+      nextState == null ||
+      typeof nextState !== &quot;object&quot; ||
+      isArray(nextState)
+    ) {
+      throw new TypeError(&quot;Widget state must be a JSON object&quot;);
+    }
+    const inputState = stringify(
+      nextState,
+      (_key, /** @type {unknown} */ value) =&gt; {
+        if (
+          typeof value === &quot;undefined&quot; ||
+          typeof value === &quot;function&quot; ||
+          typeof value === &quot;symbol&quot; ||
+          (typeof value === &quot;number&quot; &amp;&amp; !Number.isFinite(value))
+        ) {
+          throw new TypeError(&quot;Widget state must be a JSON object&quot;);
+        }
+        return value;
+      },
+    );
+    const parsedState = parse(inputState);
+    if (
+      parsedState == null ||
+      typeof parsedState !== &quot;object&quot; ||
+      isArray(parsedState)
+    ) {
+      throw new TypeError(&quot;Widget state must be a JSON object&quot;);
+    }
+    const storedState = {
+      modelContent: null,
+      privateContent: null,
+      ...parsedState,
+    };
+    const serializedState = stringify(storedState);
+    if (encode(serializedState).length &gt; 16 * 1024) {
+      throw new TypeError(
+        &quot;Widget state must be a JSON object of at most 16 KiB&quot;,
+      );
+    }
+    if (
+      hasOwn(storedState, &quot;imageIds&quot;) &amp;&amp;
+      (!isArray(storedState.imageIds) ||
+        storedState.imageIds.some(
+          (/** @type {unknown} */ id) =&gt; typeof id !== &quot;string&quot;,
+        ))
+    ) {
+      throw new TypeError(&quot;Widget state imageIds must be an array of strings&quot;);
+    }
+    if (storedState.imageIds?.length &gt; 0) {
+      throw Object.assign(
+        new TypeError(&quot;Visualization state does not support image attachments&quot;),
+        { code: -32602, data: { code: &quot;images_unsupported&quot; } },
+      );
+    }
+    state = storedState;
+    globalThis.openai.widgetState = state;
+    globalThis.dispatchEvent(
+      new CustomEvent(&quot;openai:set_globals&quot;, {
+        detail: { globals: { widgetState: state } },
+      }),
+    );
+    if (statePersistence === &quot;none&quot;) {
+      throw persistenceError();
+    }
+    const id = ++nextStateRequestId;
+    return new Promise((resolve, reject) =&gt; {
+      const timeout = globalThis.setTimeout(() =&gt; {
+        pendingStateWrites.delete(id);
+        reject(persistenceError());
+      }, 30_000);
+      pendingStateWrites.set(id, { resolve, reject, timeout, serializedState });
+      postToHost(&quot;widget-state-write&quot;, { id, state: serializedState });
+    });
+  };
+  const syncTheme = () =&gt; {
+    const theme = mediaQuery.matches ? &quot;dark&quot; : &quot;light&quot;;
+    root.dataset.theme = theme;
+    globalThis.openai = {
+      ...globalThis.openai,
+      openExternal,
+      sendFollowUpMessage,
+      setWidgetState,
+      theme,
+      visualizationStyleVariables: {},
+      visualizationTheme: theme,
+      widgetState: state,
+      statePersistence,
+      stateModelContext: &quot;none&quot;,
+    };
+    globalThis.dispatchEvent(
+      new CustomEvent(&quot;openai:set_globals&quot;, {
+        detail: { globals: globalThis.openai },
+      }),
+    );
+  };
+  const sendHeight = () =&gt; {
+    postToHost(&quot;height&quot;, {
+      height: Math.ceil(
+        Math.max(
+          document.body.scrollHeight,
+          document.body.getBoundingClientRect().height,
+        ),
+      ),
+    });
+  };
+
+  globalThis.addEventListener(
+    &quot;message&quot;,
+    (event) =&gt; {
+      const data = apply(getMessageData, event, []);
+      const ports = apply(getMessagePorts, event, []);
+      const source = apply(getMessageSource, event, []);
+      if (
+        hostPort != null ||
+        source !== parentWindow ||
+        typeof data !== &quot;object&quot; ||
+        data?.type !== &quot;codex-visualization-initialize&quot; ||
+        !isArray(ports) ||
+        ports.length !== 1
+      ) {
+        return;
+      }
+      apply(stopMessagePropagation, event, []);
+      const nextHostPort = ports[0];
+      try {
+        apply(addHostMessageListener, nextHostPort, [
+          &quot;message&quot;,
+          (event) =&gt; {
+            const data = apply(getMessageData, event, []);
+            if (typeof data === &quot;object&quot; &amp;&amp; data?.type === &quot;measure&quot;) {
+              sendHeight();
+            } else if (
+              typeof data === &quot;object&quot; &amp;&amp;
+              data?.type === &quot;widget-state-result&quot;
+            ) {
+              /** @type {unknown} */
+              const id = data.id;
+              if (typeof id !== &quot;number&quot;) {
+                return;
+              }
+              const pending = pendingStateWrites.get(id);
+              if (pending != null) {
+                pendingStateWrites.delete(id);
+                globalThis.clearTimeout(pending.timeout);
+                if (data.ok === true) {
+                  pending.resolve();
+                } else {
+                  pending.reject(persistenceError());
+                }
+              }
+            }
+          },
+        ]);
+        apply(startHostPort, nextHostPort, []);
+      } catch {
+        return;
+      }
+      hostPort = nextHostPort;
+      for (const [id, { serializedState }] of pendingStateWrites) {
+        postToHost(&quot;widget-state-write&quot;, { id, state: serializedState });
+      }
+      sendHeight();
+    },
+    { capture: true },
+  );
+  document.currentScript?.remove();
+  mediaQuery.addEventListener(&quot;change&quot;, syncTheme);
+  globalThis.addEventListener(&quot;click&quot;, (event) =&gt; {
+    if (event.defaultPrevented) {
+      return;
+    }
+    let element = null;
+    if (event.target instanceof globalThis.Element) {
+      element = event.target;
+    } else if (event.target instanceof globalThis.Node) {
+      element = event.target.parentElement;
+    }
+    const link = element?.closest(&quot;a[href]&quot;);
+    const href = link?.getAttribute(&quot;href&quot;);
+    if (href == null) {
+      return;
+    }
+    if (href.startsWith(&quot;#&quot;)) {
+      let id;
+      try {
+        id = decodeURIComponent(href.slice(1));
+      } catch {
+        return;
+      }
+      const target = id.length === 0 ? root : document.getElementById(id);
+      if (
+        target == null ||
+        globalThis.navigator.userActivation?.isActive !== true
+      ) {
+        return;
+      }
+      event.preventDefault();
+      postToHost(&quot;scroll-to&quot;, {
+        top: target.getBoundingClientRect().top + globalThis.scrollY,
+      });
+      return;
+    }
+    event.preventDefault();
+    openExternal({ href });
+  });
+  new ResizeObserver(sendHeight).observe(document.body);
+  syncTheme();
+})();
+&lt;/script&gt;
+&lt;div id=&quot;expansion-scan-preview&quot;&gt;
+  &lt;h3&gt;Proposed next collection pass&lt;/h3&gt;
+  &lt;div class=&quot;viz-row&quot;&gt;&lt;span&gt;9 initial searches · 4 conditional follow-ups&lt;/span&gt;&lt;span&gt;534 previously searched centers&lt;/span&gt;&lt;/div&gt;
+  &lt;div class=&quot;viz-controls&quot;&gt;
+    &lt;label class=&quot;form-label&quot;&gt;Area
+      &lt;select class=&quot;form-select&quot; id=&quot;radius-map-area&quot;&gt;
+        &lt;option value=&quot;overview&quot;&gt;Entire radius&lt;/option&gt;&lt;option value=&quot;core&quot;&gt;Los Angeles&lt;/option&gt;&lt;option value=&quot;valley&quot;&gt;Valley / Burbank&lt;/option&gt;&lt;option value=&quot;east&quot;&gt;Pasadena / Inland edge&lt;/option&gt;&lt;option value=&quot;south&quot;&gt;Long Beach / Orange County&lt;/option&gt;&lt;option value=&quot;west&quot;&gt;Ventura / western edge&lt;/option&gt;
+      &lt;/select&gt;
+    &lt;/label&gt;
+    &lt;label class=&quot;form-label&quot;&gt;Center &lt;select class=&quot;form-select&quot; id=&quot;radius-map-center&quot;&gt;&lt;option value=&quot;&quot;&gt;Select a ZIP&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;
+    &lt;button class=&quot;btn&quot; id=&quot;radius-map-plus&quot; type=&quot;button&quot; aria-label=&quot;Zoom in&quot;&gt;Zoom +&lt;/button&gt;
+    &lt;button class=&quot;btn&quot; id=&quot;radius-map-minus&quot; type=&quot;button&quot; aria-label=&quot;Zoom out&quot;&gt;Zoom −&lt;/button&gt;
+    &lt;button class=&quot;btn btn-ghost&quot; id=&quot;radius-map-reset&quot; type=&quot;button&quot;&gt;Overview&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;viz-row&quot;&gt;
+    &lt;label class=&quot;form-check&quot;&gt;&lt;input class=&quot;form-check-input&quot; id=&quot;radius-map-existing&quot; type=&quot;checkbox&quot;&gt;&lt;span class=&quot;form-check-label&quot;&gt;Show searched centers&lt;/span&gt;&lt;/label&gt;
+    &lt;label class=&quot;form-check&quot;&gt;&lt;input class=&quot;form-check-input&quot; id=&quot;radius-map-circles&quot; type=&quot;checkbox&quot;&gt;&lt;span class=&quot;form-check-label&quot;&gt;Show five-mile circles&lt;/span&gt;&lt;/label&gt;
+    &lt;span&gt;&lt;span style=&quot;color:var(--viz-series-1)&quot;&gt;●&lt;/span&gt; Initial search&lt;/span&gt;&lt;span&gt;&lt;span style=&quot;color:var(--viz-series-2)&quot;&gt;△&lt;/span&gt; Conditional follow-up&lt;/span&gt;&lt;span&gt;○ Already searched&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;radius-map-field&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;card&quot; id=&quot;radius-map-detail&quot; aria-live=&quot;polite&quot;&gt;Select a center for its ZIP, city, and planning status.&lt;/div&gt;
+  &lt;div class=&quot;text-small text-muted&quot;&gt;Awaiting approval · 50 miles around 91506 · centers, not agents · historical coverage partly unverified&lt;/div&gt;
+  &lt;script id=&quot;radius-map-data&quot; type=&quot;application/json&quot;&gt;{&quot;prepared_at&quot;:&quot;2026-10-14T16:31:17.835Z&quot;,&quot;origin&quot;:{&quot;zip&quot;:&quot;91506&quot;,&quot;latitude&quot;:34.1717,&quot;longitude&quot;:-118.3231,&quot;city&quot;:&quot;Burbank&quot;,&quot;state&quot;:&quot;CA&quot;,&quot;country&quot;:&quot;US&quot;},&quot;ready&quot;:[{&quot;zip&quot;:&quot;90095&quot;,&quot;city&quot;:&quot;Los Angeles, CA 90095, USA&quot;,&quot;latitude&quot;:34.070264,&quot;longitude&quot;:-118.4440562,&quot;rank&quot;:1},{&quot;zip&quot;:&quot;90506&quot;,&quot;city&quot;:&quot;Torrance, CA 90506, USA&quot;,&quot;latitude&quot;:33.8844585,&quot;longitude&quot;:-118.329392,&quot;rank&quot;:2},{&quot;zip&quot;:&quot;91042&quot;,&quot;city&quot;:&quot;Tujunga, CA 91042, USA&quot;,&quot;latitude&quot;:34.296676,&quot;longitude&quot;:-118.2292712,&quot;rank&quot;:3},{&quot;zip&quot;:&quot;91759&quot;,&quot;city&quot;:&quot;Mt Baldy, CA 91759, USA&quot;,&quot;latitude&quot;:34.2602336,&quot;longitude&quot;:-117.7138785,&quot;rank&quot;:4},{&quot;zip&quot;:&quot;Agua Dulce&quot;,&quot;city&quot;:&quot;Agua Dulce, CA 91390, USA&quot;,&quot;latitude&quot;:34.4963443,&quot;longitude&quot;:-118.3261969,&quot;rank&quot;:5},{&quot;zip&quot;:&quot;Acton&quot;,&quot;city&quot;:&quot;Acton, CA, USA&quot;,&quot;latitude&quot;:34.4717405,&quot;longitude&quot;:-118.1972271,&quot;rank&quot;:6},{&quot;zip&quot;:&quot;Mount Baldy&quot;,&quot;city&quot;:&quot;Mt Baldy, CA 91759, USA&quot;,&quot;latitude&quot;:34.2363809,&quot;longitude&quot;:-117.6589752,&quot;rank&quot;:7},{&quot;zip&quot;:&quot;Northridge&quot;,&quot;city&quot;:&quot;Northridge, Los Angeles, CA, USA&quot;,&quot;latitude&quot;:34.2354576,&quot;longitude&quot;:-118.5361381,&quot;rank&quot;:8},{&quot;zip&quot;:&quot;Lancaster&quot;,&quot;city&quot;:&quot;Lancaster, CA, USA&quot;,&quot;latitude&quot;:34.703947,&quot;longitude&quot;:-118.1481016,&quot;rank&quot;:9}],&quot;review&quot;:[{&quot;zip&quot;:&quot;90223&quot;,&quot;city&quot;:&quot;Compton, CA 90223, USA&quot;,&quot;latitude&quot;:33.89989,&quot;longitude&quot;:-118.2199049,&quot;rank&quot;:1},{&quot;zip&quot;:&quot;91329&quot;,&quot;city&quot;:&quot;Northridge, CA 91329, USA&quot;,&quot;latitude&quot;:34.2239055,&quot;longitude&quot;:-118.5024461,&quot;rank&quot;:2},{&quot;zip&quot;:&quot;93539&quot;,&quot;city&quot;:&quot;Lancaster, CA 93539, USA&quot;,&quot;latitude&quot;:34.6824502,&quot;longitude&quot;:-118.1656706,&quot;rank&quot;:3},{&quot;zip&quot;:&quot;93586&quot;,&quot;city&quot;:&quot;Quartz Hill, CA 93586, USA&quot;,&quot;latitude&quot;:34.65,&quot;longitude&quot;:-118.22,&quot;rank&quot;:4}],&quot;existing&quot;:[{&quot;zip&quot;:&quot;91506&quot;,&quot;city&quot;:&quot;Burbank&quot;,&quot;latitude&quot;:34.1717,&quot;longitude&quot;:-118.3231,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91353&quot;,&quot;city&quot;:&quot;Sun Valley&quot;,&quot;latitude&quot;:34.2175,&quot;longitude&quot;:-118.3704,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91204&quot;,&quot;city&quot;:&quot;Glendale&quot;,&quot;latitude&quot;:34.1379,&quot;longitude&quot;:-118.2599,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91604&quot;,&quot;city&quot;:&quot;Studio City&quot;,&quot;latitude&quot;:34.143,&quot;longitude&quot;:-118.3913,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90028&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.1005,&quot;longitude&quot;:-118.3254,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91208&quot;,&quot;city&quot;:&quot;Glendale&quot;,&quot;latitude&quot;:34.1921,&quot;longitude&quot;:-118.235,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91043&quot;,&quot;city&quot;:&quot;Tujunga&quot;,&quot;latitude&quot;:34.2522,&quot;longitude&quot;:-118.2884,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91404&quot;,&quot;city&quot;:&quot;Van Nuys&quot;,&quot;latitude&quot;:34.1867,&quot;longitude&quot;:-118.449,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90209&quot;,&quot;city&quot;:&quot;Beverly Hills&quot;,&quot;latitude&quot;:34.0736,&quot;longitude&quot;:-118.4004,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90090&quot;,&quot;city&quot;:&quot;Dodgertown&quot;,&quot;latitude&quot;:34.0725,&quot;longitude&quot;:-118.2418,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90042&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.1145,&quot;longitude&quot;:-118.1929,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91333&quot;,&quot;city&quot;:&quot;Pacoima&quot;,&quot;latitude&quot;:34.2625,&quot;longitude&quot;:-118.427,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91103&quot;,&quot;city&quot;:&quot;Pasadena&quot;,&quot;latitude&quot;:34.1669,&quot;longitude&quot;:-118.1551,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90018&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.029,&quot;longitude&quot;:-118.3152,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91316&quot;,&quot;city&quot;:&quot;Encino&quot;,&quot;latitude&quot;:34.1655,&quot;longitude&quot;:-118.5175,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90049&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.066,&quot;longitude&quot;:-118.474,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91325&quot;,&quot;city&quot;:&quot;Northridge&quot;,&quot;latitude&quot;:34.2353,&quot;longitude&quot;:-118.5188,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90023&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0245,&quot;longitude&quot;:-118.1975,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91108&quot;,&quot;city&quot;:&quot;San Marino&quot;,&quot;latitude&quot;:34.1207,&quot;longitude&quot;:-118.1117,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90230&quot;,&quot;city&quot;:&quot;Culver City&quot;,&quot;latitude&quot;:33.9949,&quot;longitude&quot;:-118.3991,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91756&quot;,&quot;city&quot;:&quot;Monterey Park&quot;,&quot;latitude&quot;:34.0625,&quot;longitude&quot;:-118.1228,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90001&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:33.9731,&quot;longitude&quot;:-118.2479,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90305&quot;,&quot;city&quot;:&quot;Inglewood&quot;,&quot;latitude&quot;:33.9583,&quot;longitude&quot;:-118.3259,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91023&quot;,&quot;city&quot;:&quot;Mount Wilson&quot;,&quot;latitude&quot;:34.2264,&quot;longitude&quot;:-118.0662,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;91025&quot;,&quot;city&quot;:&quot;Sierra Madre&quot;,&quot;latitude&quot;:34.1617,&quot;longitude&quot;:-118.0528,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91303&quot;,&quot;city&quot;:&quot;Canoga Park&quot;,&quot;latitude&quot;:34.1993,&quot;longitude&quot;:-118.5983,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91326&quot;,&quot;city&quot;:&quot;Porter Ranch&quot;,&quot;latitude&quot;:34.2619,&quot;longitude&quot;:-118.582,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90290&quot;,&quot;city&quot;:&quot;Topanga&quot;,&quot;latitude&quot;:34.1076,&quot;longitude&quot;:-118.6023,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90201&quot;,&quot;city&quot;:&quot;Bell Gardens&quot;,&quot;latitude&quot;:33.9653,&quot;longitude&quot;:-118.1515,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91731&quot;,&quot;city&quot;:&quot;El Monte&quot;,&quot;latitude&quot;:34.0791,&quot;longitude&quot;:-118.0371,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91387&quot;,&quot;city&quot;:&quot;Canyon Country&quot;,&quot;latitude&quot;:34.4132,&quot;longitude&quot;:-118.426,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90245&quot;,&quot;city&quot;:&quot;El Segundo&quot;,&quot;latitude&quot;:33.9243,&quot;longitude&quot;:-118.4119,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91321&quot;,&quot;city&quot;:&quot;Newhall&quot;,&quot;latitude&quot;:34.3795,&quot;longitude&quot;:-118.523,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90262&quot;,&quot;city&quot;:&quot;Lynwood&quot;,&quot;latitude&quot;:33.9241,&quot;longitude&quot;:-118.2013,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90249&quot;,&quot;city&quot;:&quot;Gardena&quot;,&quot;latitude&quot;:33.8998,&quot;longitude&quot;:-118.3199,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91302&quot;,&quot;city&quot;:&quot;Calabasas&quot;,&quot;latitude&quot;:34.1419,&quot;longitude&quot;:-118.6641,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91009&quot;,&quot;city&quot;:&quot;Duarte&quot;,&quot;latitude&quot;:34.1395,&quot;longitude&quot;:-117.9773,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90606&quot;,&quot;city&quot;:&quot;Whittier&quot;,&quot;latitude&quot;:33.9777,&quot;longitude&quot;:-118.0658,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90220&quot;,&quot;city&quot;:&quot;Compton&quot;,&quot;latitude&quot;:33.8748,&quot;longitude&quot;:-118.2402,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;93550&quot;,&quot;city&quot;:&quot;Palmdale&quot;,&quot;latitude&quot;:34.3579404,&quot;longitude&quot;:-118.0654445,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;90254&quot;,&quot;city&quot;:&quot;Hermosa Beach&quot;,&quot;latitude&quot;:33.8643,&quot;longitude&quot;:-118.3955,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91797&quot;,&quot;city&quot;:&quot;Pomona&quot;,&quot;latitude&quot;:34.0812006,&quot;longitude&quot;:-117.9834738,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91381&quot;,&quot;city&quot;:&quot;Stevenson Ranch&quot;,&quot;latitude&quot;:34.3775,&quot;longitude&quot;:-118.6131,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;93063&quot;,&quot;city&quot;:&quot;Simi Valley&quot;,&quot;latitude&quot;:34.3046,&quot;longitude&quot;:-118.6844,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91354&quot;,&quot;city&quot;:&quot;Valencia&quot;,&quot;latitude&quot;:34.4466,&quot;longitude&quot;:-118.5374,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90706&quot;,&quot;city&quot;:&quot;Bellflower&quot;,&quot;latitude&quot;:33.8867,&quot;longitude&quot;:-118.1265,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;93510&quot;,&quot;city&quot;:&quot;Acton&quot;,&quot;latitude&quot;:34.4835,&quot;longitude&quot;:-118.1959,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;91714&quot;,&quot;city&quot;:&quot;City Of Industry&quot;,&quot;latitude&quot;:34.0197,&quot;longitude&quot;:-117.9587,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90502&quot;,&quot;city&quot;:&quot;Torrance&quot;,&quot;latitude&quot;:33.8286,&quot;longitude&quot;:-118.292,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91702&quot;,&quot;city&quot;:&quot;Azusa&quot;,&quot;latitude&quot;:34.0948204,&quot;longitude&quot;:-117.9073244,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90604&quot;,&quot;city&quot;:&quot;Whittier&quot;,&quot;latitude&quot;:33.9299,&quot;longitude&quot;:-118.0121,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90807&quot;,&quot;city&quot;:&quot;Long Beach&quot;,&quot;latitude&quot;:33.8315,&quot;longitude&quot;:-118.1811,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91385&quot;,&quot;city&quot;:&quot;Valencia&quot;,&quot;latitude&quot;:34.4436,&quot;longitude&quot;:-118.6095,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91301&quot;,&quot;city&quot;:&quot;Agoura Hills&quot;,&quot;latitude&quot;:34.1227,&quot;longitude&quot;:-118.7573,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90265&quot;,&quot;city&quot;:&quot;Malibu&quot;,&quot;latitude&quot;:34.0402,&quot;longitude&quot;:-118.7351,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;91377&quot;,&quot;city&quot;:&quot;Oak Park&quot;,&quot;latitude&quot;:34.185,&quot;longitude&quot;:-118.7669,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;93065&quot;,&quot;city&quot;:&quot;Simi Valley&quot;,&quot;latitude&quot;:34.2656,&quot;longitude&quot;:-118.7653,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90715&quot;,&quot;city&quot;:&quot;Lakewood&quot;,&quot;latitude&quot;:33.8405,&quot;longitude&quot;:-118.0767,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91748&quot;,&quot;city&quot;:&quot;Rowland Heights&quot;,&quot;latitude&quot;:33.9818,&quot;longitude&quot;:-117.8969,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90274&quot;,&quot;city&quot;:&quot;Palos Verdes Peninsula&quot;,&quot;latitude&quot;:33.7669,&quot;longitude&quot;:-118.3806,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90624&quot;,&quot;city&quot;:&quot;Buena Park&quot;,&quot;latitude&quot;:33.8584,&quot;longitude&quot;:-118.0033,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90815&quot;,&quot;city&quot;:&quot;Long Beach&quot;,&quot;latitude&quot;:33.7939,&quot;longitude&quot;:-118.1192,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90831&quot;,&quot;city&quot;:&quot;Long Beach&quot;,&quot;latitude&quot;:33.7678,&quot;longitude&quot;:-118.1994,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91773&quot;,&quot;city&quot;:&quot;San Dimas&quot;,&quot;latitude&quot;:34.1023,&quot;longitude&quot;:-117.8169,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91358&quot;,&quot;city&quot;:&quot;Thousand Oaks&quot;,&quot;latitude&quot;:34.1706,&quot;longitude&quot;:-118.8376,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;93553&quot;,&quot;city&quot;:&quot;Pearblossom&quot;,&quot;latitude&quot;:34.3780816,&quot;longitude&quot;:-117.9014654,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;92838&quot;,&quot;city&quot;:&quot;Fullerton&quot;,&quot;latitude&quot;:33.9041552,&quot;longitude&quot;:-117.9307584,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90732&quot;,&quot;city&quot;:&quot;San Pedro&quot;,&quot;latitude&quot;:33.742,&quot;longitude&quot;:-118.3121,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;93543&quot;,&quot;city&quot;:&quot;Littlerock&quot;,&quot;latitude&quot;:34.4891,&quot;longitude&quot;:-117.9708,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;90263&quot;,&quot;city&quot;:&quot;Malibu&quot;,&quot;latitude&quot;:34.005,&quot;longitude&quot;:-118.8101,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;93551&quot;,&quot;city&quot;:&quot;Palmdale&quot;,&quot;latitude&quot;:34.6017,&quot;longitude&quot;:-118.231,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;93590&quot;,&quot;city&quot;:&quot;Palmdale&quot;,&quot;latitude&quot;:34.5794,&quot;longitude&quot;:-118.1165,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;92846&quot;,&quot;city&quot;:&quot;Garden Grove&quot;,&quot;latitude&quot;:33.788,&quot;longitude&quot;:-118.0325,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91765&quot;,&quot;city&quot;:&quot;Diamond Bar&quot;,&quot;latitude&quot;:34.0066,&quot;longitude&quot;:-117.8098,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;93040&quot;,&quot;city&quot;:&quot;Piru&quot;,&quot;latitude&quot;:34.4152743,&quot;longitude&quot;:-118.7939824,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;93552&quot;,&quot;city&quot;:&quot;Palmdale&quot;,&quot;latitude&quot;:34.5811542,&quot;longitude&quot;:-118.0303189,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;93021&quot;,&quot;city&quot;:&quot;Moorpark&quot;,&quot;latitude&quot;:34.2784,&quot;longitude&quot;:-118.8771,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;92825&quot;,&quot;city&quot;:&quot;Anaheim&quot;,&quot;latitude&quot;:33.8356,&quot;longitude&quot;:-117.9132,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92871&quot;,&quot;city&quot;:&quot;Placentia&quot;,&quot;latitude&quot;:33.8829,&quot;longitude&quot;:-117.8557,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91319&quot;,&quot;city&quot;:&quot;Newbury Park&quot;,&quot;latitude&quot;:34.18,&quot;longitude&quot;:-118.91,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91769&quot;,&quot;city&quot;:&quot;Pomona&quot;,&quot;latitude&quot;:34.0553,&quot;longitude&quot;:-117.7523,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90743&quot;,&quot;city&quot;:&quot;Surfside&quot;,&quot;latitude&quot;:33.7178819,&quot;longitude&quot;:-118.0704585,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92823&quot;,&quot;city&quot;:&quot;Brea&quot;,&quot;latitude&quot;:33.923,&quot;longitude&quot;:-117.798,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92842&quot;,&quot;city&quot;:&quot;Garden Grove&quot;,&quot;latitude&quot;:33.7777748,&quot;longitude&quot;:-117.9507834,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91711&quot;,&quot;city&quot;:&quot;Claremont&quot;,&quot;latitude&quot;:34.1092,&quot;longitude&quot;:-117.7183,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;93563&quot;,&quot;city&quot;:&quot;Valyermo&quot;,&quot;latitude&quot;:34.4053384,&quot;longitude&quot;:-117.7490656,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;92647&quot;,&quot;city&quot;:&quot;Huntington Beach&quot;,&quot;latitude&quot;:33.721,&quot;longitude&quot;:-118.0033,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91709&quot;,&quot;city&quot;:&quot;Chino Hills&quot;,&quot;latitude&quot;:33.959453,&quot;longitude&quot;:-117.7256083,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92867&quot;,&quot;city&quot;:&quot;Orange&quot;,&quot;latitude&quot;:33.811,&quot;longitude&quot;:-117.8493,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;93534&quot;,&quot;city&quot;:&quot;Lancaster&quot;,&quot;latitude&quot;:34.6909,&quot;longitude&quot;:-118.1491,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;93015&quot;,&quot;city&quot;:&quot;Fillmore&quot;,&quot;latitude&quot;:34.3992,&quot;longitude&quot;:-118.9182,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;93532&quot;,&quot;city&quot;:&quot;Lake Hughes&quot;,&quot;latitude&quot;:34.6847,&quot;longitude&quot;:-118.5442,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;92817&quot;,&quot;city&quot;:&quot;Anaheim&quot;,&quot;latitude&quot;:33.8512,&quot;longitude&quot;:-117.7915,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;93012&quot;,&quot;city&quot;:&quot;Camarillo&quot;,&quot;latitude&quot;:34.2218,&quot;longitude&quot;:-118.9866,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91784&quot;,&quot;city&quot;:&quot;Upland&quot;,&quot;latitude&quot;:34.141,&quot;longitude&quot;:-117.6581,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91762&quot;,&quot;city&quot;:&quot;Ontario&quot;,&quot;latitude&quot;:34.0584,&quot;longitude&quot;:-117.6665,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92712&quot;,&quot;city&quot;:&quot;Santa Ana&quot;,&quot;latitude&quot;:33.7496,&quot;longitude&quot;:-117.875,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;93544&quot;,&quot;city&quot;:&quot;Llano&quot;,&quot;latitude&quot;:34.494562,&quot;longitude&quot;:-117.7607932,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;92887&quot;,&quot;city&quot;:&quot;Yorba Linda&quot;,&quot;latitude&quot;:33.8416068,&quot;longitude&quot;:-117.702148,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;93536&quot;,&quot;city&quot;:&quot;Lancaster&quot;,&quot;latitude&quot;:34.7471,&quot;longitude&quot;:-118.3687,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;93066&quot;,&quot;city&quot;:&quot;Somis&quot;,&quot;latitude&quot;:34.2798,&quot;longitude&quot;:-119.0115,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;92646&quot;,&quot;city&quot;:&quot;Huntington Beach&quot;,&quot;latitude&quot;:33.6654,&quot;longitude&quot;:-117.9686,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;93591&quot;,&quot;city&quot;:&quot;Palmdale&quot;,&quot;latitude&quot;:34.6019,&quot;longitude&quot;:-117.8123,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;91708&quot;,&quot;city&quot;:&quot;Chino&quot;,&quot;latitude&quot;:33.954,&quot;longitude&quot;:-117.6404,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91730&quot;,&quot;city&quot;:&quot;Rancho Cucamonga&quot;,&quot;latitude&quot;:34.0965313,&quot;longitude&quot;:-117.5848025,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92705&quot;,&quot;city&quot;:&quot;Santa Ana&quot;,&quot;latitude&quot;:33.754,&quot;longitude&quot;:-117.7919,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92397&quot;,&quot;city&quot;:&quot;Wrightwood&quot;,&quot;latitude&quot;:34.3628,&quot;longitude&quot;:-117.6249,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;92372&quot;,&quot;city&quot;:&quot;Pinon Hills&quot;,&quot;latitude&quot;:34.4429,&quot;longitude&quot;:-117.6403,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;92862&quot;,&quot;city&quot;:&quot;Orange&quot;,&quot;latitude&quot;:33.7915,&quot;longitude&quot;:-117.714,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92606&quot;,&quot;city&quot;:&quot;Irvine&quot;,&quot;latitude&quot;:33.6912614,&quot;longitude&quot;:-117.8223506,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;93061&quot;,&quot;city&quot;:&quot;Santa Paula&quot;,&quot;latitude&quot;:34.3542,&quot;longitude&quot;:-119.0593,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;92658&quot;,&quot;city&quot;:&quot;Newport Beach&quot;,&quot;latitude&quot;:33.63915679999999,&quot;longitude&quot;:-117.8647939,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;93535&quot;,&quot;city&quot;:&quot;Lancaster&quot;,&quot;latitude&quot;:34.7131,&quot;longitude&quot;:-117.8783,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;93042&quot;,&quot;city&quot;:&quot;Point Mugu Nawc&quot;,&quot;latitude&quot;:34.1124406,&quot;longitude&quot;:-119.102441,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;91739&quot;,&quot;city&quot;:&quot;Rancho Cucamonga&quot;,&quot;latitude&quot;:34.1547243,&quot;longitude&quot;:-117.5143603,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92329&quot;,&quot;city&quot;:&quot;Phelan&quot;,&quot;latitude&quot;:34.4261,&quot;longitude&quot;:-117.5723,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;92358&quot;,&quot;city&quot;:&quot;Lytle Creek&quot;,&quot;latitude&quot;:34.2558,&quot;longitude&quot;:-117.5186,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;92882&quot;,&quot;city&quot;:&quot;Corona&quot;,&quot;latitude&quot;:33.8419,&quot;longitude&quot;:-117.6043,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92860&quot;,&quot;city&quot;:&quot;Norco&quot;,&quot;latitude&quot;:33.8787742,&quot;longitude&quot;:-117.5760323,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91752&quot;,&quot;city&quot;:&quot;Mira Loma&quot;,&quot;latitude&quot;:33.9938,&quot;longitude&quot;:-117.5236,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;93031&quot;,&quot;city&quot;:&quot;Oxnard&quot;,&quot;latitude&quot;:34.2328937,&quot;longitude&quot;:-119.179765,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92618&quot;,&quot;city&quot;:&quot;Irvine&quot;,&quot;latitude&quot;:33.7074,&quot;longitude&quot;:-117.7054,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;93560&quot;,&quot;city&quot;:&quot;Rosamond&quot;,&quot;latitude&quot;:34.8843005,&quot;longitude&quot;:-118.3228165,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;92603&quot;,&quot;city&quot;:&quot;Irvine&quot;,&quot;latitude&quot;:33.6245,&quot;longitude&quot;:-117.794,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;93033&quot;,&quot;city&quot;:&quot;Oxnard&quot;,&quot;latitude&quot;:34.1599885,&quot;longitude&quot;:-119.1274334,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;93004&quot;,&quot;city&quot;:&quot;Ventura&quot;,&quot;latitude&quot;:34.2788,&quot;longitude&quot;:-119.1651,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;93009&quot;,&quot;city&quot;:&quot;Ventura&quot;,&quot;latitude&quot;:34.3562,&quot;longitude&quot;:-119.1462,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92337&quot;,&quot;city&quot;:&quot;Fontana&quot;,&quot;latitude&quot;:34.0498,&quot;longitude&quot;:-117.4706,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91608&quot;,&quot;city&quot;:&quot;Universal City&quot;,&quot;latitude&quot;:34.1383,&quot;longitude&quot;:-118.3528,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91352&quot;,&quot;city&quot;:&quot;Sun Valley&quot;,&quot;latitude&quot;:34.2209,&quot;longitude&quot;:-118.3699,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91603&quot;,&quot;city&quot;:&quot;North Hollywood&quot;,&quot;latitude&quot;:34.1722,&quot;longitude&quot;:-118.379,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91040&quot;,&quot;city&quot;:&quot;Sunland&quot;,&quot;latitude&quot;:34.2618,&quot;longitude&quot;:-118.3371,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;91617&quot;,&quot;city&quot;:&quot;Valley Village&quot;,&quot;latitude&quot;:34.1649,&quot;longitude&quot;:-118.3965,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90027&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.104,&quot;longitude&quot;:-118.2925,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90041&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.1339,&quot;longitude&quot;:-118.2082,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90068&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.1156,&quot;longitude&quot;:-118.3305,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91609&quot;,&quot;city&quot;:&quot;North Hollywood&quot;,&quot;latitude&quot;:34.1722,&quot;longitude&quot;:-118.379,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91504&quot;,&quot;city&quot;:&quot;Burbank&quot;,&quot;latitude&quot;:34.2001,&quot;longitude&quot;:-118.3264,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91402&quot;,&quot;city&quot;:&quot;Panorama City&quot;,&quot;latitude&quot;:34.2262,&quot;longitude&quot;:-118.447,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91606&quot;,&quot;city&quot;:&quot;North Hollywood&quot;,&quot;latitude&quot;:34.1872,&quot;longitude&quot;:-118.3865,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90210&quot;,&quot;city&quot;:&quot;Beverly Hills&quot;,&quot;latitude&quot;:34.1030032,&quot;longitude&quot;:-118.4104684,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90010&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0606,&quot;longitude&quot;:-118.3027,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90069&quot;,&quot;city&quot;:&quot;West Hollywood&quot;,&quot;latitude&quot;:34.0906,&quot;longitude&quot;:-118.3788,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91214&quot;,&quot;city&quot;:&quot;La Crescenta&quot;,&quot;latitude&quot;:34.2316,&quot;longitude&quot;:-118.2457,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91203&quot;,&quot;city&quot;:&quot;Glendale&quot;,&quot;latitude&quot;:34.1517,&quot;longitude&quot;:-118.2636,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91224&quot;,&quot;city&quot;:&quot;La Crescenta&quot;,&quot;latitude&quot;:34.2242,&quot;longitude&quot;:-118.2401,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91041&quot;,&quot;city&quot;:&quot;Sunland&quot;,&quot;latitude&quot;:34.2669,&quot;longitude&quot;:-118.3023,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91605&quot;,&quot;city&quot;:&quot;North Hollywood&quot;,&quot;latitude&quot;:34.2057,&quot;longitude&quot;:-118.4001,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91436&quot;,&quot;city&quot;:&quot;Encino&quot;,&quot;latitude&quot;:34.151,&quot;longitude&quot;:-118.4882,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90064&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0353,&quot;longitude&quot;:-118.4259,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90046&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.1074,&quot;longitude&quot;:-118.3652,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90039&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.1121,&quot;longitude&quot;:-118.2594,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90021&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0333,&quot;longitude&quot;:-118.2447,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91205&quot;,&quot;city&quot;:&quot;Glendale&quot;,&quot;latitude&quot;:34.1378,&quot;longitude&quot;:-118.2425,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91802&quot;,&quot;city&quot;:&quot;Alhambra&quot;,&quot;latitude&quot;:34.0953,&quot;longitude&quot;:-118.127,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91342&quot;,&quot;city&quot;:&quot;Sylmar&quot;,&quot;latitude&quot;:34.3054,&quot;longitude&quot;:-118.4322,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91405&quot;,&quot;city&quot;:&quot;Van Nuys&quot;,&quot;latitude&quot;:34.2001,&quot;longitude&quot;:-118.4456,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91012&quot;,&quot;city&quot;:&quot;La Canada Flintridge&quot;,&quot;latitude&quot;:34.1992,&quot;longitude&quot;:-118.1879,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91118&quot;,&quot;city&quot;:&quot;San Marino&quot;,&quot;latitude&quot;:34.1214,&quot;longitude&quot;:-118.1065,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90043&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:33.9871,&quot;longitude&quot;:-118.3321,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90014&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0443,&quot;longitude&quot;:-118.2509,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91406&quot;,&quot;city&quot;:&quot;Van Nuys&quot;,&quot;latitude&quot;:34.2006,&quot;longitude&quot;:-118.4868,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91399&quot;,&quot;city&quot;:&quot;Lockheed Corp&quot;,&quot;latitude&quot;:34.1544724,&quot;longitude&quot;:-118.5914696,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90403&quot;,&quot;city&quot;:&quot;Santa Monica&quot;,&quot;latitude&quot;:34.0287,&quot;longitude&quot;:-118.4924,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90077&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.1112,&quot;longitude&quot;:-118.4502,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91344&quot;,&quot;city&quot;:&quot;Granada Hills&quot;,&quot;latitude&quot;:34.2771,&quot;longitude&quot;:-118.4992,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91396&quot;,&quot;city&quot;:&quot;Winnetka&quot;,&quot;latitude&quot;:34.2133,&quot;longitude&quot;:-118.572,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90013&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0448,&quot;longitude&quot;:-118.2434,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90101&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0238187,&quot;longitude&quot;:-118.153228,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91131&quot;,&quot;city&quot;:&quot;World Vision International&quot;,&quot;latitude&quot;:34.1476527,&quot;longitude&quot;:-118.144302,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91771&quot;,&quot;city&quot;:&quot;Rosemead&quot;,&quot;latitude&quot;:34.0806,&quot;longitude&quot;:-118.0728,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90302&quot;,&quot;city&quot;:&quot;Inglewood&quot;,&quot;latitude&quot;:33.9745,&quot;longitude&quot;:-118.3548,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90035&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0531,&quot;longitude&quot;:-118.3806,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91772&quot;,&quot;city&quot;:&quot;Rosemead&quot;,&quot;latitude&quot;:34.0806,&quot;longitude&quot;:-118.0728,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90063&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0451,&quot;longitude&quot;:-118.1859,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90037&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.003,&quot;longitude&quot;:-118.2863,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90280&quot;,&quot;city&quot;:&quot;South Gate&quot;,&quot;latitude&quot;:33.9462,&quot;longitude&quot;:-118.2013,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91401&quot;,&quot;city&quot;:&quot;Van Nuys&quot;,&quot;latitude&quot;:34.1802,&quot;longitude&quot;:-118.4324,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91503&quot;,&quot;city&quot;:&quot;Burbank&quot;,&quot;latitude&quot;:34.1808,&quot;longitude&quot;:-118.309,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91202&quot;,&quot;city&quot;:&quot;Glendale&quot;,&quot;latitude&quot;:34.1652,&quot;longitude&quot;:-118.2656,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91423&quot;,&quot;city&quot;:&quot;Sherman Oaks&quot;,&quot;latitude&quot;:34.1526,&quot;longitude&quot;:-118.4322,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91507&quot;,&quot;city&quot;:&quot;Burbank&quot;,&quot;latitude&quot;:34.1808,&quot;longitude&quot;:-118.309,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91502&quot;,&quot;city&quot;:&quot;Burbank&quot;,&quot;latitude&quot;:34.1745,&quot;longitude&quot;:-118.3059,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90065&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.1073,&quot;longitude&quot;:-118.2266,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91602&quot;,&quot;city&quot;:&quot;North Hollywood&quot;,&quot;latitude&quot;:34.151,&quot;longitude&quot;:-118.3663,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91412&quot;,&quot;city&quot;:&quot;Panorama City&quot;,&quot;latitude&quot;:34.2247,&quot;longitude&quot;:-118.4498,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90004&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0762,&quot;longitude&quot;:-118.3029,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91601&quot;,&quot;city&quot;:&quot;North Hollywood&quot;,&quot;latitude&quot;:34.1687,&quot;longitude&quot;:-118.3713,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91407&quot;,&quot;city&quot;:&quot;Van Nuys&quot;,&quot;latitude&quot;:34.1867,&quot;longitude&quot;:-118.449,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91505&quot;,&quot;city&quot;:&quot;Burbank&quot;,&quot;latitude&quot;:34.169,&quot;longitude&quot;:-118.3442,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90038&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0898,&quot;longitude&quot;:-118.3215,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91209&quot;,&quot;city&quot;:&quot;Glendale&quot;,&quot;latitude&quot;:34.1425,&quot;longitude&quot;:-118.2551,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91508&quot;,&quot;city&quot;:&quot;Burbank&quot;,&quot;latitude&quot;:34.1808,&quot;longitude&quot;:-118.309,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91206&quot;,&quot;city&quot;:&quot;Glendale&quot;,&quot;latitude&quot;:34.1556,&quot;longitude&quot;:-118.2322,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90213&quot;,&quot;city&quot;:&quot;Beverly Hills&quot;,&quot;latitude&quot;:34.0736,&quot;longitude&quot;:-118.4004,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91611&quot;,&quot;city&quot;:&quot;North Hollywood&quot;,&quot;latitude&quot;:34.1722,&quot;longitude&quot;:-118.379,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91201&quot;,&quot;city&quot;:&quot;Glendale&quot;,&quot;latitude&quot;:34.1716,&quot;longitude&quot;:-118.2899,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90031&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0783,&quot;longitude&quot;:-118.2113,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90029&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.09,&quot;longitude&quot;:-118.2944,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91207&quot;,&quot;city&quot;:&quot;Glendale&quot;,&quot;latitude&quot;:34.1649,&quot;longitude&quot;:-118.2451,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91501&quot;,&quot;city&quot;:&quot;Burbank&quot;,&quot;latitude&quot;:34.1862,&quot;longitude&quot;:-118.3009,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91510&quot;,&quot;city&quot;:&quot;Burbank&quot;,&quot;latitude&quot;:34.1808,&quot;longitude&quot;:-118.309,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90026&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0766,&quot;longitude&quot;:-118.2646,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91046&quot;,&quot;city&quot;:&quot;Verdugo City&quot;,&quot;latitude&quot;:34.2114,&quot;longitude&quot;:-118.2395,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91521&quot;,&quot;city&quot;:&quot;Burbank&quot;,&quot;latitude&quot;:34.1808,&quot;longitude&quot;:-118.309,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90057&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0622,&quot;longitude&quot;:-118.2763,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91011&quot;,&quot;city&quot;:&quot;La Canada Flintridge&quot;,&quot;latitude&quot;:34.2217,&quot;longitude&quot;:-118.2051,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91614&quot;,&quot;city&quot;:&quot;Studio City&quot;,&quot;latitude&quot;:34.1486,&quot;longitude&quot;:-118.3965,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90048&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0737,&quot;longitude&quot;:-118.372,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91413&quot;,&quot;city&quot;:&quot;Sherman Oaks&quot;,&quot;latitude&quot;:34.1511,&quot;longitude&quot;:-118.4492,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91331&quot;,&quot;city&quot;:&quot;Pacoima&quot;,&quot;latitude&quot;:34.2556,&quot;longitude&quot;:-118.4208,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90067&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0551,&quot;longitude&quot;:-118.4095,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90020&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0665,&quot;longitude&quot;:-118.3022,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90036&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0699,&quot;longitude&quot;:-118.3492,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91522&quot;,&quot;city&quot;:&quot;Burbank&quot;,&quot;latitude&quot;:34.1808,&quot;longitude&quot;:-118.309,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91021&quot;,&quot;city&quot;:&quot;Montrose&quot;,&quot;latitude&quot;:34.2064,&quot;longitude&quot;:-118.2242,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91343&quot;,&quot;city&quot;:&quot;North Hills&quot;,&quot;latitude&quot;:34.2366,&quot;longitude&quot;:-118.4758,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91607&quot;,&quot;city&quot;:&quot;Valley Village&quot;,&quot;latitude&quot;:34.1672,&quot;longitude&quot;:-118.3989,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91020&quot;,&quot;city&quot;:&quot;Montrose&quot;,&quot;latitude&quot;:34.2114,&quot;longitude&quot;:-118.2305,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90019&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0482,&quot;longitude&quot;:-118.3343,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90071&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0529,&quot;longitude&quot;:-118.2549,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90211&quot;,&quot;city&quot;:&quot;Beverly Hills&quot;,&quot;latitude&quot;:34.0652,&quot;longitude&quot;:-118.383,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91210&quot;,&quot;city&quot;:&quot;Glendale&quot;,&quot;latitude&quot;:34.1425,&quot;longitude&quot;:-118.2551,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90012&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0614,&quot;longitude&quot;:-118.2385,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91403&quot;,&quot;city&quot;:&quot;Sherman Oaks&quot;,&quot;latitude&quot;:34.1514,&quot;longitude&quot;:-118.4603,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90212&quot;,&quot;city&quot;:&quot;Beverly Hills&quot;,&quot;latitude&quot;:34.0619,&quot;longitude&quot;:-118.3995,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90017&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0559,&quot;longitude&quot;:-118.2666,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90007&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0294,&quot;longitude&quot;:-118.2871,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90034&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.029,&quot;longitude&quot;:-118.4005,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91495&quot;,&quot;city&quot;:&quot;Sherman Oaks&quot;,&quot;latitude&quot;:34.1511,&quot;longitude&quot;:-118.4492,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91356&quot;,&quot;city&quot;:&quot;Tarzana&quot;,&quot;latitude&quot;:34.1671,&quot;longitude&quot;:-118.5414,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91408&quot;,&quot;city&quot;:&quot;Van Nuys&quot;,&quot;latitude&quot;:34.1867,&quot;longitude&quot;:-118.449,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91335&quot;,&quot;city&quot;:&quot;Reseda&quot;,&quot;latitude&quot;:34.2007,&quot;longitude&quot;:-118.5391,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91346&quot;,&quot;city&quot;:&quot;Mission Hills&quot;,&quot;latitude&quot;:34.2572,&quot;longitude&quot;:-118.467,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91395&quot;,&quot;city&quot;:&quot;Mission Hills&quot;,&quot;latitude&quot;:34.2572,&quot;longitude&quot;:-118.467,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90006&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0493,&quot;longitude&quot;:-118.2917,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90032&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0818,&quot;longitude&quot;:-118.1753,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90015&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0434,&quot;longitude&quot;:-118.2716,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90058&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:33.9994,&quot;longitude&quot;:-118.2133,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90005&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0585,&quot;longitude&quot;:-118.3012,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91393&quot;,&quot;city&quot;:&quot;North Hills&quot;,&quot;latitude&quot;:34.2364,&quot;longitude&quot;:-118.4847,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91334&quot;,&quot;city&quot;:&quot;Pacoima&quot;,&quot;latitude&quot;:34.2625,&quot;longitude&quot;:-118.427,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91392&quot;,&quot;city&quot;:&quot;Sylmar&quot;,&quot;latitude&quot;:34.3078,&quot;longitude&quot;:-118.4492,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90008&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0116,&quot;longitude&quot;:-118.3411,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90255&quot;,&quot;city&quot;:&quot;Huntington Park&quot;,&quot;latitude&quot;:33.9769,&quot;longitude&quot;:-118.2161,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90016&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0298,&quot;longitude&quot;:-118.3528,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90303&quot;,&quot;city&quot;:&quot;Inglewood&quot;,&quot;latitude&quot;:33.9377,&quot;longitude&quot;:-118.3321,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90272&quot;,&quot;city&quot;:&quot;Pacific Palisades&quot;,&quot;latitude&quot;:34.0481,&quot;longitude&quot;:-118.5265,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;90291&quot;,&quot;city&quot;:&quot;Venice&quot;,&quot;latitude&quot;:33.9938,&quot;longitude&quot;:-118.4635,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90025&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0447,&quot;longitude&quot;:-118.4487,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91357&quot;,&quot;city&quot;:&quot;Tarzana&quot;,&quot;latitude&quot;:34.1733,&quot;longitude&quot;:-118.554,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91311&quot;,&quot;city&quot;:&quot;Chatsworth&quot;,&quot;latitude&quot;:34.2583,&quot;longitude&quot;:-118.5914,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91104&quot;,&quot;city&quot;:&quot;Pasadena&quot;,&quot;latitude&quot;:34.1678,&quot;longitude&quot;:-118.1261,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91841&quot;,&quot;city&quot;:&quot;Alhambra&quot;,&quot;latitude&quot;:34.0837958,&quot;longitude&quot;:-118.1181199,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91006&quot;,&quot;city&quot;:&quot;Arcadia&quot;,&quot;latitude&quot;:34.1324,&quot;longitude&quot;:-118.0264,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90202&quot;,&quot;city&quot;:&quot;Bell&quot;,&quot;latitude&quot;:33.9775,&quot;longitude&quot;:-118.187,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91364&quot;,&quot;city&quot;:&quot;Woodland Hills&quot;,&quot;latitude&quot;:34.1557,&quot;longitude&quot;:-118.6,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91313&quot;,&quot;city&quot;:&quot;Chatsworth&quot;,&quot;latitude&quot;:34.2572,&quot;longitude&quot;:-118.6012,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90059&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:33.9293,&quot;longitude&quot;:-118.2463,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90270&quot;,&quot;city&quot;:&quot;Maywood&quot;,&quot;latitude&quot;:33.989,&quot;longitude&quot;:-118.1877,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90061&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:33.9245,&quot;longitude&quot;:-118.2716,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90242&quot;,&quot;city&quot;:&quot;Downey&quot;,&quot;latitude&quot;:33.9218,&quot;longitude&quot;:-118.1395,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90022&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0245,&quot;longitude&quot;:-118.1561,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91770&quot;,&quot;city&quot;:&quot;Rosemead&quot;,&quot;latitude&quot;:34.0658,&quot;longitude&quot;:-118.0853,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91706&quot;,&quot;city&quot;:&quot;Baldwin Park&quot;,&quot;latitude&quot;:34.0964,&quot;longitude&quot;:-117.9682,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91386&quot;,&quot;city&quot;:&quot;Canyon Country&quot;,&quot;latitude&quot;:34.4233,&quot;longitude&quot;:-118.472,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91350&quot;,&quot;city&quot;:&quot;Santa Clarita&quot;,&quot;latitude&quot;:34.4336,&quot;longitude&quot;:-118.5007,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90045&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:33.9631,&quot;longitude&quot;:-118.3941,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90278&quot;,&quot;city&quot;:&quot;Redondo Beach&quot;,&quot;latitude&quot;:33.8707,&quot;longitude&quot;:-118.3715,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91355&quot;,&quot;city&quot;:&quot;Valencia&quot;,&quot;latitude&quot;:34.3985,&quot;longitude&quot;:-118.5535,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90723&quot;,&quot;city&quot;:&quot;Paramount&quot;,&quot;latitude&quot;:33.8969,&quot;longitude&quot;:-118.1632,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90003&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:33.9653,&quot;longitude&quot;:-118.2727,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90248&quot;,&quot;city&quot;:&quot;Gardena&quot;,&quot;latitude&quot;:33.8766,&quot;longitude&quot;:-118.2835,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90313&quot;,&quot;city&quot;:&quot;General Telephone&quot;,&quot;latitude&quot;:33.9617977,&quot;longitude&quot;:-118.3533544,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91367&quot;,&quot;city&quot;:&quot;Woodland Hills&quot;,&quot;latitude&quot;:34.1767,&quot;longitude&quot;:-118.6159,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91308&quot;,&quot;city&quot;:&quot;West Hills&quot;,&quot;latitude&quot;:34.2,&quot;longitude&quot;:-118.64,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91066&quot;,&quot;city&quot;:&quot;Arcadia&quot;,&quot;latitude&quot;:34.1397,&quot;longitude&quot;:-118.0353,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91722&quot;,&quot;city&quot;:&quot;Covina&quot;,&quot;latitude&quot;:34.0972,&quot;longitude&quot;:-117.9065,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90605&quot;,&quot;city&quot;:&quot;Whittier&quot;,&quot;latitude&quot;:33.9413,&quot;longitude&quot;:-118.0356,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90640&quot;,&quot;city&quot;:&quot;Montebello&quot;,&quot;latitude&quot;:34.0133,&quot;longitude&quot;:-118.113,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90895&quot;,&quot;city&quot;:&quot;Carson&quot;,&quot;latitude&quot;:33.8392,&quot;longitude&quot;:-118.2202,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90247&quot;,&quot;city&quot;:&quot;Gardena&quot;,&quot;latitude&quot;:33.8925,&quot;longitude&quot;:-118.2961,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90260&quot;,&quot;city&quot;:&quot;Lawndale&quot;,&quot;latitude&quot;:33.8879,&quot;longitude&quot;:-118.351,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90505&quot;,&quot;city&quot;:&quot;Torrance&quot;,&quot;latitude&quot;:33.8106,&quot;longitude&quot;:-118.3507,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91380&quot;,&quot;city&quot;:&quot;Santa Clarita&quot;,&quot;latitude&quot;:34.3917,&quot;longitude&quot;:-118.5426,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;93093&quot;,&quot;city&quot;:&quot;Simi Valley&quot;,&quot;latitude&quot;:34.2582671,&quot;longitude&quot;:-118.7066671,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91382&quot;,&quot;city&quot;:&quot;Santa Clarita&quot;,&quot;latitude&quot;:34.3917,&quot;longitude&quot;:-118.5426,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91390&quot;,&quot;city&quot;:&quot;Santa Clarita&quot;,&quot;latitude&quot;:34.4684,&quot;longitude&quot;:-118.5261,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;90702&quot;,&quot;city&quot;:&quot;Artesia&quot;,&quot;latitude&quot;:33.8658,&quot;longitude&quot;:-118.0831,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90239&quot;,&quot;city&quot;:&quot;Downey&quot;,&quot;latitude&quot;:33.94,&quot;longitude&quot;:-118.1326,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91792&quot;,&quot;city&quot;:&quot;West Covina&quot;,&quot;latitude&quot;:34.0229,&quot;longitude&quot;:-117.8975,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90601&quot;,&quot;city&quot;:&quot;Whittier&quot;,&quot;latitude&quot;:34.0011,&quot;longitude&quot;:-118.0371,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90746&quot;,&quot;city&quot;:&quot;Carson&quot;,&quot;latitude&quot;:33.8584,&quot;longitude&quot;:-118.2554,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90503&quot;,&quot;city&quot;:&quot;Torrance&quot;,&quot;latitude&quot;:33.8397,&quot;longitude&quot;:-118.3542,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90602&quot;,&quot;city&quot;:&quot;Whittier&quot;,&quot;latitude&quot;:33.9693,&quot;longitude&quot;:-118.0337,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92833&quot;,&quot;city&quot;:&quot;Fullerton&quot;,&quot;latitude&quot;:33.8766,&quot;longitude&quot;:-117.9551,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90714&quot;,&quot;city&quot;:&quot;Lakewood&quot;,&quot;latitude&quot;:33.8512,&quot;longitude&quot;:-118.1339,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90810&quot;,&quot;city&quot;:&quot;Long Beach&quot;,&quot;latitude&quot;:33.8193,&quot;longitude&quot;:-118.2325,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91384&quot;,&quot;city&quot;:&quot;Castaic&quot;,&quot;latitude&quot;:34.4827,&quot;longitude&quot;:-118.6254,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;91359&quot;,&quot;city&quot;:&quot;Westlake Village&quot;,&quot;latitude&quot;:34.1761133,&quot;longitude&quot;:-118.8487793,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91376&quot;,&quot;city&quot;:&quot;Agoura Hills&quot;,&quot;latitude&quot;:34.1364,&quot;longitude&quot;:-118.7745,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91362&quot;,&quot;city&quot;:&quot;Thousand Oaks&quot;,&quot;latitude&quot;:34.1948,&quot;longitude&quot;:-118.8232,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91363&quot;,&quot;city&quot;:&quot;Thousand Oaks&quot;,&quot;latitude&quot;:34.1466467,&quot;longitude&quot;:-118.8073729,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;93064&quot;,&quot;city&quot;:&quot;Brandeis&quot;,&quot;latitude&quot;:34.2582,&quot;longitude&quot;:-118.7107,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;93062&quot;,&quot;city&quot;:&quot;Simi Valley&quot;,&quot;latitude&quot;:34.2694,&quot;longitude&quot;:-118.7815,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90720&quot;,&quot;city&quot;:&quot;Los Alamitos&quot;,&quot;latitude&quot;:33.8081254,&quot;longitude&quot;:-118.0691286,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90707&quot;,&quot;city&quot;:&quot;Bellflower&quot;,&quot;latitude&quot;:33.8817,&quot;longitude&quot;:-118.117,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91788&quot;,&quot;city&quot;:&quot;Walnut&quot;,&quot;latitude&quot;:34.0203,&quot;longitude&quot;:-117.8653,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90633&quot;,&quot;city&quot;:&quot;La Habra&quot;,&quot;latitude&quot;:33.9345,&quot;longitude&quot;:-117.9452,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90717&quot;,&quot;city&quot;:&quot;Lomita&quot;,&quot;latitude&quot;:33.7938,&quot;longitude&quot;:-118.3172,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90277&quot;,&quot;city&quot;:&quot;Redondo Beach&quot;,&quot;latitude&quot;:33.8307,&quot;longitude&quot;:-118.3832,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92801&quot;,&quot;city&quot;:&quot;Anaheim&quot;,&quot;latitude&quot;:33.8428,&quot;longitude&quot;:-117.9546,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90703&quot;,&quot;city&quot;:&quot;Cerritos&quot;,&quot;latitude&quot;:33.8669,&quot;longitude&quot;:-118.0686,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90721&quot;,&quot;city&quot;:&quot;Los Alamitos&quot;,&quot;latitude&quot;:33.8032009,&quot;longitude&quot;:-118.0718894,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90813&quot;,&quot;city&quot;:&quot;Long Beach&quot;,&quot;latitude&quot;:33.782,&quot;longitude&quot;:-118.1835,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90755&quot;,&quot;city&quot;:&quot;Signal Hill&quot;,&quot;latitude&quot;:33.8029,&quot;longitude&quot;:-118.1677,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90748&quot;,&quot;city&quot;:&quot;Wilmington&quot;,&quot;latitude&quot;:33.78,&quot;longitude&quot;:-118.2626,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91740&quot;,&quot;city&quot;:&quot;Glendora&quot;,&quot;latitude&quot;:34.1287,&quot;longitude&quot;:-117.8552,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91767&quot;,&quot;city&quot;:&quot;Pomona&quot;,&quot;latitude&quot;:34.0812,&quot;longitude&quot;:-117.7362,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91360&quot;,&quot;city&quot;:&quot;Thousand Oaks&quot;,&quot;latitude&quot;:34.2092,&quot;longitude&quot;:-118.8739,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91361&quot;,&quot;city&quot;:&quot;Westlake Village&quot;,&quot;latitude&quot;:34.1472,&quot;longitude&quot;:-118.8383,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90073&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:33.7866,&quot;longitude&quot;:-118.2987,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90275&quot;,&quot;city&quot;:&quot;Rancho Palos Verdes&quot;,&quot;latitude&quot;:33.7515,&quot;longitude&quot;:-118.367,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92841&quot;,&quot;city&quot;:&quot;Garden Grove&quot;,&quot;latitude&quot;:33.7817,&quot;longitude&quot;:-117.9766,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90716&quot;,&quot;city&quot;:&quot;Hawaiian Gardens&quot;,&quot;latitude&quot;:33.8296,&quot;longitude&quot;:-118.073,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91789&quot;,&quot;city&quot;:&quot;Walnut&quot;,&quot;latitude&quot;:34.0183,&quot;longitude&quot;:-117.8546,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91766&quot;,&quot;city&quot;:&quot;Pomona&quot;,&quot;latitude&quot;:34.0397162,&quot;longitude&quot;:-117.7549295,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92814&quot;,&quot;city&quot;:&quot;Anaheim&quot;,&quot;latitude&quot;:33.82353,&quot;longitude&quot;:-117.9659037,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92676&quot;,&quot;city&quot;:&quot;Silverado&quot;,&quot;latitude&quot;:33.7480914,&quot;longitude&quot;:-117.6200138,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;91750&quot;,&quot;city&quot;:&quot;La Verne&quot;,&quot;latitude&quot;:34.1009953,&quot;longitude&quot;:-117.8194197,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;93010&quot;,&quot;city&quot;:&quot;Camarillo&quot;,&quot;latitude&quot;:34.22000000000001,&quot;longitude&quot;:-119.04,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91761&quot;,&quot;city&quot;:&quot;Ontario&quot;,&quot;latitude&quot;:34.0348144,&quot;longitude&quot;:-117.5848025,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;93060&quot;,&quot;city&quot;:&quot;Santa Paula&quot;,&quot;latitude&quot;:34.4089106,&quot;longitude&quot;:-119.0692659,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;92661&quot;,&quot;city&quot;:&quot;Newport Beach&quot;,&quot;latitude&quot;:33.6061462,&quot;longitude&quot;:-117.8912117,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92626&quot;,&quot;city&quot;:&quot;Costa Mesa&quot;,&quot;latitude&quot;:33.6834142,&quot;longitude&quot;:-117.9073244,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91737&quot;,&quot;city&quot;:&quot;Rancho Cucamonga&quot;,&quot;latitude&quot;:34.1787581,&quot;longitude&quot;:-117.5848025,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91710&quot;,&quot;city&quot;:&quot;Chino&quot;,&quot;latitude&quot;:34.0420153,&quot;longitude&quot;:-117.6610854,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92627&quot;,&quot;city&quot;:&quot;Costa Mesa&quot;,&quot;latitude&quot;:33.673202,&quot;longitude&quot;:-117.9233294,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90024&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0448583,&quot;longitude&quot;:-118.4484367,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90062&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.002058,&quot;longitude&quot;:-118.2818967,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91030&quot;,&quot;city&quot;:&quot;South Pasadena&quot;,&quot;latitude&quot;:34.1058277,&quot;longitude&quot;:-118.153228,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90033&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0440239,&quot;longitude&quot;:-118.1854042,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90232&quot;,&quot;city&quot;:&quot;Culver City&quot;,&quot;latitude&quot;:34.0236878,&quot;longitude&quot;:-118.3900204,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90011&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0549076,&quot;longitude&quot;:-118.242643,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91776&quot;,&quot;city&quot;:&quot;San Gabriel&quot;,&quot;latitude&quot;:34.1023978,&quot;longitude&quot;:-118.0995912,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91411&quot;,&quot;city&quot;:&quot;Van Nuys&quot;,&quot;latitude&quot;:34.2012166,&quot;longitude&quot;:-118.466222,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90066&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0211416,&quot;longitude&quot;:-118.3968001,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91371&quot;,&quot;city&quot;:&quot;Woodland Hills&quot;,&quot;latitude&quot;:34.1847736,&quot;longitude&quot;:-118.5827161,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90056&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:33.9885683,&quot;longitude&quot;:-118.3666482,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91803&quot;,&quot;city&quot;:&quot;Alhambra&quot;,&quot;latitude&quot;:34.0837958,&quot;longitude&quot;:-118.1181199,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90808&quot;,&quot;city&quot;:&quot;Long Beach&quot;,&quot;latitude&quot;:33.8197825,&quot;longitude&quot;:-118.1064156,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90623&quot;,&quot;city&quot;:&quot;La Palma&quot;,&quot;latitude&quot;:33.8477954,&quot;longitude&quot;:-118.0449554,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91105&quot;,&quot;city&quot;:&quot;Pasadena&quot;,&quot;latitude&quot;:34.1406082,&quot;longitude&quot;:-118.1678543,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91324&quot;,&quot;city&quot;:&quot;Northridge&quot;,&quot;latitude&quot;:34.2413938,&quot;longitude&quot;:-118.5506158,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91106&quot;,&quot;city&quot;:&quot;Pasadena&quot;,&quot;latitude&quot;:34.1476527,&quot;longitude&quot;:-118.144302,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90701&quot;,&quot;city&quot;:&quot;Artesia&quot;,&quot;latitude&quot;:33.8659295,&quot;longitude&quot;:-118.0638802,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90747&quot;,&quot;city&quot;:&quot;Carson&quot;,&quot;latitude&quot;:33.8316745,&quot;longitude&quot;:-118.281693,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90805&quot;,&quot;city&quot;:&quot;Long Beach&quot;,&quot;latitude&quot;:33.8640647,&quot;longitude&quot;:-118.1766294,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90504&quot;,&quot;city&quot;:&quot;Torrance&quot;,&quot;latitude&quot;:33.8673266,&quot;longitude&quot;:-118.3286614,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;90630&quot;,&quot;city&quot;:&quot;Cypress&quot;,&quot;latitude&quot;:33.7891968,&quot;longitude&quot;:-118.0285506,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91780&quot;,&quot;city&quot;:&quot;Temple City&quot;,&quot;latitude&quot;:34.1260887,&quot;longitude&quot;:-118.054895,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90250&quot;,&quot;city&quot;:&quot;Hawthorne&quot;,&quot;latitude&quot;:33.92,&quot;longitude&quot;:-118.35,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90501&quot;,&quot;city&quot;:&quot;Torrance&quot;,&quot;latitude&quot;:33.8331717,&quot;longitude&quot;:-118.2906661,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90404&quot;,&quot;city&quot;:&quot;Santa Monica&quot;,&quot;latitude&quot;:34.0279895,&quot;longitude&quot;:-118.495155,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90650&quot;,&quot;city&quot;:&quot;Norwalk&quot;,&quot;latitude&quot;:33.9045574,&quot;longitude&quot;:-118.0784449,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90712&quot;,&quot;city&quot;:&quot;Lakewood&quot;,&quot;latitude&quot;:33.8522282,&quot;longitude&quot;:-118.1330353,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90745&quot;,&quot;city&quot;:&quot;Carson&quot;,&quot;latitude&quot;:33.8331717,&quot;longitude&quot;:-118.2906661,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91755&quot;,&quot;city&quot;:&quot;Monterey Park&quot;,&quot;latitude&quot;:34.0472318,&quot;longitude&quot;:-118.1415261,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91801&quot;,&quot;city&quot;:&quot;Alhambra&quot;,&quot;latitude&quot;:34.0923467,&quot;longitude&quot;:-118.1256175,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91306&quot;,&quot;city&quot;:&quot;Winnetka&quot;,&quot;latitude&quot;:34.2048586,&quot;longitude&quot;:-118.5739621,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90713&quot;,&quot;city&quot;:&quot;Lakewood&quot;,&quot;latitude&quot;:33.8508086,&quot;longitude&quot;:-118.1334072,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90094&quot;,&quot;city&quot;:&quot;Playa Vista&quot;,&quot;latitude&quot;:33.9564064,&quot;longitude&quot;:-118.4424524,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91775&quot;,&quot;city&quot;:&quot;San Gabriel&quot;,&quot;latitude&quot;:34.12,&quot;longitude&quot;:-118.11,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90405&quot;,&quot;city&quot;:&quot;Santa Monica&quot;,&quot;latitude&quot;:34.0118828,&quot;longitude&quot;:-118.4915504,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91101&quot;,&quot;city&quot;:&quot;Pasadena&quot;,&quot;latitude&quot;:34.169895,&quot;longitude&quot;:-118.1199696,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91330&quot;,&quot;city&quot;:&quot;Northridge&quot;,&quot;latitude&quot;:34.27,&quot;longitude&quot;:-118.54,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91754&quot;,&quot;city&quot;:&quot;Monterey Park&quot;,&quot;latitude&quot;:34.0435816,&quot;longitude&quot;:-118.1411981,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90620&quot;,&quot;city&quot;:&quot;Buena Park&quot;,&quot;latitude&quot;:33.8428724,&quot;longitude&quot;:-118.0127534,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90221&quot;,&quot;city&quot;:&quot;Compton&quot;,&quot;latitude&quot;:33.8890686,&quot;longitude&quot;:-118.2000277,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90680&quot;,&quot;city&quot;:&quot;Stanton&quot;,&quot;latitude&quot;:33.80248220000001,&quot;longitude&quot;:-117.9930967,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91733&quot;,&quot;city&quot;:&quot;South El Monte&quot;,&quot;latitude&quot;:34.0749394,&quot;longitude&quot;:-118.0341611,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90621&quot;,&quot;city&quot;:&quot;Buena Park&quot;,&quot;latitude&quot;:33.8674044,&quot;longitude&quot;:-117.9981387,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90806&quot;,&quot;city&quot;:&quot;Long Beach&quot;,&quot;latitude&quot;:33.8020217,&quot;longitude&quot;:-118.1678543,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90710&quot;,&quot;city&quot;:&quot;Harbor City&quot;,&quot;latitude&quot;:33.7957752,&quot;longitude&quot;:-118.2965121,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92832&quot;,&quot;city&quot;:&quot;Fullerton&quot;,&quot;latitude&quot;:33.8733037,&quot;longitude&quot;:-117.9307584,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90804&quot;,&quot;city&quot;:&quot;Long Beach&quot;,&quot;latitude&quot;:33.7806646,&quot;longitude&quot;:-118.1503026,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92845&quot;,&quot;city&quot;:&quot;Garden Grove&quot;,&quot;latitude&quot;:33.7852683,&quot;longitude&quot;:-118.0273914,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90002&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:33.9287591,&quot;longitude&quot;:-118.2468148,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90638&quot;,&quot;city&quot;:&quot;La Mirada&quot;,&quot;latitude&quot;:33.9045543,&quot;longitude&quot;:-118.0127534,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90660&quot;,&quot;city&quot;:&quot;Pico Rivera&quot;,&quot;latitude&quot;:33.9830688,&quot;longitude&quot;:-118.096735,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90304&quot;,&quot;city&quot;:&quot;Inglewood&quot;,&quot;latitude&quot;:33.9387862,&quot;longitude&quot;:-118.3608046,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90044&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:33.9519253,&quot;longitude&quot;:-118.3082034,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90047&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:33.9519253,&quot;longitude&quot;:-118.3082034,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91304&quot;,&quot;city&quot;:&quot;Canoga Park&quot;,&quot;latitude&quot;:34.1998644,&quot;longitude&quot;:-118.599807,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92804&quot;,&quot;city&quot;:&quot;Anaheim&quot;,&quot;latitude&quot;:33.8177929,&quot;longitude&quot;:-117.9615905,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91007&quot;,&quot;city&quot;:&quot;Arcadia&quot;,&quot;latitude&quot;:34.1260887,&quot;longitude&quot;:-118.054895,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92805&quot;,&quot;city&quot;:&quot;Anaheim&quot;,&quot;latitude&quot;:33.8276052,&quot;longitude&quot;:-117.9073244,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92802&quot;,&quot;city&quot;:&quot;Anaheim&quot;,&quot;latitude&quot;:33.8179838,&quot;longitude&quot;:-117.9275434,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92831&quot;,&quot;city&quot;:&quot;Fullerton&quot;,&quot;latitude&quot;:33.8740731,&quot;longitude&quot;:-117.9026351,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90401&quot;,&quot;city&quot;:&quot;Santa Monica&quot;,&quot;latitude&quot;:34.0199977,&quot;longitude&quot;:-118.5000014,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91732&quot;,&quot;city&quot;:&quot;El Monte&quot;,&quot;latitude&quot;:34.0749394,&quot;longitude&quot;:-118.0341611,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90292&quot;,&quot;city&quot;:&quot;Marina Del Rey&quot;,&quot;latitude&quot;:33.99,&quot;longitude&quot;:-118.46,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90740&quot;,&quot;city&quot;:&quot;Seal Beach&quot;,&quot;latitude&quot;:33.7284052,&quot;longitude&quot;:-118.084295,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90040&quot;,&quot;city&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:33.9930471,&quot;longitude&quot;:-118.153228,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92844&quot;,&quot;city&quot;:&quot;Garden Grove&quot;,&quot;latitude&quot;:33.7636344,&quot;longitude&quot;:-117.9688322,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90266&quot;,&quot;city&quot;:&quot;Manhattan Beach&quot;,&quot;latitude&quot;:33.8600693,&quot;longitude&quot;:-118.3987842,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90670&quot;,&quot;city&quot;:&quot;Santa Fe Springs&quot;,&quot;latitude&quot;:33.95,&quot;longitude&quot;:-118.08,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92683&quot;,&quot;city&quot;:&quot;Westminster&quot;,&quot;latitude&quot;:33.7438299,&quot;longitude&quot;:-118.0019403,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91340&quot;,&quot;city&quot;:&quot;San Fernando&quot;,&quot;latitude&quot;:34.2819461,&quot;longitude&quot;:-118.4389719,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90240&quot;,&quot;city&quot;:&quot;Downey&quot;,&quot;latitude&quot;:33.9372725,&quot;longitude&quot;:-118.1298234,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90822&quot;,&quot;city&quot;:&quot;Long Beach&quot;,&quot;latitude&quot;:33.8020217,&quot;longitude&quot;:-118.1678543,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92806&quot;,&quot;city&quot;:&quot;Anaheim&quot;,&quot;latitude&quot;:33.8606474,&quot;longitude&quot;:-117.8011009,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90402&quot;,&quot;city&quot;:&quot;Santa Monica&quot;,&quot;latitude&quot;:34.0118828,&quot;longitude&quot;:-118.4915504,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91107&quot;,&quot;city&quot;:&quot;Pasadena&quot;,&quot;latitude&quot;:34.1599999,&quot;longitude&quot;:-118.05,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90603&quot;,&quot;city&quot;:&quot;Whittier&quot;,&quot;latitude&quot;:33.9324943,&quot;longitude&quot;:-118.0244639,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90241&quot;,&quot;city&quot;:&quot;Downey&quot;,&quot;latitude&quot;:33.9401088,&quot;longitude&quot;:-118.1331593,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90631&quot;,&quot;city&quot;:&quot;La Habra&quot;,&quot;latitude&quot;:33.9173004,&quot;longitude&quot;:-117.9591341,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91345&quot;,&quot;city&quot;:&quot;Mission Hills&quot;,&quot;latitude&quot;:34.27,&quot;longitude&quot;:-118.47,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91790&quot;,&quot;city&quot;:&quot;West Covina&quot;,&quot;latitude&quot;:34.068839,&quot;longitude&quot;:-117.9281954,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91744&quot;,&quot;city&quot;:&quot;La Puente&quot;,&quot;latitude&quot;:34.0373357,&quot;longitude&quot;:-117.9519585,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90222&quot;,&quot;city&quot;:&quot;Compton&quot;,&quot;latitude&quot;:33.9111458,&quot;longitude&quot;:-118.2351192,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90814&quot;,&quot;city&quot;:&quot;Long Beach&quot;,&quot;latitude&quot;:33.7700504,&quot;longitude&quot;:-118.1937395,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91791&quot;,&quot;city&quot;:&quot;West Covina&quot;,&quot;latitude&quot;:34.0566376,&quot;longitude&quot;:-117.8956062,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90293&quot;,&quot;city&quot;:&quot;Playa Del Rey&quot;,&quot;latitude&quot;:33.97448060000001,&quot;longitude&quot;:-118.4177707,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92835&quot;,&quot;city&quot;:&quot;Fullerton&quot;,&quot;latitude&quot;:33.9041552,&quot;longitude&quot;:-117.9307584,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92821&quot;,&quot;city&quot;:&quot;Brea&quot;,&quot;latitude&quot;:33.9176714,&quot;longitude&quot;:-117.8903877,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91746&quot;,&quot;city&quot;:&quot;La Puente&quot;,&quot;latitude&quot;:34.02,&quot;longitude&quot;:-117.96,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91307&quot;,&quot;city&quot;:&quot;West Hills&quot;,&quot;latitude&quot;:34.2082515,&quot;longitude&quot;:-118.6322268,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92870&quot;,&quot;city&quot;:&quot;Placentia&quot;,&quot;latitude&quot;:33.8802416,&quot;longitude&quot;:-117.8604472,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92865&quot;,&quot;city&quot;:&quot;Orange&quot;,&quot;latitude&quot;:33.7879085,&quot;longitude&quot;:-117.855281,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92655&quot;,&quot;city&quot;:&quot;Midway City&quot;,&quot;latitude&quot;:33.7591757,&quot;longitude&quot;:-117.9897058,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91768&quot;,&quot;city&quot;:&quot;Pomona&quot;,&quot;latitude&quot;:34.055103,&quot;longitude&quot;:-117.7499909,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91724&quot;,&quot;city&quot;:&quot;Covina&quot;,&quot;latitude&quot;:34.0900091,&quot;longitude&quot;:-117.8903397,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91016&quot;,&quot;city&quot;:&quot;Monrovia&quot;,&quot;latitude&quot;:34.1500245,&quot;longitude&quot;:-118.0000121,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92868&quot;,&quot;city&quot;:&quot;Orange&quot;,&quot;latitude&quot;:33.7454725,&quot;longitude&quot;:-117.867653,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91745&quot;,&quot;city&quot;:&quot;Hacienda Heights&quot;,&quot;latitude&quot;:33.9990858,&quot;longitude&quot;:-117.9834738,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92840&quot;,&quot;city&quot;:&quot;Garden Grove&quot;,&quot;latitude&quot;:33.7777748,&quot;longitude&quot;:-117.9507834,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90742&quot;,&quot;city&quot;:&quot;Sunset Beach&quot;,&quot;latitude&quot;:33.721051,&quot;longitude&quot;:-118.0478826,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91763&quot;,&quot;city&quot;:&quot;Montclair&quot;,&quot;latitude&quot;:34.0745742,&quot;longitude&quot;:-117.6962824,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91723&quot;,&quot;city&quot;:&quot;Covina&quot;,&quot;latitude&quot;:34.0948204,&quot;longitude&quot;:-117.9073244,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92649&quot;,&quot;city&quot;:&quot;Huntington Beach&quot;,&quot;latitude&quot;:33.7178819,&quot;longitude&quot;:-118.0704585,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92807&quot;,&quot;city&quot;:&quot;Anaheim&quot;,&quot;latitude&quot;:33.851861,&quot;longitude&quot;:-117.7955187,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92866&quot;,&quot;city&quot;:&quot;Orange&quot;,&quot;latitude&quot;:33.7878196,&quot;longitude&quot;:-117.8553713,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92701&quot;,&quot;city&quot;:&quot;Santa Ana&quot;,&quot;latitude&quot;:33.7454725,&quot;longitude&quot;:-117.867653,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92706&quot;,&quot;city&quot;:&quot;Santa Ana&quot;,&quot;latitude&quot;:33.78659,&quot;longitude&quot;:-117.8750976,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90803&quot;,&quot;city&quot;:&quot;Long Beach&quot;,&quot;latitude&quot;:33.7700504,&quot;longitude&quot;:-118.1937395,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91010&quot;,&quot;city&quot;:&quot;Duarte&quot;,&quot;latitude&quot;:34.1579788,&quot;longitude&quot;:-117.9424743,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92861&quot;,&quot;city&quot;:&quot;Villa Park&quot;,&quot;latitude&quot;:33.8177801,&quot;longitude&quot;:-117.8106269,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91008&quot;,&quot;city&quot;:&quot;Duarte&quot;,&quot;latitude&quot;:34.1624549,&quot;longitude&quot;:-117.9659037,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92614&quot;,&quot;city&quot;:&quot;Irvine&quot;,&quot;latitude&quot;:33.6912614,&quot;longitude&quot;:-117.8223506,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92843&quot;,&quot;city&quot;:&quot;Garden Grove&quot;,&quot;latitude&quot;:33.7777748,&quot;longitude&quot;:-117.9507834,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92660&quot;,&quot;city&quot;:&quot;Newport Beach&quot;,&quot;latitude&quot;:33.63915679999999,&quot;longitude&quot;:-117.8647939,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91001&quot;,&quot;city&quot;:&quot;Altadena&quot;,&quot;latitude&quot;:34.2103962,&quot;longitude&quot;:-118.1239717,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92703&quot;,&quot;city&quot;:&quot;Santa Ana&quot;,&quot;latitude&quot;:33.7246333,&quot;longitude&quot;:-117.9073244,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92782&quot;,&quot;city&quot;:&quot;Tustin&quot;,&quot;latitude&quot;:33.7454725,&quot;longitude&quot;:-117.867653,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92780&quot;,&quot;city&quot;:&quot;Tustin&quot;,&quot;latitude&quot;:33.7456051,&quot;longitude&quot;:-117.8206943,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92612&quot;,&quot;city&quot;:&quot;Irvine&quot;,&quot;latitude&quot;:33.6845673,&quot;longitude&quot;:-117.8265049,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92869&quot;,&quot;city&quot;:&quot;Orange&quot;,&quot;latitude&quot;:33.7877124,&quot;longitude&quot;:-117.8120984,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90802&quot;,&quot;city&quot;:&quot;Long Beach&quot;,&quot;latitude&quot;:33.7415317,&quot;longitude&quot;:-118.1941785,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92617&quot;,&quot;city&quot;:&quot;Irvine&quot;,&quot;latitude&quot;:33.6845673,&quot;longitude&quot;:-117.8265049,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92707&quot;,&quot;city&quot;:&quot;Santa Ana&quot;,&quot;latitude&quot;:33.7169034,&quot;longitude&quot;:-117.8506504,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92708&quot;,&quot;city&quot;:&quot;Fountain Valley&quot;,&quot;latitude&quot;:33.7168761,&quot;longitude&quot;:-117.9600466,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92886&quot;,&quot;city&quot;:&quot;Yorba Linda&quot;,&quot;latitude&quot;:33.9011405,&quot;longitude&quot;:-117.7959713,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91764&quot;,&quot;city&quot;:&quot;Ontario&quot;,&quot;latitude&quot;:34.0739866,&quot;longitude&quot;:-117.6141457,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92602&quot;,&quot;city&quot;:&quot;Irvine&quot;,&quot;latitude&quot;:33.7514861,&quot;longitude&quot;:-117.7549295,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91786&quot;,&quot;city&quot;:&quot;Upland&quot;,&quot;latitude&quot;:34.0952311,&quot;longitude&quot;:-117.6734931,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91024&quot;,&quot;city&quot;:&quot;Sierra Madre&quot;,&quot;latitude&quot;:34.1934312,&quot;longitude&quot;:-118.0478826,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92704&quot;,&quot;city&quot;:&quot;Santa Ana&quot;,&quot;latitude&quot;:33.7246333,&quot;longitude&quot;:-117.9073244,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90731&quot;,&quot;city&quot;:&quot;San Pedro&quot;,&quot;latitude&quot;:33.7349075,&quot;longitude&quot;:-118.3140488,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92604&quot;,&quot;city&quot;:&quot;Irvine&quot;,&quot;latitude&quot;:33.6845673,&quot;longitude&quot;:-117.8265049,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90744&quot;,&quot;city&quot;:&quot;Wilmington&quot;,&quot;latitude&quot;:33.7857948,&quot;longitude&quot;:-118.2643567,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92648&quot;,&quot;city&quot;:&quot;Huntington Beach&quot;,&quot;latitude&quot;:33.6594835,&quot;longitude&quot;:-117.9988026,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92620&quot;,&quot;city&quot;:&quot;Irvine&quot;,&quot;latitude&quot;:33.7073908,&quot;longitude&quot;:-117.7666567,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92880&quot;,&quot;city&quot;:&quot;Corona&quot;,&quot;latitude&quot;:33.9522626,&quot;longitude&quot;:-117.6493515,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91701&quot;,&quot;city&quot;:&quot;Rancho Cucamonga&quot;,&quot;latitude&quot;:34.13566730000001,&quot;longitude&quot;:-117.6141457,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92808&quot;,&quot;city&quot;:&quot;Anaheim&quot;,&quot;latitude&quot;:33.8416068,&quot;longitude&quot;:-117.702148,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91351&quot;,&quot;city&quot;:&quot;Canyon Country&quot;,&quot;latitude&quot;:34.4235425,&quot;longitude&quot;:-118.4720633,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92625&quot;,&quot;city&quot;:&quot;Corona Del Mar&quot;,&quot;latitude&quot;:33.599184,&quot;longitude&quot;:-117.8721676,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92657&quot;,&quot;city&quot;:&quot;Newport Coast&quot;,&quot;latitude&quot;:33.599184,&quot;longitude&quot;:-117.8721676,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92335&quot;,&quot;city&quot;:&quot;Fontana&quot;,&quot;latitude&quot;:34.0922335,&quot;longitude&quot;:-117.435048,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92879&quot;,&quot;city&quot;:&quot;Corona&quot;,&quot;latitude&quot;:33.8551027,&quot;longitude&quot;:-117.5389829,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92610&quot;,&quot;city&quot;:&quot;Foothill Ranch&quot;,&quot;latitude&quot;:33.6447519,&quot;longitude&quot;:-117.6845508,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92662&quot;,&quot;city&quot;:&quot;Newport Beach&quot;,&quot;latitude&quot;:33.6099342,&quot;longitude&quot;:-117.8726469,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91741&quot;,&quot;city&quot;:&quot;Glendora&quot;,&quot;latitude&quot;:34.1194758,&quot;longitude&quot;:-117.848726,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91320&quot;,&quot;city&quot;:&quot;Newbury Park&quot;,&quot;latitude&quot;:34.18,&quot;longitude&quot;:-118.91,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92663&quot;,&quot;city&quot;:&quot;Newport Beach&quot;,&quot;latitude&quot;:33.62145390000001,&quot;longitude&quot;:-117.9236751,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92336&quot;,&quot;city&quot;:&quot;Fontana&quot;,&quot;latitude&quot;:34.103261,&quot;longitude&quot;:-117.4358563,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;93036&quot;,&quot;city&quot;:&quot;Oxnard&quot;,&quot;latitude&quot;:34.2054029,&quot;longitude&quot;:-119.1681373,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;93030&quot;,&quot;city&quot;:&quot;Oxnard&quot;,&quot;latitude&quot;:34.1999903,&quot;longitude&quot;:-119.1800239,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92371&quot;,&quot;city&quot;:&quot;Phelan&quot;,&quot;latitude&quot;:34.4290417,&quot;longitude&quot;:-117.5261025,&quot;status&quot;:&quot;complete&quot;},{&quot;zip&quot;:&quot;91743&quot;,&quot;city&quot;:&quot;Guasti&quot;,&quot;latitude&quot;:34.0646405,&quot;longitude&quot;:-117.5845265,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92628&quot;,&quot;city&quot;:&quot;Costa Mesa&quot;,&quot;latitude&quot;:33.673202,&quot;longitude&quot;:-117.9233294,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91798&quot;,&quot;city&quot;:&quot;Ontario&quot;,&quot;latitude&quot;:34.0652675,&quot;longitude&quot;:-117.5851693,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92728&quot;,&quot;city&quot;:&quot;Fountain Valley&quot;,&quot;latitude&quot;:33.6967434,&quot;longitude&quot;:-117.9120846,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91734&quot;,&quot;city&quot;:&quot;El Monte&quot;,&quot;latitude&quot;:34.0749394,&quot;longitude&quot;:-118.0341611,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91416&quot;,&quot;city&quot;:&quot;Encino&quot;,&quot;latitude&quot;:34.1599833,&quot;longitude&quot;:-118.5000085,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90846&quot;,&quot;city&quot;:&quot;Long Beach&quot;,&quot;latitude&quot;:33.8020217,&quot;longitude&quot;:-118.1678543,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90659&quot;,&quot;city&quot;:&quot;Norwalk&quot;,&quot;latitude&quot;:33.9045574,&quot;longitude&quot;:-118.0784449,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91394&quot;,&quot;city&quot;:&quot;Granada Hills&quot;,&quot;latitude&quot;:34.2801972,&quot;longitude&quot;:-118.4980744,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92684&quot;,&quot;city&quot;:&quot;Westminster&quot;,&quot;latitude&quot;:33.7438299,&quot;longitude&quot;:-118.0019403,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90102&quot;,&quot;city&quot;:&quot;Brylane&quot;,&quot;latitude&quot;:34.0224471,&quot;longitude&quot;:-118.2000277,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90622&quot;,&quot;city&quot;:&quot;Buena Park&quot;,&quot;latitude&quot;:33.8466648,&quot;longitude&quot;:-118.0053395,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90637&quot;,&quot;city&quot;:&quot;La Mirada&quot;,&quot;latitude&quot;:33.9172357,&quot;longitude&quot;:-118.0120086,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92809&quot;,&quot;city&quot;:&quot;Anaheim&quot;,&quot;latitude&quot;:33.8416364,&quot;longitude&quot;:-117.9373297,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92812&quot;,&quot;city&quot;:&quot;Anaheim&quot;,&quot;latitude&quot;:33.8179838,&quot;longitude&quot;:-117.9275434,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90639&quot;,&quot;city&quot;:&quot;La Mirada&quot;,&quot;latitude&quot;:33.90528219999999,&quot;longitude&quot;:-118.0179682,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92899&quot;,&quot;city&quot;:&quot;Anaheim&quot;,&quot;latitude&quot;:33.8606474,&quot;longitude&quot;:-117.8011009,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90632&quot;,&quot;city&quot;:&quot;La Habra&quot;,&quot;latitude&quot;:33.9318591,&quot;longitude&quot;:-117.946137,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92885&quot;,&quot;city&quot;:&quot;Yorba Linda&quot;,&quot;latitude&quot;:33.8663982,&quot;longitude&quot;:-117.8223506,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92834&quot;,&quot;city&quot;:&quot;Fullerton&quot;,&quot;latitude&quot;:33.8740731,&quot;longitude&quot;:-117.9026351,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92864&quot;,&quot;city&quot;:&quot;Orange&quot;,&quot;latitude&quot;:33.8098668,&quot;longitude&quot;:-117.830026,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92711&quot;,&quot;city&quot;:&quot;Santa Ana&quot;,&quot;latitude&quot;:33.7653884,&quot;longitude&quot;:-117.8514524,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;90612&quot;,&quot;city&quot;:&quot;Whittier&quot;,&quot;latitude&quot;:33.9754423,&quot;longitude&quot;:-118.0326781,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91758&quot;,&quot;city&quot;:&quot;Ontario&quot;,&quot;latitude&quot;:34.0420153,&quot;longitude&quot;:-117.6610854,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92857&quot;,&quot;city&quot;:&quot;Orange&quot;,&quot;latitude&quot;:33.8331623,&quot;longitude&quot;:-117.8472816,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92816&quot;,&quot;city&quot;:&quot;Anaheim&quot;,&quot;latitude&quot;:33.8365932,&quot;longitude&quot;:-117.9143012,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92811&quot;,&quot;city&quot;:&quot;Atwood&quot;,&quot;latitude&quot;:33.8684506,&quot;longitude&quot;:-117.8295413,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92619&quot;,&quot;city&quot;:&quot;Irvine&quot;,&quot;latitude&quot;:33.66824210000001,&quot;longitude&quot;:-117.7659237,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92735&quot;,&quot;city&quot;:&quot;Santa Ana&quot;,&quot;latitude&quot;:33.7454725,&quot;longitude&quot;:-117.867653,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92710&quot;,&quot;city&quot;:&quot;Irvine&quot;,&quot;latitude&quot;:33.6845673,&quot;longitude&quot;:-117.8265049,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92698&quot;,&quot;city&quot;:&quot;Aliso Viejo&quot;,&quot;latitude&quot;:33.6588951,&quot;longitude&quot;:-117.8282121,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92859&quot;,&quot;city&quot;:&quot;Orange&quot;,&quot;latitude&quot;:33.8038894,&quot;longitude&quot;:-117.77252,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92697&quot;,&quot;city&quot;:&quot;Irvine&quot;,&quot;latitude&quot;:33.6845673,&quot;longitude&quot;:-117.8265049,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91729&quot;,&quot;city&quot;:&quot;Rancho Cucamonga&quot;,&quot;latitude&quot;:34.099175,&quot;longitude&quot;:-117.5639339,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91785&quot;,&quot;city&quot;:&quot;Upland&quot;,&quot;latitude&quot;:34.1036996,&quot;longitude&quot;:-117.6610854,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91003&quot;,&quot;city&quot;:&quot;Altadena&quot;,&quot;latitude&quot;:34.19,&quot;longitude&quot;:-118.13,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92331&quot;,&quot;city&quot;:&quot;Fontana&quot;,&quot;latitude&quot;:34.08378700000001,&quot;longitude&quot;:-117.4673845,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;93044&quot;,&quot;city&quot;:&quot;Port Hueneme&quot;,&quot;latitude&quot;:34.1451995,&quot;longitude&quot;:-119.1942983,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92803&quot;,&quot;city&quot;:&quot;Anaheim&quot;,&quot;latitude&quot;:33.8365932,&quot;longitude&quot;:-117.9143012,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91327&quot;,&quot;city&quot;:&quot;Northridge&quot;,&quot;latitude&quot;:34.27,&quot;longitude&quot;:-118.54,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92863&quot;,&quot;city&quot;:&quot;Orange&quot;,&quot;latitude&quot;:33.8098668,&quot;longitude&quot;:-117.830026,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92709&quot;,&quot;city&quot;:&quot;El Toro Marine Corps Air Sta&quot;,&quot;latitude&quot;:33.6667964,&quot;longitude&quot;:-117.7604266,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;92650&quot;,&quot;city&quot;:&quot;East Irvine&quot;,&quot;latitude&quot;:33.66824210000001,&quot;longitude&quot;:-117.7659237,&quot;status&quot;:&quot;truncated&quot;},{&quot;zip&quot;:&quot;91372&quot;,&quot;city&quot;:&quot;Calabasas&quot;,&quot;latitude&quot;:34.1685035,&quot;longitude&quot;:-118.6058267,&quot;status&quot;:&quot;truncated&quot;}],&quot;cities&quot;:[{&quot;name&quot;:&quot;Burbank&quot;,&quot;latitude&quot;:34.1717,&quot;longitude&quot;:-118.3231},{&quot;name&quot;:&quot;Los Angeles&quot;,&quot;latitude&quot;:34.0614,&quot;longitude&quot;:-118.2385},{&quot;name&quot;:&quot;Glendale&quot;,&quot;latitude&quot;:34.1716,&quot;longitude&quot;:-118.2899},{&quot;name&quot;:&quot;Pasadena&quot;,&quot;latitude&quot;:34.1468,&quot;longitude&quot;:-118.1391},{&quot;name&quot;:&quot;Long Beach&quot;,&quot;latitude&quot;:33.7706,&quot;longitude&quot;:-118.182},{&quot;name&quot;:&quot;Santa Ana&quot;,&quot;latitude&quot;:33.7523,&quot;longitude&quot;:-117.8541},{&quot;name&quot;:&quot;Oxnard&quot;,&quot;latitude&quot;:34.2141,&quot;longitude&quot;:-119.175},{&quot;name&quot;:&quot;Camarillo&quot;,&quot;latitude&quot;:34.2313,&quot;longitude&quot;:-119.0464},{&quot;name&quot;:&quot;Valencia&quot;,&quot;latitude&quot;:34.3985,&quot;longitude&quot;:-118.5535},{&quot;name&quot;:&quot;Ontario&quot;,&quot;latitude&quot;:34.0763,&quot;longitude&quot;:-117.6254},{&quot;name&quot;:&quot;Rancho Cucamonga&quot;,&quot;latitude&quot;:34.107,&quot;longitude&quot;:-117.5941},{&quot;name&quot;:&quot;Agua Dulce&quot;,&quot;latitude&quot;:34.4963443,&quot;longitude&quot;:-118.3261969},{&quot;name&quot;:&quot;Mount Baldy&quot;,&quot;latitude&quot;:34.2363809,&quot;longitude&quot;:-117.6589752}],&quot;counties&quot;:{&quot;type&quot;:&quot;FeatureCollection&quot;,&quot;features&quot;:[{&quot;type&quot;:&quot;Feature&quot;,&quot;properties&quot;:{&quot;name&quot;:&quot;San Bernardino&quot;},&quot;geometry&quot;:{&quot;type&quot;:&quot;Polygon&quot;,&quot;coordinates&quot;:[[[-117.6663,34.8228],[-117.6304,34.8219],[-117.6304,35.4507],[-117.634,35.6518],[-117.6161,35.681],[-117.652,35.681],[-117.634,35.7102],[-117.634,35.7969],[-116.6506,35.7952],[-115.7353,35.7935],[-115.7353,35.809],[-115.6491,35.8098],[-115.4122,35.6251],[-115.161,35.4241],[-114.6334,35.0015],[-114.637,34.8752],[-114.5795,34.8262],[-114.5544,34.7669],[-114.4719,34.7128],[-114.3785,34.5075],[-114.3857,34.4577],[-114.339,34.4517],[-114.2278,34.3657],[-114.1775,34.3494],[-114.138,34.303],[-114.1345,34.2609],[-114.2242,34.2051],[-114.2278,34.1888],[-114.2888,34.1707],[-114.3247,34.1364],[-114.4216,34.1037],[-114.436,34.0797],[-115.3153,34.078],[-115.3153,34.0341],[-116.5106,34.0333],[-116.9305,34.0341],[-116.9305,34.0049],[-117.2141,34.0041],[-117.2248,34.0187],[-117.372,34.0195],[-117.3756,34.0341],[-117.5586,34.0333],[-117.5586,33.9886],[-117.6089,33.9714],[-117.6125,33.925],[-117.6556,33.9242],[-117.6735,33.8709],[-117.7848,33.9465],[-117.8027,33.9757],[-117.7668,34.023],[-117.7309,34.0213],[-117.6771,34.1664],[-117.6448,34.2893],[-117.652,34.3391],[-117.6663,34.5582],[-117.6663,34.8228]]]}},{&quot;type&quot;:&quot;Feature&quot;,&quot;properties&quot;:{&quot;name&quot;:&quot;Ventura&quot;},&quot;geometry&quot;:{&quot;type&quot;:&quot;MultiPolygon&quot;,&quot;coordinates&quot;:[[[[-119.4323,34.029],[-119.4035,34.0144],[-119.3641,34.0264],[-119.3641,34.0006],[-119.4251,33.9972],[-119.4574,34.0152],[-119.4323,34.029]]],[[[-119.4789,34.3769],[-119.4466,34.4044],[-119.443,34.4637],[-119.443,34.9009],[-119.382,34.9009],[-119.382,34.8795],[-119.2779,34.8795],[-119.2779,34.8571],[-119.242,34.858],[-119.242,34.8142],[-118.9764,34.8125],[-118.9764,34.791],[-118.8831,34.791],[-118.6534,34.3237],[-118.6318,34.242],[-118.6677,34.2369],[-118.6677,34.1682],[-118.7898,34.1682],[-118.9405,34.0754],[-118.9441,34.0453],[-119.0877,34.0986],[-119.1308,34.1003],[-119.2169,34.1458],[-119.2779,34.267],[-119.3138,34.2755],[-119.3748,34.3211],[-119.3892,34.3185],[-119.461,34.3743],[-119.4789,34.3769]]],[[[-119.5794,33.279],[-119.5292,33.285],[-119.4574,33.255],[-119.4287,33.2284],[-119.4753,33.2155],[-119.5471,33.2335],[-119.5794,33.279]]]]}},{&quot;type&quot;:&quot;Feature&quot;,&quot;properties&quot;:{&quot;name&quot;:&quot;Orange&quot;},&quot;geometry&quot;:{&quot;type&quot;:&quot;Polygon&quot;,&quot;coordinates&quot;:[[[-118.115,33.7429],[-118.0934,33.7584],[-118.0863,33.8031],[-118.0288,33.8735],[-117.975,33.9061],[-117.975,33.9457],[-117.7848,33.9465],[-117.6735,33.8709],[-117.5802,33.7696],[-117.5371,33.7575],[-117.5335,33.7103],[-117.4761,33.7034],[-117.4115,33.6587],[-117.512,33.5342],[-117.5084,33.505],[-117.5084,33.4697],[-117.5802,33.4543],[-117.5945,33.3873],[-117.6304,33.4302],[-117.6843,33.462],[-117.7166,33.4603],[-117.7848,33.5419],[-117.8781,33.5926],[-117.9283,33.6055],[-118.0001,33.6544],[-118.0647,33.7111],[-118.115,33.7429]]]}},{&quot;type&quot;:&quot;Feature&quot;,&quot;properties&quot;:{&quot;name&quot;:&quot;Kern&quot;},&quot;geometry&quot;:{&quot;type&quot;:&quot;Polygon&quot;,&quot;coordinates&quot;:[[[-120.1932,35.7892],[-119.5363,35.7892],[-118.8041,35.7901],[-118.377,35.7901],[-118.0683,35.7918],[-118.0073,35.7892],[-117.9248,35.7866],[-117.9248,35.7978],[-117.634,35.7969],[-117.634,35.7102],[-117.652,35.681],[-117.6161,35.681],[-117.634,35.6518],[-117.6304,35.4507],[-117.6304,34.8219],[-117.6663,34.8228],[-118.3268,34.8193],[-118.8544,34.8176],[-118.8831,34.791],[-118.9764,34.791],[-118.9764,34.8125],[-119.242,34.8142],[-119.242,34.858],[-119.2779,34.8571],[-119.2779,34.8795],[-119.382,34.8795],[-119.382,34.9009],[-119.443,34.9009],[-119.4717,34.9009],[-119.4717,35.077],[-119.4897,35.0917],[-119.5615,35.0874],[-119.5543,35.1801],[-119.6656,35.175],[-119.6656,35.2626],[-119.8091,35.2635],[-119.8091,35.3511],[-119.8809,35.3511],[-119.8809,35.4387],[-119.9958,35.4396],[-120.0317,35.4988],[-120.0855,35.5263],[-120.0855,35.6148],[-120.1932,35.614],[-120.1932,35.7892]]]}},{&quot;type&quot;:&quot;Feature&quot;,&quot;properties&quot;:{&quot;name&quot;:&quot;Riverside&quot;},&quot;geometry&quot;:{&quot;type&quot;:&quot;Polygon&quot;,&quot;coordinates&quot;:[[[-114.436,34.0797],[-114.436,34.0281],[-114.5365,33.9285],[-114.5113,33.9113],[-114.5042,33.8641],[-114.5257,33.8589],[-114.5293,33.8151],[-114.5042,33.7601],[-114.497,33.6965],[-114.5257,33.6862],[-114.54,33.5917],[-114.5257,33.5522],[-114.558,33.5316],[-114.6226,33.4569],[-114.6262,33.4337],[-115.441,33.4285],[-115.4697,33.4268],[-116.0834,33.4259],[-117.031,33.4268],[-117.2392,33.4319],[-117.2428,33.4491],[-117.372,33.4904],[-117.3648,33.505],[-117.5084,33.505],[-117.512,33.5342],[-117.4115,33.6587],[-117.4761,33.7034],[-117.5335,33.7103],[-117.5371,33.7575],[-117.5802,33.7696],[-117.6735,33.8709],[-117.6556,33.9242],[-117.6125,33.925],[-117.6089,33.9714],[-117.5586,33.9886],[-117.5586,34.0333],[-117.3756,34.0341],[-117.372,34.0195],[-117.2248,34.0187],[-117.2141,34.0041],[-116.9305,34.0049],[-116.9305,34.0341],[-116.5106,34.0333],[-115.3153,34.0341],[-115.3153,34.078],[-114.436,34.0797]]]}},{&quot;type&quot;:&quot;Feature&quot;,&quot;properties&quot;:{&quot;name&quot;:&quot;Los Angeles&quot;},&quot;geometry&quot;:{&quot;type&quot;:&quot;MultiPolygon&quot;,&quot;coordinates&quot;:[[[[-118.6031,33.4783],[-118.5457,33.474],[-118.4452,33.4285],[-118.3698,33.4096],[-118.3662,33.3881],[-118.3088,33.3357],[-118.3268,33.2988],[-118.3734,33.3203],[-118.4667,33.3263],[-118.4883,33.3564],[-118.4883,33.4199],[-118.5601,33.4337],[-118.6031,33.4783]]],[[[-118.6067,33.0308],[-118.5744,33.0342],[-118.4955,32.9337],[-118.3519,32.822],[-118.3878,32.8255],[-118.4273,32.8066],[-118.4883,32.8444],[-118.5349,32.9062],[-118.5852,33.0084],[-118.6067,33.0308]]],[[[-118.8831,34.791],[-118.8544,34.8176],[-118.3268,34.8193],[-117.6663,34.8228],[-117.6663,34.5582],[-117.652,34.3391],[-117.6448,34.2893],[-117.6771,34.1664],[-117.7309,34.0213],[-117.7668,34.023],[-117.8027,33.9757],[-117.7848,33.9465],[-117.975,33.9457],[-117.975,33.9061],[-118.0288,33.8735],[-118.0863,33.8031],[-118.0934,33.7584],[-118.115,33.7429],[-118.176,33.7635],[-118.1832,33.7232],[-118.2586,33.7034],[-118.3232,33.7154],[-118.3591,33.7369],[-118.4129,33.7421],[-118.4273,33.7747],[-118.3949,33.8039],[-118.3914,33.8409],[-118.4416,33.9405],[-118.4811,33.9955],[-118.5421,34.0384],[-118.6677,34.0393],[-118.7467,34.0324],[-118.8041,34.0015],[-118.8544,34.0341],[-118.9441,34.0453],[-118.9405,34.0754],[-118.7898,34.1682],[-118.6677,34.1682],[-118.6677,34.2369],[-118.6318,34.242],[-118.6534,34.3237],[-118.8831,34.791]]]]}}]}}&lt;/script&gt;
+&lt;/div&gt;
+&lt;style&gt;
+#expansion-scan-preview #radius-map-field{position:relative;overflow:hidden;touch-action:none}
+#expansion-scan-preview .map-svg{display:block;width:100%;font:inherit}
+#expansion-scan-preview .map-svg text{fill:var(--foreground);font-family:inherit;paint-order:stroke;stroke:var(--background);stroke-width:3px;stroke-linejoin:round}
+#expansion-scan-preview .county-land{fill:var(--muted);fill-opacity:.55;stroke:var(--border);stroke-width:.7}
+#expansion-scan-preview .radius-boundary{fill:none;stroke:var(--foreground);stroke-width:1.4}
+#expansion-scan-preview .past-point{fill:none;stroke:var(--muted-foreground);stroke-width:1;opacity:.55}
+#expansion-scan-preview .ready-point{fill:var(--viz-series-1);stroke:var(--background);stroke-width:1}
+#expansion-scan-preview .review-point{fill:var(--viz-series-2);stroke:var(--background);stroke-width:1}
+#expansion-scan-preview .search-circle{fill:var(--viz-series-1);fill-opacity:.025;stroke:var(--viz-series-1);stroke-opacity:.13;stroke-width:.5}
+#expansion-scan-preview .selected-point{fill:none;stroke:var(--foreground);stroke-width:2}
+&lt;/style&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(function(){
+ const root=document.getElementById(&#x27;expansion-scan-preview&#x27;);
+ const data=JSON.parse(root.querySelector(&#x27;#radius-map-data&#x27;).textContent);
+ const field=root.querySelector(&#x27;#radius-map-field&#x27;),detail=root.querySelector(&#x27;#radius-map-detail&#x27;);
+ const showPast=root.querySelector(&#x27;#radius-map-existing&#x27;),showCircles=root.querySelector(&#x27;#radius-map-circles&#x27;),area=root.querySelector(&#x27;#radius-map-area&#x27;);
+ const centerSelect=root.querySelector(&#x27;#radius-map-center&#x27;);
+ const saved=window.openai?.widgetState||{};
+ let transform=d3.zoomIdentity,projection,svg,group,width,height,selected=null;
+ const regions={core:[-118.28,34.03,3.5],valley:[-118.43,34.19,3.8],east:[-117.92,34.08,3.2],south:[-118.01,33.78,3],west:[-118.98,34.24,3]};
+ showPast.checked=!!saved.privateContent?.showPast;showCircles.checked=!!saved.privateContent?.showCircles;
+ const save=()=&gt;window.openai?.setWidgetState?.({modelContent:{selected_zip:selected?.zip||null,area:area.value},privateContent:{showPast:showPast.checked,showCircles:showCircles.checked}}).catch(()=&gt;{});
+ const circle=(miles)=&gt;d3.geoCircle().center([data.origin.longitude,data.origin.latitude]).radius(miles/3958.8*180/Math.PI)();
+ const updateMarks=()=&gt;{
+   group.selectAll(&#x27;.past-point&#x27;).attr(&#x27;r&#x27;,3/transform.k);
+   group.selectAll(&#x27;.ready-point&#x27;).attr(&#x27;r&#x27;,4.8/transform.k);
+   group.selectAll(&#x27;.review-point&#x27;).attr(&#x27;d&#x27;,d3.symbol().type(d3.symbolTriangle).size(65/(transform.k*transform.k)));
+   group.selectAll(&#x27;.city-label&#x27;).attr(&#x27;font-size&#x27;,12/transform.k).attr(&#x27;dx&#x27;,6/transform.k).attr(&#x27;dy&#x27;,-6/transform.k).style(&#x27;stroke-width&#x27;,3/transform.k);
+   const occupied=[];
+   group.selectAll(&#x27;.city-label&#x27;).each(function(p){const xy=transform.apply(projection([p.longitude,p.latitude]));const labelWidth=p.name.length*7;let chosen=null;for(const dy of [-6,14,-24,32]){const box={x:xy[0]+6,y:xy[1]+dy-12,w:labelWidth,h:16};if(box.x&lt;2||box.y&lt;2||box.x+box.w&gt;width-2||box.y+box.h&gt;height-2)continue;if(occupied.some(b=&gt;box.x&lt;b.x+b.w+4&amp;&amp;box.x+box.w+4&gt;b.x&amp;&amp;box.y&lt;b.y+b.h+4&amp;&amp;box.y+box.h+4&gt;b.y))continue;chosen={box,dy};break;}d3.select(this).style(&#x27;display&#x27;,chosen?null:&#x27;none&#x27;);if(chosen){occupied.push(chosen.box);d3.select(this).attr(&#x27;dy&#x27;,chosen.dy/transform.k);}});
+   group.selectAll(&#x27;.selected-point&#x27;).attr(&#x27;r&#x27;,9/transform.k);
+ };
+ const zoom=d3.zoom().scaleExtent([1,9]).on(&#x27;zoom&#x27;,event=&gt;{transform=event.transform;group.attr(&#x27;transform&#x27;,transform);updateMarks();});
+ for(const point of [...data.ready.map(p=&gt;({...p,kind:&#x27;ready&#x27;})),...data.review.map(p=&gt;({...p,kind:&#x27;review&#x27;}))].sort((a,b)=&gt;a.zip.localeCompare(b.zip))){const option=document.createElement(&#x27;option&#x27;);option.value=point.zip;option.textContent=point.zip+&#x27; · &#x27;+point.city;centerSelect.append(option);}
+ function pick(point){selected=point;detail.textContent=`${point.zip} · ${point.city} · ${point.kind===&#x27;ready&#x27;?&#x27;Proposed initial search&#x27;:point.kind===&#x27;review&#x27;?&#x27;Conditional follow-up&#x27;:point.status===&#x27;truncated&#x27;?&#x27;Previously capped at 300&#x27;:point.status===&#x27;complete&#x27;?&#x27;Previously completed&#x27;:&#x27;Previously unfinished&#x27;}${point.rank?&#x27; · Scan order &#x27;+point.rank:&#x27;&#x27;}`;drawSelection();save();}
+ function drawSelection(){group.selectAll(&#x27;.selected-point&#x27;).remove();if(selected){const p=projection([selected.longitude,selected.latitude]);group.append(&#x27;circle&#x27;).attr(&#x27;class&#x27;,&#x27;selected-point&#x27;).attr(&#x27;cx&#x27;,p[0]).attr(&#x27;cy&#x27;,p[1]).attr(&#x27;r&#x27;,9/transform.k).attr(&#x27;pointer-events&#x27;,&#x27;none&#x27;);}}
+ function render(){
+  width=Math.max(300,field.clientWidth);height=Math.round(Math.min(640,Math.max(430,width*.78)));
+  field.replaceChildren();svg=d3.select(field).append(&#x27;svg&#x27;).attr(&#x27;class&#x27;,&#x27;map-svg&#x27;).attr(&#x27;viewBox&#x27;,`0 0 ${width} ${height}`).attr(&#x27;role&#x27;,&#x27;img&#x27;).attr(&#x27;aria-label&#x27;,&#x27;Zoomable map of all remaining collection search centers within fifty miles of Burbank.&#x27;);
+  projection=d3.geoMercator().fitExtent([[12,12],[width-12,height-12]],circle(56));
+  const path=d3.geoPath(projection);group=svg.append(&#x27;g&#x27;);
+  group.selectAll(&#x27;.county-land&#x27;).data(data.counties.features).join(&#x27;path&#x27;).attr(&#x27;class&#x27;,&#x27;county-land&#x27;).attr(&#x27;d&#x27;,path);
+  group.append(&#x27;path&#x27;).datum(circle(50)).attr(&#x27;class&#x27;,&#x27;radius-boundary&#x27;).attr(&#x27;d&#x27;,path);
+  if(showCircles.checked)group.selectAll(&#x27;.search-circle&#x27;).data(data.ready).join(&#x27;path&#x27;).attr(&#x27;class&#x27;,&#x27;search-circle&#x27;).attr(&#x27;d&#x27;,p=&gt;path(d3.geoCircle().center([p.longitude,p.latitude]).radius(5/3958.8*180/Math.PI)()));
+  const points=[...data.ready.map(p=&gt;({...p,kind:&#x27;ready&#x27;})),...data.review.map(p=&gt;({...p,kind:&#x27;review&#x27;})),...(showPast.checked?data.existing.map(p=&gt;({...p,kind:&#x27;past&#x27;})):[])];
+  for(const p of points){const xy=projection([p.longitude,p.latitude]);const mark=group.append(p.kind===&#x27;review&#x27;?&#x27;path&#x27;:&#x27;circle&#x27;).datum(p).attr(&#x27;class&#x27;,p.kind===&#x27;ready&#x27;?&#x27;ready-point&#x27;:p.kind===&#x27;review&#x27;?&#x27;review-point&#x27;:&#x27;past-point&#x27;);if(p.kind===&#x27;review&#x27;)mark.attr(&#x27;transform&#x27;,`translate(${xy[0]},${xy[1]})`);else mark.attr(&#x27;cx&#x27;,xy[0]).attr(&#x27;cy&#x27;,xy[1]);}
+  group.selectAll(&#x27;.city-label&#x27;).data(data.cities).join(&#x27;text&#x27;).attr(&#x27;class&#x27;,&#x27;city-label&#x27;).attr(&#x27;x&#x27;,p=&gt;projection([p.longitude,p.latitude])[0]).attr(&#x27;y&#x27;,p=&gt;projection([p.longitude,p.latitude])[1]).text(p=&gt;p.name);
+  svg.call(zoom).call(zoom.transform,transform);
+  svg.on(&#x27;click.select&#x27;,event=&gt;{if(event.defaultPrevented)return;const [x,y]=d3.pointer(event,svg.node());const local=transform.invert([x,y]);let near=null,distance=Infinity;for(const p of points){const q=projection([p.longitude,p.latitude]);const d=Math.hypot(q[0]-local[0],q[1]-local[1])*transform.k;if(d&lt;distance){distance=d;near=p;}}if(near&amp;&amp;distance&lt;24)pick(near);});
+  drawSelection();
+ }
+ function goRegion(){const r=regions[area.value];if(!r){svg.call(zoom.transform,d3.zoomIdentity);return;}const p=projection([r[0],r[1]]);svg.call(zoom.transform,d3.zoomIdentity.translate(width/2,height/2).scale(r[2]).translate(-p[0],-p[1]));save();}
+ area.onchange=goRegion;root.querySelector(&#x27;#radius-map-plus&#x27;).onclick=()=&gt;svg.call(zoom.scaleBy,1.5);root.querySelector(&#x27;#radius-map-minus&#x27;).onclick=()=&gt;svg.call(zoom.scaleBy,1/1.5);root.querySelector(&#x27;#radius-map-reset&#x27;).onclick=()=&gt;{area.value=&#x27;overview&#x27;;svg.call(zoom.transform,d3.zoomIdentity);save();};
+ centerSelect.onchange=()=&gt;{const point=data.ready.find(p=&gt;p.zip===centerSelect.value)||data.review.find(p=&gt;p.zip===centerSelect.value);if(!point)return;pick({...point,kind:data.ready.some(p=&gt;p.zip===point.zip)?&#x27;ready&#x27;:&#x27;review&#x27;});const p=projection([point.longitude,point.latitude]);svg.call(zoom.transform,d3.zoomIdentity.translate(width/2,height/2).scale(5).translate(-p[0],-p[1]));};
+ showPast.onchange=()=&gt;{render();save();};showCircles.onchange=()=&gt;{render();save();};
+ new ResizeObserver(()=&gt;render()).observe(field);
+ render();
+})();
+&lt;/script&gt;
+
+&lt;script src=&quot;https://unpkg.com/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/@floating-ui/dom@1.7.4/dist/floating-ui.dom.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  if (window.FloatingUIDOM == null) {
+    return;
+  }
+  const { autoUpdate, computePosition, flip, offset, shift, size } =
+    window.FloatingUIDOM;
+  const tooltipPlacements = new Set([&quot;top&quot;, &quot;right&quot;, &quot;bottom&quot;, &quot;left&quot;]);
+  const tooltipId = `codex-visualization-tooltip-${
+    window.crypto?.randomUUID?.() ?? Date.now().toString(36)
+  }`;
+  const tooltipGap = 5;
+  const hoverDelay = 700;
+  const skipDelay = 300;
+  let activeTrigger = null;
+  let pendingTrigger = null;
+  let tooltip = null;
+  let openTimeout = null;
+  let autoUpdateCleanup = null;
+  let positionRequest = 0;
+  let skipDelayUntil = 0;
+  let lastPointerWasTouch = false;
+  let pinnedByTouch = false;
+
+  const getTrigger = (event) =&gt; {
+    for (const target of event.composedPath()) {
+      if (target?.nodeType === Node.ELEMENT_NODE) {
+        const trigger = target.closest(&quot;[data-tooltip]&quot;);
+        if (trigger) return trigger;
+      }
+    }
+    return null;
+  };
+  const containsTarget = (trigger, target) =&gt;
+    target?.nodeType != null &amp;&amp; trigger.contains(target);
+  const getContent = (trigger) =&gt;
+    trigger.getAttribute(&quot;data-tooltip&quot;)?.trim() ?? &quot;&quot;;
+  const getPlacement = (trigger) =&gt; {
+    const placement = trigger.getAttribute(&quot;data-tooltip-placement&quot;);
+    return tooltipPlacements.has(placement) ? placement : &quot;top&quot;;
+  };
+  const getTooltip = () =&gt; {
+    if (tooltip == null) {
+      tooltip = document.createElement(&quot;div&quot;);
+      tooltip.id = tooltipId;
+      tooltip.className = &quot;tooltip&quot;;
+      tooltip.setAttribute(&quot;role&quot;, &quot;tooltip&quot;);
+    }
+    return tooltip;
+  };
+  const setDescribedBy = (trigger, described) =&gt; {
+    const ids = new Set(
+      (trigger.getAttribute(&quot;aria-describedby&quot;) ?? &quot;&quot;)
+        .split(/\s+/)
+        .filter(Boolean),
+    );
+    if (described) {
+      ids.add(tooltipId);
+    } else {
+      ids.delete(tooltipId);
+    }
+    if (ids.size === 0) {
+      trigger.removeAttribute(&quot;aria-describedby&quot;);
+    } else {
+      trigger.setAttribute(&quot;aria-describedby&quot;, [...ids].join(&quot; &quot;));
+    }
+  };
+  const clearOpenTimeout = () =&gt; {
+    if (openTimeout != null) {
+      window.clearTimeout(openTimeout);
+      openTimeout = null;
+    }
+    pendingTrigger = null;
+  };
+  const closeTooltip = (activateSkipDelay = true) =&gt; {
+    clearOpenTimeout();
+    pinnedByTouch = false;
+    positionRequest += 1;
+    autoUpdateCleanup?.();
+    autoUpdateCleanup = null;
+    if (activeTrigger == null) {
+      return;
+    }
+    setDescribedBy(activeTrigger, false);
+    activeTrigger = null;
+    tooltip?.remove();
+    if (activateSkipDelay) {
+      skipDelayUntil = Date.now() + skipDelay;
+    }
+  };
+  const updatePosition = (trigger, floating) =&gt; {
+    const request = ++positionRequest;
+    void computePosition(trigger, floating, {
+      middleware: [
+        offset(tooltipGap),
+        flip({ padding: tooltipGap }),
+        shift({ padding: tooltipGap }),
+        size({
+          padding: tooltipGap,
+          apply({ availableHeight, availableWidth, elements }) {
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-width&quot;,
+              `${Math.max(0, availableWidth)}px`,
+            );
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-height&quot;,
+              `${Math.max(0, availableHeight)}px`,
+            );
+          },
+        }),
+      ],
+      placement: getPlacement(trigger),
+      strategy: &quot;fixed&quot;,
+    })
+      .then(({ x, y }) =&gt; {
+        if (activeTrigger !== trigger || request !== positionRequest) {
+          return;
+        }
+        const scale = window.devicePixelRatio || 1;
+        floating.style.transform = `translate(${Math.round(x * scale) / scale}px, ${Math.round(y * scale) / scale}px)`;
+        floating.style.visibility = &quot;visible&quot;;
+      })
+      .catch(() =&gt; {
+        if (activeTrigger === trigger &amp;&amp; request === positionRequest) {
+          closeTooltip(false);
+        }
+      });
+  };
+  const openTooltip = (trigger) =&gt; {
+    const content = getContent(trigger);
+    if (!trigger.isConnected || content.length === 0) {
+      return;
+    }
+    clearOpenTimeout();
+    if (activeTrigger === trigger) {
+      return;
+    }
+    closeTooltip();
+    const floating = getTooltip();
+    floating.textContent = content;
+    floating.style.visibility = &quot;hidden&quot;;
+    floating.style.transform = &quot;translate(0, 0)&quot;;
+    document.body.appendChild(floating);
+    activeTrigger = trigger;
+    setDescribedBy(trigger, true);
+    autoUpdateCleanup = autoUpdate(trigger, floating, () =&gt; {
+      updatePosition(trigger, floating);
+    });
+  };
+  const requestOpen = (trigger, immediate = false) =&gt; {
+    if (
+      getContent(trigger).length === 0 ||
+      activeTrigger === trigger ||
+      pendingTrigger === trigger
+    ) {
+      return;
+    }
+    clearOpenTimeout();
+    pendingTrigger = trigger;
+    const delay =
+      immediate || activeTrigger != null || Date.now() &lt; skipDelayUntil
+        ? 0
+        : hoverDelay;
+    if (delay === 0) {
+      openTooltip(trigger);
+      return;
+    }
+    openTimeout = window.setTimeout(() =&gt; {
+      openTimeout = null;
+      pendingTrigger = null;
+      openTooltip(trigger);
+    }, delay);
+  };
+  const handlePointerOpen = (event) =&gt; {
+    if (event.pointerType === &quot;touch&quot;) {
+      return;
+    }
+    const trigger = getTrigger(event);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    requestOpen(trigger);
+  };
+  const handlePointer = (event) =&gt; {
+    lastPointerWasTouch =
+      event.type === &quot;pointerdown&quot; &amp;&amp; event.pointerType === &quot;touch&quot;;
+  };
+  const handleTouchClick = (event) =&gt; {
+    const isTouch = event.pointerType === &quot;touch&quot; || lastPointerWasTouch;
+    lastPointerWasTouch = false;
+    if (!isTouch || event.detail === 0) {
+      return;
+    }
+    const trigger = getTrigger(event);
+    if (
+      trigger == null ||
+      !trigger.isConnected ||
+      getContent(trigger).length === 0 ||
+      (pinnedByTouch &amp;&amp; activeTrigger === trigger)
+    ) {
+      if (pinnedByTouch) {
+        closeTooltip();
+      }
+      return;
+    }
+    openTooltip(trigger);
+    pinnedByTouch = activeTrigger === trigger;
+    window.setTimeout(() =&gt; {
+      if (activeTrigger === trigger &amp;&amp; !trigger.isConnected) {
+        closeTooltip(false);
+      }
+    }, 0);
+  };
+  const handleLeave = (event) =&gt; {
+    if (pinnedByTouch) {
+      return;
+    }
+    const trigger = getTrigger(event);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const handleFocusIn = (event) =&gt; {
+    const trigger = getTrigger(event);
+    if (trigger?.matches(&quot;:focus-visible&quot;)) {
+      requestOpen(trigger, true);
+    }
+  };
+  const handleKeyDown = (event) =&gt; {
+    if (event.key === &quot;Escape&quot;) {
+      closeTooltip();
+    }
+  };
+  const handleContextMenu = (event) =&gt; {
+    lastPointerWasTouch = false;
+    const trigger = getTrigger(event);
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const handlers = {
+    pointerover: handlePointerOpen,
+    pointerdown: handlePointer,
+    pointercancel: handlePointer,
+    click: handleTouchClick,
+    pointerout: handleLeave,
+    focusin: handleFocusIn,
+    focusout: handleLeave,
+    keydown: handleKeyDown,
+    contextmenu: handleContextMenu,
+  };
+  const roots = new Map();
+  const handledEvents = new WeakSet();
+  const handleEvent = (event) =&gt; {
+    if (handledEvents.has(event)) return;
+    handledEvents.add(event);
+    handlers[event.type](event);
+  };
+  const discoverRoots = (node) =&gt; {
+    if (node.shadowRoot) listen(node.shadowRoot);
+    for (const element of node.querySelectorAll(&quot;*&quot;)) {
+      if (element.shadowRoot) listen(element.shadowRoot);
+    }
+  };
+  const listen = (root) =&gt; {
+    if (roots.has(root)) return;
+    for (const type of Object.keys(handlers)) root.addEventListener(type, handleEvent);
+    const observer = new window.MutationObserver((records) =&gt; {
+      for (const { addedNodes } of records) {
+        for (const node of addedNodes) {
+          if (node.nodeType === Node.ELEMENT_NODE) discoverRoots(node);
+        }
+      }
+      for (const [root, cleanup] of roots) {
+        if (root.host &amp;&amp; !root.host.isConnected) {
+          cleanup();
+          roots.delete(root);
+        }
+      }
+      if (activeTrigger &amp;&amp; !activeTrigger.isConnected) closeTooltip(false);
+    });
+    observer.observe(root, { childList: true, subtree: true });
+    roots.set(root, () =&gt; {
+      observer.disconnect();
+      for (const type of Object.keys(handlers)) root.removeEventListener(type, handleEvent);
+    });
+    discoverRoots(root);
+  };
+  const destroy = () =&gt; {
+    closeTooltip(false);
+    lastPointerWasTouch = false;
+    for (const cleanup of roots.values()) cleanup();
+    roots.clear();
+    tooltip = null;
+  };
+
+  // Events between children of one shadow root never reach the document.
+  listen(document);
+  window.addEventListener(&quot;pagehide&quot;, destroy, { once: true });
+})();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-tabs&quot;&gt;
+(() =&gt; {
+  const selector = &#x27;.nav[role=&quot;tablist&quot;] [role=&quot;tab&quot;]&#x27;;
+  const disabled = &#x27;:disabled,[aria-disabled=&quot;true&quot;]&#x27;;
+  const selectTab = (selected) =&gt; {
+    const panelId = selected.getAttribute(&quot;aria-controls&quot;);
+    for (const tab of selected.closest(&#x27;[role=&quot;tablist&quot;]&#x27;).querySelectorAll(&#x27;[role=&quot;tab&quot;]&#x27;)) {
+      const active = tab === selected;
+      tab.classList.toggle(&quot;active&quot;, active);
+      tab.setAttribute(&quot;aria-selected&quot;, String(active));
+      const id = tab.getAttribute(&quot;aria-controls&quot;);
+      const panel = id &amp;&amp; document.getElementById(id);
+      if (panel != null) {
+        panel.hidden = id !== panelId;
+        if (!panel.hidden &amp;&amp; selected.id) {
+          panel.setAttribute(&quot;aria-labelledby&quot;, selected.id);
+        }
+      }
+    }
+  };
+  const interact = (event) =&gt; {
+    const tab = event.target?.closest?.(selector);
+    if (event.defaultPrevented || tab == null || tab.matches(disabled)) {
+      return;
+    }
+    if (event.type === &quot;click&quot;) {
+      selectTab(tab);
+      return;
+    }
+    const tabs = Array.from(
+      tab.closest(&#x27;[role=&quot;tablist&quot;]&#x27;).querySelectorAll(&#x27;[role=&quot;tab&quot;]&#x27;),
+    ).filter((candidate) =&gt; !candidate.matches(disabled));
+    const current = tabs.indexOf(tab);
+    let next;
+    if (event.key === &quot;ArrowRight&quot; || event.key === &quot;ArrowDown&quot;) {
+      next = (current + 1) % tabs.length;
+    } else if (event.key === &quot;ArrowLeft&quot; || event.key === &quot;ArrowUp&quot;) {
+      next = (current + tabs.length - 1) % tabs.length;
+    } else if (event.key === &quot;Home&quot;) {
+      next = 0;
+    } else if (event.key === &quot;End&quot;) {
+      next = tabs.length - 1;
+    } else {
+      return;
+    }
+    event.preventDefault();
+    tabs[next].focus();
+    selectTab(tabs[next]);
+  };
+
+  for (const list of document.querySelectorAll(&#x27;.nav[role=&quot;tablist&quot;]&#x27;)) {
+    const selected =
+      list.querySelector(&#x27;[role=&quot;tab&quot;][aria-selected=&quot;true&quot;]&#x27;) ??
+      list.querySelector(&#x27;[role=&quot;tab&quot;].active&#x27;) ??
+      list.querySelector(&#x27;[role=&quot;tab&quot;]&#x27;);
+    if (selected != null) {
+      selectTab(selected);
+    }
+  }
+  document.addEventListener(&quot;click&quot;, interact);
+  document.addEventListener(&quot;keydown&quot;, interact);
+  window.addEventListener(&quot;pagehide&quot;, () =&gt; {
+    document.removeEventListener(&quot;click&quot;, interact);
+    document.removeEventListener(&quot;keydown&quot;, interact);
+  }, { once: true });
+})();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-carousel&quot;&gt;
+  (() =&gt; {
+    for (const root of document.querySelectorAll(&quot;.viz-carousel&quot;)) {
+      const panels = Array.from(
+        root.querySelectorAll(&quot;:scope &gt; [data-variant]&quot;),
+      );
+      if (panels.length === 0) {
+        continue;
+      }
+      root.setAttribute(&quot;role&quot;, &quot;group&quot;);
+      panels.forEach((panel, index) =&gt; {
+        panel.hidden = index !== 0;
+        panel.setAttribute(&quot;role&quot;, &quot;group&quot;);
+        if (!panel.hasAttribute(&quot;aria-label&quot;)) {
+          panel.setAttribute(&quot;aria-label&quot;, panel.dataset.variant);
+        }
+      });
+      root.dataset.activeVariant = panels[0].dataset.variant;
+      if (panels.length === 1) {
+        continue;
+      }
+
+      const controls = document.createElement(&quot;div&quot;);
+      controls.className = &quot;viz-carousel-controls&quot;;
+      // Portable copy of the settings dropdown&#x27;s legacy glyph; no 14px icon-package preset matches it.
+      // https://github.com/openai/openai/blob/master/codex/codex-apps/webview/src/icons/chevron.svg
+      controls.innerHTML = `
+      &lt;button type=&quot;button&quot; class=&quot;viz-carousel-previous cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;chevron-left&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+      &lt;details class=&quot;viz-carousel-picker&quot;&gt;
+        &lt;summary class=&quot;cursor-interaction&quot;&gt;
+          &lt;span class=&quot;viz-carousel-count tabular-nums&quot;&gt;&lt;/span&gt;
+          &lt;span class=&quot;viz-carousel-name&quot;&gt;&lt;/span&gt;
+          &lt;svg class=&quot;viz-carousel-caret&quot; width=&quot;14&quot; height=&quot;14&quot; viewBox=&quot;0 0 20 21&quot; fill=&quot;none&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;
+            &lt;path d=&quot;M15.2793 7.71101C15.539 7.45131 15.961 7.45131 16.2207 7.71101C16.4804 7.97071 16.4804 8.39272 16.2207 8.65242L10.4707 14.4024C10.211 14.6621 9.78902 14.6621 9.52932 14.4024L3.77932 8.65242L3.69436 8.54792C3.52385 8.28979 3.55205 7.93828 3.77932 7.71101C4.00659 7.48374 4.3581 7.45554 4.61623 7.62605L4.72073 7.71101L10 12.9903L15.2793 7.71101Z&quot; fill=&quot;currentColor&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;0.6&quot; /&gt;
+          &lt;/svg&gt;
+        &lt;/summary&gt;
+        &lt;div class=&quot;viz-carousel-options&quot;&gt;&lt;/div&gt;
+      &lt;/details&gt;
+      &lt;button type=&quot;button&quot; class=&quot;viz-carousel-next cursor-interaction&quot;&gt;&lt;i data-lucide=&quot;chevron-right&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/button&gt;`;
+      const previous = controls.querySelector(&quot;.viz-carousel-previous&quot;);
+      const next = controls.querySelector(&quot;.viz-carousel-next&quot;);
+      const picker = controls.querySelector(&quot;.viz-carousel-picker&quot;);
+      const summary = picker.querySelector(&quot;summary&quot;);
+      const count = controls.querySelector(&quot;.viz-carousel-count&quot;);
+      const name = controls.querySelector(&quot;.viz-carousel-name&quot;);
+      const options = controls.querySelector(&quot;.viz-carousel-options&quot;);
+      const status = document.createElement(&quot;span&quot;);
+      status.className = &quot;sr-only&quot;;
+      status.setAttribute(&quot;role&quot;, &quot;status&quot;);
+      status.setAttribute(&quot;aria-live&quot;, &quot;polite&quot;);
+      status.setAttribute(&quot;aria-atomic&quot;, &quot;true&quot;);
+      previous.setAttribute(
+        &quot;aria-label&quot;,
+        root.dataset.previousLabel ?? &quot;Previous variant&quot;,
+      );
+      next.setAttribute(&quot;aria-label&quot;, root.dataset.nextLabel ?? &quot;Next variant&quot;);
+
+      let active = 0;
+      let mousePointerId = null;
+      let summaryPointerHandled = false;
+      summary.addEventListener(&quot;pointerdown&quot;, (event) =&gt; {
+        summaryPointerHandled =
+          event.pointerType === &quot;mouse&quot; &amp;&amp; event.button === 0 &amp;&amp; !event.ctrlKey;
+        if (!summaryPointerHandled) {
+          return;
+        }
+        event.preventDefault();
+        summary.focus({ preventScroll: true });
+        picker.open = !picker.open;
+        mousePointerId = picker.open ? event.pointerId : null;
+      });
+      summary.addEventListener(&quot;click&quot;, (event) =&gt; {
+        if (summaryPointerHandled &amp;&amp; event.detail &gt; 0) {
+          event.preventDefault();
+        }
+      });
+      const choices = panels.map((panel, index) =&gt; {
+        const choice = document.createElement(&quot;button&quot;);
+        choice.type = &quot;button&quot;;
+        choice.className = &quot;cursor-interaction&quot;;
+        choice.textContent = panel.dataset.variant;
+        choice.addEventListener(&quot;click&quot;, () =&gt; {
+          select(index);
+          summary.focus();
+        });
+        choice.addEventListener(&quot;pointerup&quot;, (event) =&gt; {
+          if (
+            picker.open &amp;&amp;
+            event.pointerType === &quot;mouse&quot; &amp;&amp;
+            event.button === 0 &amp;&amp;
+            event.pointerId === mousePointerId
+          ) {
+            choice.click();
+          }
+        });
+        options.appendChild(choice);
+        return choice;
+      });
+      const select = (index) =&gt; {
+        const changed = active !== index;
+        active = index;
+        panels.forEach((panel, position) =&gt; {
+          panel.hidden = position !== active;
+          choices[position].setAttribute(
+            &quot;aria-current&quot;,
+            String(position === active),
+          );
+        });
+        root.dataset.activeVariant = panels[active].dataset.variant;
+        count.textContent = `${active + 1} / ${panels.length}`;
+        name.textContent = panels[active].dataset.variant;
+        picker.open = false;
+        mousePointerId = null;
+        if (changed) {
+          status.textContent = `${count.textContent}: ${name.textContent}`;
+        }
+      };
+      previous.addEventListener(&quot;click&quot;, () =&gt;
+        select((active + panels.length - 1) % panels.length),
+      );
+      next.addEventListener(&quot;click&quot;, () =&gt;
+        select((active + 1) % panels.length),
+      );
+      picker.addEventListener(&quot;keydown&quot;, (event) =&gt; {
+        if (event.key === &quot;Escape&quot; &amp;&amp; picker.open) {
+          event.preventDefault();
+          picker.open = false;
+          mousePointerId = null;
+          summary.focus();
+          return;
+        }
+        if (event.altKey || event.ctrlKey || event.metaKey) {
+          return;
+        }
+        const index = choices.indexOf(document.activeElement);
+        let nextIndex;
+        if (event.key === &quot;ArrowDown&quot;) {
+          nextIndex = index &lt; 0 ? active : (index + 1) % choices.length;
+        } else if (event.key === &quot;ArrowUp&quot;) {
+          nextIndex = index &lt; 0 ? active : (index + choices.length - 1) % choices.length;
+        } else if (picker.open &amp;&amp; event.key === &quot;Home&quot;) {
+          nextIndex = 0;
+        } else if (picker.open &amp;&amp; event.key === &quot;End&quot;) {
+          nextIndex = choices.length - 1;
+        } else {
+          return;
+        }
+        event.preventDefault();
+        picker.open = true;
+        choices[nextIndex].focus();
+      });
+      picker.addEventListener(&quot;focusout&quot;, (event) =&gt; {
+        if (!picker.contains(event.relatedTarget)) {
+          picker.open = false;
+          mousePointerId = null;
+        }
+      });
+      const dismiss = (event) =&gt; {
+        if (!summary.contains(event.target)) {
+          mousePointerId = null;
+        }
+        if (!picker.contains(event.target)) {
+          picker.open = false;
+        }
+      };
+      const endPointerSelection = () =&gt; {
+        mousePointerId = null;
+      };
+      const sizePicker = () =&gt; {
+        root.style.setProperty(
+          &quot;--viz-carousel-picker-height&quot;,
+          `${picker.open ? options.offsetHeight : 0}px`,
+        );
+      };
+      picker.addEventListener(&quot;toggle&quot;, sizePicker);
+      window.addEventListener(&quot;resize&quot;, sizePicker);
+      document.addEventListener(&quot;pointerdown&quot;, dismiss);
+      document.addEventListener(&quot;pointerup&quot;, endPointerSelection);
+      document.addEventListener(&quot;pointercancel&quot;, endPointerSelection);
+      window.addEventListener(&quot;blur&quot;, endPointerSelection);
+      window.addEventListener(
+        &quot;pagehide&quot;,
+        () =&gt; {
+          document.removeEventListener(&quot;pointerdown&quot;, dismiss);
+          document.removeEventListener(&quot;pointerup&quot;, endPointerSelection);
+          document.removeEventListener(&quot;pointercancel&quot;, endPointerSelection);
+          window.removeEventListener(&quot;blur&quot;, endPointerSelection);
+          window.removeEventListener(&quot;resize&quot;, sizePicker);
+        },
+        { once: true },
+      );
+      root.append(controls, status);
+      select(0);
+    }
+  })();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-lucide&quot; async src=&quot;https://unpkg.com/lucide@1.17.0/dist/umd/lucide.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  const initialize = () =&gt; {
+    globalThis.lucide?.createIcons({ attrs: { width: 16, height: 16 } });
+  };
+  if (globalThis.lucide != null) {
+    initialize();
+    return;
+  }
+  document
+    .getElementById(&quot;codex-visualization-lucide&quot;)
+    ?.addEventListener(&quot;load&quot;, initialize, { once: true });
+})();
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+
+<script>(() => {
+  const frame = document.getElementById("codex-visualization");
+  if (!(frame instanceof HTMLIFrameElement)) {
+    return;
+  }
+  let viewportHeight = globalThis.innerHeight;
+  const storageKey = `codex:visualization-widget-state-v2:${JSON.stringify([
+    globalThis.location.pathname,
+    globalThis.location.search,
+  ])}`;
+  const parseState = (serializedState) => {
+    if (
+      typeof serializedState !== "string" ||
+      new TextEncoder().encode(serializedState).length > 16 * 1024
+    ) {
+      throw new TypeError(
+        "Widget state must be a JSON object of at most 16 KiB",
+      );
+    }
+    /** @type {unknown} */
+    const state = JSON.parse(serializedState);
+    if (
+      state == null ||
+      typeof state !== "object" ||
+      Array.isArray(state) ||
+      ("imageIds" in state &&
+        (!Array.isArray(state.imageIds) || state.imageIds.length > 0))
+    ) {
+      throw new TypeError("Widget state must be a JSON object");
+    }
+    const storedState = { modelContent: null, privateContent: null, ...state };
+    const canonicalState = JSON.stringify(
+      storedState,
+      (_key, /** @type {unknown} */ value) => {
+        if (typeof value === "number" && !Number.isFinite(value)) {
+          throw new TypeError("Widget state must contain finite numbers");
+        }
+        return value;
+      },
+    );
+    if (new TextEncoder().encode(canonicalState).length > 16 * 1024) {
+      throw new TypeError(
+        "Widget state must be a JSON object of at most 16 KiB",
+      );
+    }
+    return storedState;
+  };
+  let storage = null;
+  let state = null;
+  try {
+    const localStorage = globalThis.localStorage;
+    const probeKey = `${storageKey}:probe`;
+    localStorage.setItem(probeKey, "1");
+    localStorage.removeItem(probeKey);
+    storage = localStorage;
+    const savedState = storage.getItem(storageKey);
+    if (savedState != null) {
+      try {
+        state = parseState(savedState);
+      } catch {
+        // Invalid saved state does not disable future writes.
+      }
+    }
+  } catch {
+    storage = null;
+  }
+  const initialGlobals = {
+    widgetState: state,
+    statePersistence: storage == null ? "none" : "local",
+  };
+
+  const channel = new MessageChannel();
+  channel.port1.addEventListener("message", (event) => {
+    const data = event.data;
+    if (typeof data !== "object" || data == null) {
+      return;
+    }
+    if (data.type === "widget-state-write") {
+      if (!Number.isSafeInteger(data.id) || data.id <= 0) {
+        return;
+      }
+      let ok = false;
+      try {
+        if (storage != null) {
+          const state = parseState(data.state);
+          storage.setItem(storageKey, JSON.stringify(state));
+          ok = true;
+        }
+      } catch {
+        // Storage denial, quota limits, and invalid state return a failed receipt.
+      }
+      channel.port1.postMessage({
+        type: "widget-state-result",
+        id: data.id,
+        ok,
+      });
+      return;
+    }
+    if (data.type === "height") {
+      const height = data.height;
+      if (
+        typeof height === "number" &&
+        Number.isFinite(height) &&
+        height >= 0 &&
+        height <= 10_000
+      ) {
+        frame.style.height = Math.ceil(height) + "px";
+      }
+      return;
+    }
+    if (data.type === "scroll-to") {
+      const top = data.top;
+      if (
+        typeof top === "number" &&
+        Number.isFinite(top) &&
+        top >= 0 &&
+        globalThis.navigator.userActivation?.isActive === true
+      ) {
+        globalThis.scrollTo({
+          top: Math.ceil(
+            globalThis.scrollY + frame.getBoundingClientRect().top + top,
+          ),
+        });
+      }
+      return;
+    }
+    if (data.type === "open-external") {
+      const rawHref = data.href;
+      if (typeof rawHref !== "string") {
+        return;
+      }
+      let href;
+      try {
+        const url = new URL(rawHref, document.baseURI);
+        if (url.protocol !== "https:") {
+          return;
+        }
+        href = url.href;
+      } catch {
+        return;
+      }
+      if (globalThis.navigator.userActivation?.isActive === true) {
+        const anchor = document.createElement("a");
+        anchor.href = href;
+        anchor.rel = "noopener noreferrer";
+        anchor.target = "_blank";
+        document.body.appendChild(anchor);
+        anchor.click();
+        anchor.remove();
+      }
+      return;
+    }
+    if (data.type === "follow-up") {
+      const prompt = data.prompt;
+      if (
+        typeof prompt !== "string" ||
+        globalThis.navigator.userActivation?.isActive !== true
+      ) {
+        return;
+      }
+      const title = data.title;
+      globalThis.prompt(typeof title === "string" ? title : prompt, prompt);
+    }
+  });
+  channel.port1.start();
+  const srcdoc = frame.dataset.srcdoc;
+  if (srcdoc == null) {
+    return;
+  }
+  globalThis.addEventListener("resize", () => {
+    const height = Number.parseFloat(frame.style.height);
+    if (!Number.isFinite(height) || height <= viewportHeight) {
+      frame.style.removeProperty("height");
+    }
+    viewportHeight = globalThis.innerHeight;
+    channel.port1.postMessage({ type: "measure" });
+  });
+  frame.addEventListener(
+    "load",
+    () => {
+      frame.contentWindow?.postMessage(
+        { type: "codex-visualization-initialize" },
+        "*",
+        [channel.port2],
+      );
+    },
+    { once: true },
+  );
+  // Match the trusted bootstrap element, not the same text in an authored title.
+  frame.srcdoc = srcdoc.replace(
+    '<script type="application/json" id="codex-visualization-widget-state">__CODEX_VISUALIZATION_WIDGET_STATE__<\/script>',
+    () =>
+      '<script type="application/json" id="codex-visualization-widget-state">' +
+      JSON.stringify(initialGlobals).replaceAll("<", "\\u003c") +
+      "<\/script>",
+  );
+  delete frame.dataset.srcdoc;
+})();
+</script>
+</body>
+</html>

@@ -2,6 +2,7 @@ const http = require('node:http');
 const fs = require('node:fs');
 const path = require('node:path');
 const csv = path.join(__dirname, 'exports', 'cdi-agents.csv');
+const capRecovery = require('./cap-recovery-view.cjs');
 const html = `<!doctype html><meta charset="utf-8"><title>Round two live sheet</title>
 <style>body{font:14px system-ui;margin:24px;color:#182638}input,button{padding:8px;margin:4px}table{border-collapse:collapse;width:100%}td,th{padding:10px;border-bottom:1px solid #ddd;text-align:left;vertical-align:top}th{background:#edf2f7;position:sticky;top:0}#status{color:#526278}</style>
 <h1>Round two · English agents</h1><p id="status">Loading…</p><input id="search" placeholder="Search name, license, ZIP…" size="40"><button id="prev">Previous</button><button id="next">Next</button><span id="page"></span><div style="overflow:auto"><table><thead id="head"></thead><tbody id="body"></tbody></table></div>
@@ -15,6 +16,10 @@ document.getElementById('search').oninput=()=>{page=0;render()};document.getElem
 http.createServer((req,res)=>{
   res.setHeader('Cache-Control','no-store');
   if(req.url==='/data'){try{res.setHeader('Content-Type','application/json');res.end(JSON.stringify({csv:fs.readFileSync(csv,'utf8'),modified:fs.statSync(csv).mtime.toISOString()}))}catch{res.statusCode=503;res.end('CSV unavailable')}}
+  else if(req.url==='/cap-recovery/data'){res.setHeader('Content-Type','application/json');try{res.end(JSON.stringify(capRecovery.snapshot()))}catch(error){res.statusCode=503;res.end(JSON.stringify({error:String(error)}))}}
+  else if(req.url==='/cap-recovery'){res.setHeader('Content-Type','text/html; charset=utf-8');res.end(fs.readFileSync(path.join(__dirname,'scan-plan','cap-recovery-live.html'),'utf8'))}
+  else if(req.url==='/scan-plan/proposal'){res.setHeader('Content-Type','text/html; charset=utf-8');try{res.end(fs.readFileSync(path.join(__dirname,'scan-plan','expansion-preview.html'),'utf8'))}catch{res.statusCode=503;res.end('Proposal unavailable')}}
+  else if(req.url==='/scan-plan' || req.url==='/scan-plan/'){res.setHeader('Content-Type','text/html; charset=utf-8');try{res.end(fs.readFileSync(path.join(__dirname,'scan-plan','collection-map.html'),'utf8'))}catch{res.statusCode=503;res.end('Collection map unavailable')}}
   else if(req.url==='/'){res.setHeader('Content-Type','text/html; charset=utf-8');res.end(html)}
   else{res.statusCode=404;res.end()}
 }).listen(8766,'127.0.0.1',()=>console.log('Live sheet: http://127.0.0.1:8766'));

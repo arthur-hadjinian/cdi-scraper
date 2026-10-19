@@ -23,3 +23,11 @@ make a model match the original list.
 The original approval reference is `exports/aguilar-review/approved.json`.
 Cached evidence and the prior comparison are under `exports/aguilar-review/`.
 Refresh public records for new screening work and record the check date.
+
+# LinkedIn enrichment
+
+For the user's chat-operated LinkedIn research workflow, read
+`docs/linkedin-enrichment.md`. Resume from the saved license-keyed queue and
+preserve the distinction between strong matches, possible matches, and profiles
+not found within the search budget. Enrichment alone does not rescreen producer
+eligibility or change historical approval/contact readiness.

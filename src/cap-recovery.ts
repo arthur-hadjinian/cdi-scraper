@@ -47,6 +47,8 @@ export function recoveryCandidates(parent: GridPoint, candidates: GridPoint[], k
 }
 
 export function queueCapRecovery(db: DatabaseSync, centerZip: string, coverageMiles: number): number {
+  // The legacy 200-center budget is exhausted in round two; avoid repeated full yield scans.
+  if((db.prepare('SELECT COUNT(DISTINCT child_zip) n FROM cap_recovery').get() as {n:number}).n>=RECOVERY_LIMITS.additionalZips)return 0;
   const candidates = buildGrid(centerZip, coverageMiles, 0);
   const known = new Set((db.prepare('SELECT zip FROM searches').all() as {zip:string}[]).map(p=>p.zip));
   let added = 0;

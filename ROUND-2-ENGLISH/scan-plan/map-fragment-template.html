@@ -1,0 +1,86 @@
+<div id="radius-scan-overview">
+  <h3>Full radius collection plan</h3>
+  <div class="viz-row"><span>163 ready centers</span><span>328 already searched</span></div>
+  <div class="viz-controls">
+    <label class="form-label">Area
+      <select class="form-select" id="radius-map-area">
+        <option value="overview">Entire radius</option><option value="core">Los Angeles</option><option value="valley">Valley / Burbank</option><option value="east">Pasadena / Inland edge</option><option value="south">Long Beach / Orange County</option><option value="west">Ventura / western edge</option>
+      </select>
+    </label>
+    <label class="form-label">Center <select class="form-select" id="radius-map-center"><option value="">Select a ZIP</option></select></label>
+    <button class="btn" id="radius-map-plus" type="button" aria-label="Zoom in">Zoom +</button>
+    <button class="btn" id="radius-map-minus" type="button" aria-label="Zoom out">Zoom −</button>
+    <button class="btn btn-ghost" id="radius-map-reset" type="button">Overview</button>
+  </div>
+  <div class="viz-row">
+    <label class="form-check"><input class="form-check-input" id="radius-map-existing" type="checkbox"><span class="form-check-label">Show searched centers</span></label>
+    <label class="form-check"><input class="form-check-input" id="radius-map-circles" type="checkbox"><span class="form-check-label">Show five-mile circles</span></label>
+    <span><span style="color:var(--viz-series-1)">●</span> Ready</span><span>○ Already searched</span>
+  </div>
+  <div id="radius-map-field"></div>
+  <div class="card" id="radius-map-detail" aria-live="polite">Select a center for its ZIP, city, and planning status.</div>
+  <div class="text-small text-muted">50 miles around 91506 · planned centers, not agent locations · historical circle coverage is partly unverified</div>
+  <script id="radius-map-data" type="application/json">__MAP_DATA__</script>
+</div>
+<style>
+#radius-scan-overview #radius-map-field{position:relative;overflow:hidden;touch-action:none}
+#radius-scan-overview .map-svg{display:block;width:100%;font:inherit}
+#radius-scan-overview .map-svg text{fill:var(--foreground);font-family:inherit;paint-order:stroke;stroke:var(--background);stroke-width:3px;stroke-linejoin:round}
+#radius-scan-overview .county-land{fill:var(--muted);fill-opacity:.55;stroke:var(--border);stroke-width:.7}
+#radius-scan-overview .radius-boundary{fill:none;stroke:var(--foreground);stroke-width:1.4}
+#radius-scan-overview .past-point{fill:none;stroke:var(--muted-foreground);stroke-width:1;opacity:.55}
+#radius-scan-overview .ready-point{fill:var(--viz-series-1);stroke:var(--background);stroke-width:1}
+#radius-scan-overview .review-point{fill:var(--viz-series-2);stroke:var(--background);stroke-width:1}
+#radius-scan-overview .search-circle{fill:var(--viz-series-1);fill-opacity:.025;stroke:var(--viz-series-1);stroke-opacity:.13;stroke-width:.5}
+#radius-scan-overview .selected-point{fill:none;stroke:var(--foreground);stroke-width:2}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script>
+(function(){
+ const root=document.getElementById('radius-scan-overview');
+ const data=JSON.parse(root.querySelector('#radius-map-data').textContent);
+ const field=root.querySelector('#radius-map-field'),detail=root.querySelector('#radius-map-detail');
+ const showPast=root.querySelector('#radius-map-existing'),showCircles=root.querySelector('#radius-map-circles'),area=root.querySelector('#radius-map-area');
+ const centerSelect=root.querySelector('#radius-map-center');
+ const saved=window.openai?.widgetState||{};
+ let transform=d3.zoomIdentity,projection,svg,group,width,height,selected=null;
+ const regions={core:[-118.28,34.03,3.5],valley:[-118.43,34.19,3.8],east:[-117.92,34.08,3.2],south:[-118.01,33.78,3],west:[-118.98,34.24,3]};
+ showPast.checked=!!saved.privateContent?.showPast;showCircles.checked=!!saved.privateContent?.showCircles;
+ const save=()=>window.openai?.setWidgetState?.({modelContent:{selected_zip:selected?.zip||null,area:area.value},privateContent:{showPast:showPast.checked,showCircles:showCircles.checked}}).catch(()=>{});
+ const circle=(miles)=>d3.geoCircle().center([data.origin.longitude,data.origin.latitude]).radius(miles/3958.8*180/Math.PI)();
+ const updateMarks=()=>{
+   group.selectAll('.past-point').attr('r',3/transform.k);
+   group.selectAll('.ready-point').attr('r',4.8/transform.k);
+   group.selectAll('.review-point').attr('d',d3.symbol().type(d3.symbolTriangle).size(65/(transform.k*transform.k)));
+   group.selectAll('.city-label').attr('font-size',12/transform.k).attr('dx',6/transform.k).attr('dy',-6/transform.k).style('stroke-width',3/transform.k);
+   const occupied=[];
+   group.selectAll('.city-label').each(function(p){const xy=transform.apply(projection([p.longitude,p.latitude]));const labelWidth=p.name.length*7;let chosen=null;for(const dy of [-6,14,-24,32]){const box={x:xy[0]+6,y:xy[1]+dy-12,w:labelWidth,h:16};if(box.x<2||box.y<2||box.x+box.w>width-2||box.y+box.h>height-2)continue;if(occupied.some(b=>box.x<b.x+b.w+4&&box.x+box.w+4>b.x&&box.y<b.y+b.h+4&&box.y+box.h+4>b.y))continue;chosen={box,dy};break;}d3.select(this).style('display',chosen?null:'none');if(chosen){occupied.push(chosen.box);d3.select(this).attr('dy',chosen.dy/transform.k);}});
+   group.selectAll('.selected-point').attr('r',9/transform.k);
+ };
+ const zoom=d3.zoom().scaleExtent([1,9]).on('zoom',event=>{transform=event.transform;group.attr('transform',transform);updateMarks();});
+ for(const point of [...data.ready.map(p=>({...p,kind:'ready'})),...data.review.map(p=>({...p,kind:'review'}))].sort((a,b)=>a.zip.localeCompare(b.zip))){const option=document.createElement('option');option.value=point.zip;option.textContent=point.zip+' · '+point.city;centerSelect.append(option);}
+ function pick(point){selected=point;detail.textContent=`${point.zip} · ${point.city} · ${point.kind==='ready'?'Ready to scan':point.kind==='review'?'Coordinate review needed':point.status==='truncated'?'Previously capped at 300':point.status==='complete'?'Previously completed':'Previously unfinished'}${point.rank?' · Scan order '+point.rank:''}`;drawSelection();save();}
+ function drawSelection(){group.selectAll('.selected-point').remove();if(selected){const p=projection([selected.longitude,selected.latitude]);group.append('circle').attr('class','selected-point').attr('cx',p[0]).attr('cy',p[1]).attr('r',9/transform.k).attr('pointer-events','none');}}
+ function render(){
+  width=Math.max(300,field.clientWidth);height=Math.round(Math.min(640,Math.max(430,width*.78)));
+  field.replaceChildren();svg=d3.select(field).append('svg').attr('class','map-svg').attr('viewBox',`0 0 ${width} ${height}`).attr('role','img').attr('aria-label','Zoomable map of all remaining collection search centers within fifty miles of Burbank.');
+  projection=d3.geoMercator().fitExtent([[12,12],[width-12,height-12]],circle(56));
+  const path=d3.geoPath(projection);group=svg.append('g');
+  group.selectAll('.county-land').data(data.counties.features).join('path').attr('class','county-land').attr('d',path);
+  group.append('path').datum(circle(50)).attr('class','radius-boundary').attr('d',path);
+  if(showCircles.checked)group.selectAll('.search-circle').data(data.ready).join('path').attr('class','search-circle').attr('d',p=>path(d3.geoCircle().center([p.longitude,p.latitude]).radius(5/3958.8*180/Math.PI)()));
+  const points=[...data.ready.map(p=>({...p,kind:'ready'})),...data.review.map(p=>({...p,kind:'review'})),...(showPast.checked?data.existing.map(p=>({...p,kind:'past'})):[])];
+  for(const p of points){const xy=projection([p.longitude,p.latitude]);const mark=group.append(p.kind==='review'?'path':'circle').datum(p).attr('class',p.kind==='ready'?'ready-point':p.kind==='review'?'review-point':'past-point');if(p.kind==='review')mark.attr('transform',`translate(${xy[0]},${xy[1]})`);else mark.attr('cx',xy[0]).attr('cy',xy[1]);}
+  group.selectAll('.city-label').data(data.cities).join('text').attr('class','city-label').attr('x',p=>projection([p.longitude,p.latitude])[0]).attr('y',p=>projection([p.longitude,p.latitude])[1]).text(p=>p.name);
+  svg.call(zoom).call(zoom.transform,transform);
+  svg.on('click.select',event=>{if(event.defaultPrevented)return;const [x,y]=d3.pointer(event,svg.node());const local=transform.invert([x,y]);let near=null,distance=Infinity;for(const p of points){const q=projection([p.longitude,p.latitude]);const d=Math.hypot(q[0]-local[0],q[1]-local[1])*transform.k;if(d<distance){distance=d;near=p;}}if(near&&distance<24)pick(near);});
+  drawSelection();
+ }
+ function goRegion(){const r=regions[area.value];if(!r){svg.call(zoom.transform,d3.zoomIdentity);return;}const p=projection([r[0],r[1]]);svg.call(zoom.transform,d3.zoomIdentity.translate(width/2,height/2).scale(r[2]).translate(-p[0],-p[1]));save();}
+ area.onchange=goRegion;root.querySelector('#radius-map-plus').onclick=()=>svg.call(zoom.scaleBy,1.5);root.querySelector('#radius-map-minus').onclick=()=>svg.call(zoom.scaleBy,1/1.5);root.querySelector('#radius-map-reset').onclick=()=>{area.value='overview';svg.call(zoom.transform,d3.zoomIdentity);save();};
+ centerSelect.onchange=()=>{const point=data.ready.find(p=>p.zip===centerSelect.value)||data.review.find(p=>p.zip===centerSelect.value);if(!point)return;pick({...point,kind:data.ready.some(p=>p.zip===point.zip)?'ready':'review'});const p=projection([point.longitude,point.latitude]);svg.call(zoom.transform,d3.zoomIdentity.translate(width/2,height/2).scale(5).translate(-p[0],-p[1]));};
+ showPast.onchange=()=>{render();save();};showCircles.onchange=()=>{render();save();};
+ new ResizeObserver(()=>render()).observe(field);
+ render();
+})();
+</script>

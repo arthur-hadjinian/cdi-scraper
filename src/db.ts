@@ -77,6 +77,12 @@ export function openDb(): DatabaseSync {
       zip TEXT PRIMARY KEY,
       seconds REAL NOT NULL DEFAULT 0
     );
+    CREATE TABLE IF NOT EXISTS planned_searches (
+      zip TEXT PRIMARY KEY,
+      batch TEXT NOT NULL,
+      rank INTEGER NOT NULL,
+      queued_at TEXT NOT NULL
+    );
   `);
   return db;
 }
@@ -107,7 +113,8 @@ export function syncGrid(db: DatabaseSync, points: GridPoint[]): void {
     const pending = db.prepare(`SELECT zip FROM searches WHERE status = 'pending'`).all() as { zip: string }[];
     for (const row of pending) {
       const recovery = db.prepare('SELECT 1 FROM cap_recovery WHERE child_zip = ?').get(row.zip);
-      if (!keep.has(row.zip) && !recovery) removePending.run(row.zip);
+      const planned = db.prepare('SELECT 1 FROM planned_searches WHERE zip = ?').get(row.zip);
+      if (!keep.has(row.zip) && !recovery && !planned) removePending.run(row.zip);
     }
     db.exec("COMMIT");
   } catch (error) {
@@ -123,7 +130,8 @@ export function nextSearches(db: DatabaseSync, limit?: number): SearchRow[] {
     FROM searches
     WHERE status IN ('pending', 'in_progress', 'error')
     ORDER BY
-      CASE status WHEN 'in_progress' THEN 0 WHEN 'error' THEN 1 ELSE 2 END,
+      CASE status WHEN 'in_progress' THEN 0 WHEN 'pending' THEN 1 ELSE 2 END,
+      COALESCE((SELECT rank FROM planned_searches p WHERE p.zip = searches.zip), 1000000),
       distance_miles ASC,
       zip ASC
     ${limit ? "LIMIT ?" : ""}
@@ -250,6 +258,9 @@ export type CsvAgent = {
 };
 
 export function allAgents(db: DatabaseSync): CsvAgent[] {
+  // Alternate city searches have task IDs, not postal ZIPs. Keep source_zips postal-only.
+  const hasSourceMap=!!db.prepare("SELECT 1 FROM sqlite_master WHERE type='table' AND name='search_sources'").get();
+  const zipExpression=hasSourceMap?`CASE WHEN EXISTS(SELECT 1 FROM search_sources q WHERE q.search_id=z.zip) THEN (SELECT source_zip FROM search_sources q WHERE q.search_id=z.zip) ELSE z.zip END`:'z.zip';
   return db.prepare(`
     SELECT
       a.name,
@@ -260,7 +271,7 @@ export function allAgents(db: DatabaseSync): CsvAgent[] {
       COALESCE(a.license_url, '') AS license_url,
       COALESCE(a.directions_url, '') AS directions_url,
       COALESCE((
-        SELECT group_concat(z.zip, ' ')
+        SELECT group_concat(${zipExpression}, ' ')
         FROM agent_zips z
         WHERE z.license_number = a.license_number
       ), '') AS source_zips,

@@ -1,0 +1,753 @@
+[
+  {
+    "ordinal": 1,
+    "status": "Strong match",
+    "linkedin_url": "https://www.linkedin.com/in/aamani-watson-534363339",
+    "candidate_url": "",
+    "evidence": "Exact name. Profile lists insurance/financial-planning services and Glendale experience, consistent with the source location.",
+    "sources": [
+      "https://www.linkedin.com/in/aamani-watson-534363339"
+    ],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Aamani Watson\" LinkedIn",
+      "\"Aamani Watson\" \"4435843\"",
+      "\"Aamani Watson\" \"Glendale\" insurance"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 2,
+    "status": "Strong match",
+    "linkedin_url": "https://www.linkedin.com/in/aaron-bero-19748814",
+    "candidate_url": "",
+    "evidence": "Exact name and Pasadena location. Kaiser Permanente on the profile aligns with the source insurer relationship; an appointment alone is not proof of employment.",
+    "sources": [
+      "https://www.linkedin.com/in/aaron-bero-19748814"
+    ],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Aaron Bero\" LinkedIn insurance",
+      "\"Aaron Bero\" Kaiser Pasadena"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 3,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "Two searches found namesakes but no individual profile tied to this Los Angeles producer's WFG relationship.",
+    "sources": [],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Aaron Byrd\" LinkedIn \"financial\"",
+      "\"Aaron Byrd\" \"World Financial Group\" LinkedIn"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 4,
+    "status": "Strong match",
+    "linkedin_url": "https://www.linkedin.com/in/cookaaron",
+    "candidate_url": "",
+    "evidence": "Exact name and AGC Wealth Advisors profile. AGC website matches both source business address (12130 Millennium, Suite 300) and phone (424-360-1133).",
+    "sources": [
+      "https://www.linkedin.com/in/cookaaron",
+      "https://www.agcwealth.com/"
+    ],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Aaron Cook\" LinkedIn \"12130\"",
+      "\"Aaron Cook\" LinkedIn insurance Los Angeles",
+      "\"Aaron Cook\" \"AGC\" \"424\""
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 5,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "Insurance namesakes surfaced in Texas and Florida. Neither was tied to the source North Hollywood producer.",
+    "sources": [],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Aaron Lucas\" LinkedIn insurance California",
+      "\"Aaron Lucas\" \"North Hollywood\" insurance"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 6,
+    "status": "Strong match",
+    "linkedin_url": "https://www.linkedin.com/in/aaronma",
+    "candidate_url": "",
+    "evidence": "Exact name, Los Angeles location and Carlyle Specialty Insurance Services agency match.",
+    "sources": [
+      "https://www.linkedin.com/in/aaronma"
+    ],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Aaron Ma\" LinkedIn Carlyle"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 7,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "A LinkedIn directory lists a Los Angeles Aaron Williams at RedClaw Financial, but no individual profile URL or source phone connection was established.",
+    "sources": [
+      "https://www.linkedin.com/pub/dir/Aaron/Williams/us-49-Los-Angeles-Metropolitan-Area"
+    ],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Aaron Williams\" LinkedIn \"financial\" \"Los Angeles\"",
+      "\"Aaron Williams\" \"RedClaw\" LinkedIn",
+      "\"Aaron Williams\" \"RedClaw Financial\"",
+      "\"Aaron Williams\" \"310-654-4441\""
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 8,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "A business interview for Abel Santiago Cicchiello surfaced, but no individual LinkedIn profile was located.",
+    "sources": [
+      "https://www.elsuplemento.com/mega/sumario/perfil/cicchiello"
+    ],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Abel Cicchiello\" LinkedIn",
+      "\"Abel Cicchiello\" insurance"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 9,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "Namesakes surfaced, but none was tied to the source Los Angeles insurance producer or license.",
+    "sources": [],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Abel Martinez\" insurance LinkedIn Los Angeles",
+      "\"Abel Martinez\" insurance \"4507369\""
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 10,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "An insurance namesake at Confianza surfaced, without evidence connecting that profile to this Northridge producer.",
+    "sources": [],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Abelardo Diaz\" LinkedIn insurance",
+      "\"Abelardo Diaz\" Northridge LinkedIn"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 11,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "Multiple namesakes surfaced. No profile was tied to the source Arleta insurance producer.",
+    "sources": [],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Abigail Lopez\" LinkedIn insurance Arleta",
+      "\"Abigail Lopez\" insurance California LinkedIn"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 12,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "WFG's agent page matches the name, agency and North Hollywood office. No individual LinkedIn URL was located.",
+    "sources": [
+      "https://agents.worldfinancialgroup.com/Abigail-Sefa-Boakye-C8U19"
+    ],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Abigail Sefa-Boakye\" LinkedIn",
+      "\"Abigail Sefa Boakye\" WFG LinkedIn"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 13,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "No relevant individual LinkedIn result surfaced in the two searches.",
+    "sources": [],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Abishai Cox\" LinkedIn",
+      "\"Abishai Cox\" insurance LinkedIn"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 14,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "A Culver City Aflac business listing and a LinkedIn company employee mention surfaced. No individual LinkedIn URL was established.",
+    "sources": [
+      "https://www.alignable.com/culver-city-ca/aflac-insurance-agent",
+      "https://www.linkedin.com/company/top-pick-insurance-agency"
+    ],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Abner Cordova\" LinkedIn insurance",
+      "\"Abner Cordova\" Aflac LinkedIn"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 15,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "Full-name and shortened-name searches did not locate a relevant individual LinkedIn profile.",
+    "sources": [],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Abner Yanes Barillas\" LinkedIn",
+      "\"Abner Yanes\" LinkedIn"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 16,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "LinkedIn's surname directory lists Abraham Keryan in Los Angeles. An individual profile URL and Primerica connection were not established.",
+    "sources": [
+      "https://www.linkedin.com/pub/dir/%2B/Keryan"
+    ],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Abraham Keryan\" LinkedIn",
+      "\"Abraham Keryan\" site:linkedin.com/in"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 17,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "Multiple namesakes surfaced, without an insurance/business connection to this Northridge producer.",
+    "sources": [],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Abraham Mendoza\" LinkedIn insurance Northridge",
+      "\"Abraham Mendoza\" insurance Northridge LinkedIn"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 18,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "An LAUSD namesake in Bell Gardens surfaced, without a connection to the Burbank insurance producer.",
+    "sources": [],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Abril Morales\" LinkedIn insurance Burbank",
+      "\"Abril Morales\" Burbank LinkedIn"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 19,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "No relevant individual LinkedIn result surfaced in the two searches.",
+    "sources": [],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Acasio Pinheiro\" LinkedIn",
+      "\"Acasio Pinheiro\" financial LinkedIn"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 20,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "No relevant individual LinkedIn result surfaced using the compound surname and insurance context.",
+    "sources": [],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Ada Capilla Slocum\" LinkedIn",
+      "\"Ada Capilla-Slocum\" insurance LinkedIn"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 21,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "No LinkedIn profile could be tied to this Montebello insurance producer. An unrelated healthcare professional surfaced.",
+    "sources": [],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "site:linkedin.com/in \"Ada Louie\"",
+      "\"Ada Louie\" insurance LinkedIn"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 22,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "Multiple namesakes surfaced, without evidence tying an individual LinkedIn profile to this Arleta producer.",
+    "sources": [],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "site:linkedin.com/in \"Ada Torres\" insurance",
+      "\"Ada Torres\" Arleta LinkedIn"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 23,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "No relevant individual LinkedIn result surfaced in the two searches.",
+    "sources": [],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "site:linkedin.com/in \"Adam Faberman\"",
+      "\"Adam Faberman\" insurance LinkedIn"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 24,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "Seven Arts business information matched the name and Beverly Hills context. No individual LinkedIn URL was established.",
+    "sources": [
+      "https://www.bizprofile.net/ca/beverly-hills/seven-arts-insurance-solutions"
+    ],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "site:linkedin.com/in \"Adam Fast\" insurance",
+      "\"Adam Fast\" \"Seven Arts\" LinkedIn"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 25,
+    "status": "Strong match",
+    "linkedin_url": "https://www.linkedin.com/in/lieberthal",
+    "candidate_url": "",
+    "evidence": "Exact name and insurance business. LinkedIn business post lists 818-419-8031, matching the source phone.",
+    "sources": [
+      "https://www.linkedin.com/in/lieberthal"
+    ],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Adam Lieberthal\" LinkedIn",
+      "\"Adam Lieberthal\" \"818\""
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 26,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "A financial-industry namesake appeared in regulatory search results, but no individual LinkedIn URL was located.",
+    "sources": [],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Adam Magsig\" LinkedIn",
+      "\"Adam Magsig\" financial LinkedIn"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 27,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "Music-industry LinkedIn material and a CUNA business article surfaced for this name. No profile was connected to the source Valley Village producer.",
+    "sources": [],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Adam Malka\" LinkedIn insurance",
+      "\"Adam Malka\" \"CUNA\" LinkedIn"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 28,
+    "status": "Strong match",
+    "linkedin_url": "https://www.linkedin.com/in/michaelsadam",
+    "candidate_url": "",
+    "evidence": "Adam H. Michaels matches the source name, Los Angeles location and Enrollify agency. Enrollify's website identifies Adam Michaels as founder/CEO.",
+    "sources": [
+      "https://www.linkedin.com/in/michaelsadam",
+      "https://enrollify.com/"
+    ],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Adam Michaels\" LinkedIn Enrollify"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 29,
+    "status": "Possible match",
+    "linkedin_url": "",
+    "candidate_url": "https://www.linkedin.com/in/adampineless",
+    "evidence": "Exact name with Los Angeles work history. Profile describes film editing/sound work and a Del Mar location; no insurance or license connection found.",
+    "sources": [
+      "https://www.linkedin.com/in/adampineless"
+    ],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Adam Pineless\" LinkedIn",
+      "\"Adam Pineless\" insurance"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 30,
+    "status": "Strong match",
+    "linkedin_url": "https://www.linkedin.com/in/adam-pryor1",
+    "candidate_url": "",
+    "evidence": "Exact name and Los Angeles location. Profile and professional contributor bio identify Capstone financial/insurance work. No license-number or phone match found.",
+    "sources": [
+      "https://www.linkedin.com/in/adam-pryor1",
+      "https://achievable.me/contributors/adam-pryor/"
+    ],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Adam Pryor\" LinkedIn insurance California",
+      "\"Adam Pryor\" \"4514497\"",
+      "\"Adam Pryor\" Capstone insurance license"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 31,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "A historical WIN insurance-business notice and unrelated LinkedIn profiles surfaced. No individual profile was tied to the source producer.",
+    "sources": [],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Adam Strauss\" LinkedIn insurance \"Los Angeles\"",
+      "\"Adam Strauss\" \"WIN\" LinkedIn"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 32,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "Namesakes outside California surfaced, without a connection to the source Northridge producer.",
+    "sources": [],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Adel Said\" LinkedIn insurance",
+      "\"Adel Said\" Northridge LinkedIn"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 33,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "Namesakes in other locations surfaced. No individual LinkedIn profile was tied to the North Hollywood insurance producer.",
+    "sources": [],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Adela Cortez\" LinkedIn insurance",
+      "\"Adela Cortez\" \"North Hollywood\" LinkedIn"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 34,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "Full-name and shortened-name searches did not establish an individual LinkedIn profile for this producer.",
+    "sources": [],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Adela Ramos Gonzalez\" LinkedIn",
+      "\"Adela Ramos\" \"Burbank\" LinkedIn"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 35,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "LinkedIn directory/activity mentions surfaced, but no individual profile was connected to the Los Angeles producer.",
+    "sources": [],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Adela Wong\" LinkedIn insurance",
+      "\"Adela Wong\" \"Los Angeles\" LinkedIn"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 36,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "A Los Angeles namesake appeared in a LinkedIn directory, without an insurance connection or individual profile URL.",
+    "sources": [],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Adelaida Delgado\" LinkedIn insurance",
+      "\"Adelaida Delgado\" \"South Gate\" LinkedIn"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 37,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "No relevant individual LinkedIn result surfaced in the two searches.",
+    "sources": [],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Adelaida Simonyan\" LinkedIn",
+      "\"Adelaida Simonyan\" financial LinkedIn"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 38,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "A financial-business filing surfaced for the name. No individual LinkedIn URL was located.",
+    "sources": [
+      "https://www.bizprofile.net/ca/santa-clarita/aem-financial-solutions"
+    ],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Adelienne Magana\" LinkedIn",
+      "\"Adelienne Magaña\" LinkedIn"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 39,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "LinkedIn's surname directory lists Adeline Barnuevo in Los Angeles. A local CPA website also surfaced, but no individual LinkedIn URL was established.",
+    "sources": [
+      "https://at.linkedin.com/pub/dir/%2B/Barnuevo/us-0-United-States",
+      "https://www.abarncpa.com/"
+    ],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Adeline Barnuevo\" LinkedIn",
+      "\"Adeline Barnuevo\" site:linkedin.com/in"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 40,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "LinkedIn directory mentions and French namesakes surfaced. No profile was tied to the Northridge producer.",
+    "sources": [],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Adeline Salgado\" LinkedIn Northridge",
+      "\"Adeline Salgado\" California LinkedIn"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 41,
+    "status": "Possible match",
+    "linkedin_url": "",
+    "candidate_url": "https://www.linkedin.com/in/admiree-fajardo-6144336a",
+    "evidence": "Exact name, Los Angeles County location and work entry with ZIP 91605. Profile describes Athans Enterprises work; insurance identity is uncorroborated.",
+    "sources": [
+      "https://www.linkedin.com/in/admiree-fajardo-6144336a"
+    ],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Admiree Fajardo\" LinkedIn",
+      "\"Admiree Fajardo\" insurance"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 42,
+    "status": "Possible match",
+    "linkedin_url": "",
+    "candidate_url": "https://www.linkedin.com/in/adrian-baker-a2499364",
+    "evidence": "Exact name and insurance/financial-services work at PHP. Profile location is Houston, while source address is Pasadena; no license or direct-contact match found.",
+    "sources": [
+      "https://www.linkedin.com/in/adrian-baker-a2499364"
+    ],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Adrian Baker\" LinkedIn insurance Pasadena",
+      "\"Adrian Baker\" Pasadena financial LinkedIn",
+      "\"Adrian Baker\" \"PHP\" Pasadena"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 43,
+    "status": "Possible match",
+    "linkedin_url": "",
+    "candidate_url": "https://www.linkedin.com/in/adrian-cejudo-carrillo-4013a5100",
+    "evidence": "Exact full name and New York Life insurance role. Profile location is Los Angeles; source address is Sacramento. No license-number match found. Search also surfaced an MBA/AT&T URL variant.",
+    "sources": [
+      "https://www.linkedin.com/in/adrian-cejudo-carrillo-4013a5100"
+    ],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Adrian Cejudo Carrillo\" LinkedIn",
+      "\"Adrian Cejudo Carrillo\" insurance"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 44,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "No individual profile was connected to this Los Angeles WFG producer.",
+    "sources": [],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Adrian Esquivias\" LinkedIn",
+      "\"Adrian Esquivias\" WFG LinkedIn"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 45,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "Many Los Angeles namesakes surfaced. None was tied to the source producer or license.",
+    "sources": [],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Adrian Martinez\" LinkedIn insurance \"Los Angeles\"",
+      "\"Adrian Martinez\" \"4586761\" LinkedIn"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 46,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "Joined-surname and split-surname searches did not locate a relevant individual LinkedIn profile.",
+    "sources": [],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Adrian Millanarcila\" LinkedIn",
+      "\"Adrian Millan Arcila\" LinkedIn"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 47,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "A LinkedIn people-directory entry exists for Adriana Bood, but no individual profile URL or HUB connection was established.",
+    "sources": [
+      "https://www.linkedin.com/directory/people/a-359"
+    ],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Adriana Bood\" LinkedIn",
+      "\"Adriana Bood\" HUB LinkedIn"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 48,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "LinkedIn's surname directory lists Adriana Daniyelyan in Los Angeles County. No individual profile URL or WFG connection was established.",
+    "sources": [
+      "https://www.linkedin.com/pub/dir/%2B/Daniyelyan"
+    ],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Adriana Daniyelyan\" LinkedIn",
+      "\"Adriana Daniyelyan\" site:linkedin.com/in"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 49,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "A nursing namesake and directory entries surfaced. No individual profile was connected to this WFG producer.",
+    "sources": [],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Adriana Norman\" LinkedIn financial",
+      "\"Adriana Norman\" WFG LinkedIn"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  },
+  {
+    "ordinal": 50,
+    "status": "Not found",
+    "linkedin_url": "",
+    "candidate_url": "",
+    "evidence": "Multiple namesakes surfaced, without evidence tying an individual LinkedIn profile to the source Los Angeles producer.",
+    "sources": [],
+    "checked_on": "2026-10-10",
+    "queries": [
+      "\"Adriana Quezada\" LinkedIn insurance",
+      "\"Adriana Quezada\" \"Los Angeles\" LinkedIn"
+    ],
+    "evidence_access": "Public search results; supplemental public pages where listed. LinkedIn may require sign-in; no authenticated profile verification."
+  }
+]

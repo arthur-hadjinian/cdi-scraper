@@ -4,6 +4,7 @@ import { createRequire } from "node:module";
 import type { BrowserContext, Page } from "playwright";
 import type { AppConfig } from "./config.js";
 import { log } from "./human.js";
+import { recordSiteDialog } from './location-check.js';
 
 const require = createRequire(import.meta.url);
 
@@ -42,13 +43,11 @@ export async function launchBrowser(config: AppConfig): Promise<{ context: Brows
     context = await chromium.launchPersistentContext(profile, options);
   }
 
-  await context.addInitScript(() => {
-    Object.defineProperty(navigator, "webdriver", { get: () => undefined });
-  });
-
   const page = context.pages()[0] ?? (await context.newPage());
   page.setDefaultTimeout(60_000);
+  page.on('pageerror',error=>log(`Site JavaScript error: ${error.message}`));
   page.on("dialog", async (dialog) => {
+    recordSiteDialog(page, dialog.message());
     log(`Site dialog: ${dialog.message()}`);
     await dialog.accept();
   });
