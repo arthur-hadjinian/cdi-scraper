@@ -16,6 +16,8 @@ import { writeMasterCsv } from "./export.js";
 import { buildGrid, milesBetween } from "./grid.js";
 import { queueCapRecovery, writeRecoveryReport } from './cap-recovery.js';
 import { queueAdaptiveRecovery } from './adaptive-recovery.js';
+import { persistentLocationFailure,skipLocation,exportSkippedLocations } from './skipped-locations.js';
+import { queueCollectionExpansion } from './collection-expansion.js';
 import { humanPause, log, randomBetween, sleep } from "./human.js";
 import { advanceWithRetry, canDeferZip, isAccessBlock } from './pagination-retry.js';
 import { locationInputs, locationReference, qualifiedZip, validateLocation, observeGeocoder, clearSiteError, assertSiteDialog, type LocationEvidence } from './location-check.js';
@@ -266,7 +268,8 @@ async function searchZip(page: Page, zip: string, config: AppConfig, attempt:num
   const center=await page.locator('#P1_CENTER').inputValue();
   const [latitude,longitude]=center.split(',').map(Number);
   if(!Number.isFinite(latitude)||!Number.isFinite(longitude)||Math.abs(latitude-evidence.latitude!)>0.001||Math.abs(longitude-evidence.longitude!)>0.001) throw new Error('Location mismatch: submitted center does not match observed geocoder');
-  appendFileSync(path.join(process.cwd(),'logs','location-checks.jsonl'),JSON.stringify({checked_at:new Date().toISOString(),zip,input,fallback:input!==qualifiedZip(zip),reference:expected,offset_miles:offset,...evidence})+'\n');
+    const primaryInput=/^\d{5}$/.test(zip)?qualifiedZip(zip):locationInputs(zip)[0];
+    appendFileSync(path.join(process.cwd(),'logs','location-checks.jsonl'),JSON.stringify({checked_at:new Date().toISOString(),zip,input,fallback:input!==primaryInput,reference:expected,offset_miles:offset,...evidence})+'\n');
   log(`Verified ${zip} in California; center offset ${offset.toFixed(2)} miles.`);
   return snapshot;
   } finally {detach();}
@@ -422,6 +425,8 @@ async function main(): Promise<void> {
   db.prepare('UPDATE searches SET latitude=?,longitude=?,distance_miles=? WHERE zip=?').run(corrected.latitude,corrected.longitude,milesBetween(locationReference(config.centerZip),corrected),'93031');
   queueCapRecovery(db, config.centerZip, config.coverageMiles);
   const adaptiveAtStartup=queueAdaptiveRecovery(db,config.centerZip,config.coverageMiles);
+  const expansionAtStartup=queueCollectionExpansion(db);
+  if(expansionAtStartup)log(`Approved collection expansion appended ${expansionAtStartup} centers.`);
   if(adaptiveAtStartup)log(`Adaptive recovery appended ${adaptiveAtStartup} new centers to the queue.`);
   const onlyZipIndex=process.argv.indexOf('--only-zip');
   const onlyZip=onlyZipIndex>=0?process.argv[onlyZipIndex+1]:undefined;
@@ -457,6 +462,7 @@ async function main(): Promise<void> {
       if (stopping) break;
 
       let attempt = 0;
+      let locationFailures = 0;
       while (attempt < config.maxAttempts && !stopping) {
         attempt += 1;
         try {
@@ -469,7 +475,7 @@ async function main(): Promise<void> {
               .run(search.zip,(Date.now()-started)/1000);
             writeRecoveryReport(db);
           }
-          const added = queueCapRecovery(db, config.centerZip, config.coverageMiles)+queueAdaptiveRecovery(db,config.centerZip,config.coverageMiles);
+          const added = queueCapRecovery(db, config.centerZip, config.coverageMiles)+queueAdaptiveRecovery(db,config.centerZip,config.coverageMiles)+queueCollectionExpansion(db);
           writeRecoveryReport(db);
           if (added) log(`Queued ${added} nearby ZIP searches for capped areas; capped searches remain unresolved.`);
           if (config.maxZips == null && !onlyZip) {
@@ -495,7 +501,15 @@ async function main(): Promise<void> {
             log(`Stopping for access/verification review: ${message}`);
             break;
           }
+          if(persistentLocationFailure(message))locationFailures++;
           if (attempt >= config.maxAttempts) {
+            if(locationFailures===config.maxAttempts){
+              skipLocation(db,search.zip,message,`All ${config.maxAttempts} attempts failed with persistent location errors; automatic skip authorized by user October 16, 2026.`);
+              try{exportSkippedLocations(db);}catch(exportError){log(`Skipped-location export failed; database archive retained: ${String(exportError)}`);}
+              log(`Archived and skipped ${search.zip} after repeated location failures. Saved agents retained; continuing the queue.`);
+              await openSearch(page,config);
+              break;
+            }
             if (canDeferZip(message) || /geocod|location mismatch|missing geocoded|site search error/i.test(message)) {
               deferredZips += 1;
               log(`Deferred ${search.zip} after ${config.maxAttempts} failed attempts: ${message}. Saved data preserved; ZIP remains incomplete. Continuing other ZIPs.`);

@@ -1,0 +1,605 @@
+{
+  "checked_at": "2026-10-17T04:20:17.530Z",
+  "method": "Read-only CDI page geocoder checks; no producer results collected or saved.",
+  "radiusOptions": [
+    {
+      "label": "Within 5 Miles",
+      "value": "8.0467"
+    },
+    {
+      "label": "Within 10 Miles",
+      "value": "16.0934"
+    },
+    {
+      "label": "Within 25 Miles",
+      "value": "40.2335"
+    },
+    {
+      "label": "Within 50 Miles",
+      "value": "80.467"
+    },
+    {
+      "label": "Within 75 Miles",
+      "value": "120.7005"
+    }
+  ],
+  "results": [
+    {
+      "key": "90079",
+      "input": "90079, CA",
+      "kind": "omitted_zip",
+      "reference": {
+        "zip": "90079",
+        "latitude": 34.040587,
+        "longitude": -118.255404,
+        "city": "Los Angeles",
+        "searched": false,
+        "nearest": {
+          "zip": "90014",
+          "city": "Los Angeles",
+          "status": "truncated",
+          "verified": false,
+          "distance": 0.36374662813023106
+        }
+      },
+      "evidence": {
+        "status": "OK",
+        "formatted": "Los Angeles, CA 90079, USA",
+        "country": "US",
+        "state": "CA",
+        "postal": "90079",
+        "latitude": 34.0405313,
+        "longitude": -118.2554032
+      },
+      "checked_at": "2026-10-17T04:19:17.340Z"
+    },
+    {
+      "key": "90089",
+      "input": "90089, CA",
+      "kind": "omitted_zip",
+      "reference": {
+        "zip": "90089",
+        "latitude": 34.020221,
+        "longitude": -118.286035,
+        "city": "Los Angeles",
+        "searched": false,
+        "nearest": {
+          "zip": "90007",
+          "city": "Los Angeles",
+          "status": "truncated",
+          "verified": false,
+          "distance": 0.6371402517963574
+        }
+      },
+      "evidence": {
+        "status": "OK",
+        "formatted": "Los Angeles, CA 90089, USA",
+        "country": "US",
+        "state": "CA",
+        "postal": "90089",
+        "latitude": 34.0220127,
+        "longitude": -118.2892046
+      },
+      "checked_at": "2026-10-17T04:19:19.956Z"
+    },
+    {
+      "key": "90095",
+      "input": "90095, CA",
+      "kind": "omitted_zip",
+      "reference": {
+        "zip": "90095",
+        "latitude": 34.071225,
+        "longitude": -118.443373,
+        "city": "Los Angeles",
+        "searched": false,
+        "nearest": {
+          "zip": "90049",
+          "city": "Los Angeles",
+          "status": "truncated",
+          "verified": false,
+          "distance": 1.789734635164914
+        }
+      },
+      "evidence": {
+        "status": "OK",
+        "formatted": "Los Angeles, CA 90095, USA",
+        "country": "US",
+        "state": "CA",
+        "postal": "90095",
+        "latitude": 34.070264,
+        "longitude": -118.4440562
+      },
+      "checked_at": "2026-10-17T04:19:22.574Z"
+    },
+    {
+      "key": "90506",
+      "input": "90506, CA",
+      "kind": "omitted_zip",
+      "reference": {
+        "zip": "90506",
+        "latitude": 33.884696,
+        "longitude": -118.329998,
+        "city": "Torrance",
+        "searched": false,
+        "nearest": {
+          "zip": "90249",
+          "city": "Gardena",
+          "status": "truncated",
+          "verified": false,
+          "distance": 1.193534290164
+        }
+      },
+      "evidence": {
+        "status": "OK",
+        "formatted": "Torrance, CA 90506, USA",
+        "country": "US",
+        "state": "CA",
+        "postal": "90506",
+        "latitude": 33.8844585,
+        "longitude": -118.329392
+      },
+      "checked_at": "2026-10-17T04:19:25.207Z"
+    },
+    {
+      "key": "91042",
+      "input": "91042, CA",
+      "kind": "omitted_zip",
+      "reference": {
+        "zip": "91042",
+        "latitude": 34.322618,
+        "longitude": -118.23757,
+        "city": "Tujunga",
+        "searched": false,
+        "nearest": {
+          "zip": "91041",
+          "city": "Sunland",
+          "status": "truncated",
+          "verified": false,
+          "distance": 5.33603724193651
+        }
+      },
+      "evidence": {
+        "status": "OK",
+        "formatted": "Tujunga, CA 91042, USA",
+        "country": "US",
+        "state": "CA",
+        "postal": "91042",
+        "latitude": 34.296676,
+        "longitude": -118.2292712
+      },
+      "checked_at": "2026-10-17T04:19:27.825Z"
+    },
+    {
+      "key": "91759",
+      "input": "91759, CA",
+      "kind": "omitted_zip",
+      "reference": {
+        "zip": "91759",
+        "latitude": 34.263699,
+        "longitude": -117.699574,
+        "city": "Mt Baldy",
+        "searched": false,
+        "nearest": {
+          "zip": "92397",
+          "city": "Wrightwood",
+          "status": "complete",
+          "verified": false,
+          "distance": 8.065155174992004
+        }
+      },
+      "evidence": {
+        "status": "OK",
+        "formatted": "Mt Baldy, CA 91759, USA",
+        "country": "US",
+        "state": "CA",
+        "postal": "91759",
+        "latitude": 34.2602336,
+        "longitude": -117.7138785
+      },
+      "checked_at": "2026-10-17T04:19:30.449Z"
+    },
+    {
+      "key": "93041",
+      "input": "93041, CA",
+      "kind": "omitted_zip",
+      "reference": {
+        "zip": "93041",
+        "latitude": 34.106028,
+        "longitude": -119.098081,
+        "city": "Port Hueneme",
+        "searched": false,
+        "nearest": {
+          "zip": "93042",
+          "city": "Point Mugu Nawc",
+          "status": "complete",
+          "verified": true,
+          "distance": 0.5084554126722736
+        }
+      },
+      "evidence": {
+        "status": "OK",
+        "formatted": "NAS Point Mugu, CA 93041, USA",
+        "country": "US",
+        "state": "CA",
+        "postal": "93041",
+        "latitude": 34.1451995,
+        "longitude": -119.1942983
+      },
+      "checked_at": "2026-10-17T04:19:33.073Z"
+    },
+    {
+      "key": "93243",
+      "input": "93243, CA",
+      "kind": "omitted_zip",
+      "reference": {
+        "zip": "93243",
+        "latitude": 34.7727,
+        "longitude": -118.791975,
+        "city": "Lebec",
+        "searched": false,
+        "nearest": {
+          "zip": "93532",
+          "city": "Lake Hughes",
+          "status": "complete",
+          "verified": false,
+          "distance": 15.327618715370685
+        }
+      },
+      "evidence": {
+        "status": "OK",
+        "formatted": "Lebec, CA 93243, USA",
+        "country": "US",
+        "state": "CA",
+        "postal": "93243",
+        "latitude": 34.7936796,
+        "longitude": -118.8363756
+      },
+      "checked_at": "2026-10-17T04:19:35.676Z"
+    },
+    {
+      "key": "90223",
+      "input": "90223, CA",
+      "kind": "remaining_postal_candidate",
+      "reference": {
+        "zip": "90223",
+        "city": "Compton",
+        "latitude": 33.8958,
+        "longitude": -118.2201,
+        "distanceMiles": 19.954510979820302,
+        "removed": false,
+        "nearest": {
+          "zip": "90221",
+          "city": "Compton",
+          "status": "truncated",
+          "verified": true,
+          "distance": 1.241628980787508
+        },
+        "capped_neighbors": 16
+      },
+      "evidence": {
+        "status": "OK",
+        "formatted": "Compton, CA 90223, USA",
+        "country": "US",
+        "state": "CA",
+        "postal": "90223",
+        "latitude": 33.89989,
+        "longitude": -118.2199049
+      },
+      "checked_at": "2026-10-17T04:19:38.293Z"
+    },
+    {
+      "key": "91328",
+      "input": "91328, CA",
+      "kind": "remaining_postal_candidate",
+      "reference": {
+        "zip": "91328",
+        "city": "Northridge",
+        "latitude": 34.2283,
+        "longitude": -118.5368,
+        "distanceMiles": 12.823068439500512,
+        "removed": false,
+        "nearest": {
+          "zip": "91325",
+          "city": "Northridge",
+          "status": "truncated",
+          "verified": false,
+          "distance": 1.136317331891488
+        },
+        "capped_neighbors": 26
+      },
+      "evidence": {
+        "status": "OK",
+        "formatted": "Northridge, CA 91328, USA",
+        "country": "US",
+        "state": "CA",
+        "postal": "91328",
+        "latitude": 34.24,
+        "longitude": -118.54
+      },
+      "checked_at": "2026-10-17T04:19:40.916Z"
+    },
+    {
+      "key": "91329",
+      "input": "91329, CA",
+      "kind": "remaining_postal_candidate",
+      "reference": {
+        "zip": "91329",
+        "city": "Northridge",
+        "latitude": 34.2283,
+        "longitude": -118.5368,
+        "distanceMiles": 12.823068439500512,
+        "removed": false,
+        "nearest": {
+          "zip": "91325",
+          "city": "Northridge",
+          "status": "truncated",
+          "verified": false,
+          "distance": 1.136317331891488
+        },
+        "capped_neighbors": 26
+      },
+      "evidence": {
+        "status": "OK",
+        "formatted": "Northridge, CA 91329, USA",
+        "country": "US",
+        "state": "CA",
+        "postal": "91329",
+        "latitude": 34.2239055,
+        "longitude": -118.5024461
+      },
+      "checked_at": "2026-10-17T04:19:43.541Z"
+    },
+    {
+      "key": "93539",
+      "input": "93539, CA",
+      "kind": "remaining_postal_candidate",
+      "reference": {
+        "zip": "93539",
+        "city": "Lancaster",
+        "latitude": 34.698,
+        "longitude": -118.1367,
+        "distanceMiles": 37.88388119294671,
+        "removed": false,
+        "nearest": {
+          "zip": "93534",
+          "city": "Lancaster",
+          "status": "truncated",
+          "verified": false,
+          "distance": 0.8584187746241391
+        },
+        "capped_neighbors": 1
+      },
+      "evidence": {
+        "status": "OK",
+        "formatted": "Lancaster, CA 93539, USA",
+        "country": "US",
+        "state": "CA",
+        "postal": "93539",
+        "latitude": 34.6824502,
+        "longitude": -118.1656706
+      },
+      "checked_at": "2026-10-17T04:19:46.169Z"
+    },
+    {
+      "key": "93584",
+      "input": "93584, CA",
+      "kind": "remaining_postal_candidate",
+      "reference": {
+        "zip": "93584",
+        "city": "Lancaster",
+        "latitude": 34.698,
+        "longitude": -118.1367,
+        "distanceMiles": 37.88388119294671,
+        "removed": false,
+        "nearest": {
+          "zip": "93534",
+          "city": "Lancaster",
+          "status": "truncated",
+          "verified": false,
+          "distance": 0.8584187746241391
+        },
+        "capped_neighbors": 1
+      },
+      "evidence": {
+        "status": "OK",
+        "formatted": "Lancaster, CA 93584, USA",
+        "country": "US",
+        "state": "CA",
+        "postal": "93584",
+        "latitude": 34.6988639,
+        "longitude": -118.1419282
+      },
+      "checked_at": "2026-10-17T04:19:48.795Z"
+    },
+    {
+      "key": "93586",
+      "input": "93586, CA",
+      "kind": "remaining_postal_candidate",
+      "reference": {
+        "zip": "93586",
+        "city": "Lancaster",
+        "latitude": 34.698,
+        "longitude": -118.1367,
+        "distanceMiles": 37.88388119294671,
+        "removed": false,
+        "nearest": {
+          "zip": "93534",
+          "city": "Lancaster",
+          "status": "truncated",
+          "verified": false,
+          "distance": 0.8584187746241391
+        },
+        "capped_neighbors": 1
+      },
+      "evidence": {
+        "status": "OK",
+        "formatted": "Quartz Hill, CA 93586, USA",
+        "country": "US",
+        "state": "CA",
+        "postal": "93586",
+        "latitude": 34.65,
+        "longitude": -118.22
+      },
+      "checked_at": "2026-10-17T04:19:51.419Z"
+    },
+    {
+      "key": "90888",
+      "input": "90888, CA",
+      "kind": "remaining_postal_candidate",
+      "reference": {
+        "zip": "90888",
+        "city": "Far",
+        "latitude": 33.77,
+        "longitude": -118.18,
+        "distanceMiles": 28.941002992158314,
+        "removed": false,
+        "nearest": {
+          "zip": "90814",
+          "city": "Long Beach",
+          "status": "truncated",
+          "verified": true,
+          "distance": 0.789152628280224
+        },
+        "capped_neighbors": 15
+      },
+      "evidence": {
+        "status": "OK",
+        "formatted": "California, USA",
+        "country": "US",
+        "state": "CA",
+        "latitude": 36.778261,
+        "longitude": -119.4179324
+      },
+      "checked_at": "2026-10-17T04:19:54.011Z"
+    },
+    {
+      "key": "city-agua-dulce",
+      "input": "Agua Dulce, CA",
+      "kind": "alternate_city",
+      "evidence": {
+        "status": "OK",
+        "formatted": "Agua Dulce, CA 91390, USA",
+        "country": "US",
+        "state": "CA",
+        "postal": "91390",
+        "latitude": 34.4963443,
+        "longitude": -118.3261969
+      },
+      "checked_at": "2026-10-17T04:19:56.636Z"
+    },
+    {
+      "key": "city-acton",
+      "input": "Acton, CA",
+      "kind": "alternate_city",
+      "evidence": {
+        "status": "OK",
+        "formatted": "Acton, CA, USA",
+        "country": "US",
+        "state": "CA",
+        "latitude": 34.4717405,
+        "longitude": -118.1972271
+      },
+      "checked_at": "2026-10-17T04:19:59.257Z"
+    },
+    {
+      "key": "city-mount-baldy",
+      "input": "Mount Baldy, CA",
+      "kind": "alternate_city",
+      "evidence": {
+        "status": "OK",
+        "formatted": "Mt Baldy, CA 91759, USA",
+        "country": "US",
+        "state": "CA",
+        "postal": "91759",
+        "latitude": 34.2363809,
+        "longitude": -117.6589752
+      },
+      "checked_at": "2026-10-17T04:20:01.897Z"
+    },
+    {
+      "key": "city-lebec",
+      "input": "Lebec, CA",
+      "kind": "alternate_city",
+      "evidence": {
+        "status": "OK",
+        "formatted": "Lebec, CA, USA",
+        "country": "US",
+        "state": "CA",
+        "latitude": 34.8416435,
+        "longitude": -118.8648189
+      },
+      "checked_at": "2026-10-17T04:20:04.506Z"
+    },
+    {
+      "key": "city-tujunga",
+      "input": "Tujunga, CA",
+      "kind": "alternate_city",
+      "evidence": {
+        "status": "OK",
+        "formatted": "Sunland, Los Angeles, CA 91040, USA",
+        "country": "US",
+        "state": "CA",
+        "postal": "91040",
+        "latitude": 34.2596694,
+        "longitude": -118.3114218
+      },
+      "checked_at": "2026-10-17T04:20:07.121Z"
+    },
+    {
+      "key": "city-san-gabriel",
+      "input": "San Gabriel, CA",
+      "kind": "alternate_city",
+      "evidence": {
+        "status": "OK",
+        "formatted": "San Gabriel, CA, USA",
+        "country": "US",
+        "state": "CA",
+        "latitude": 34.09611110000001,
+        "longitude": -118.1058333
+      },
+      "checked_at": "2026-10-17T04:20:09.763Z"
+    },
+    {
+      "key": "city-compton",
+      "input": "Compton, CA",
+      "kind": "alternate_city",
+      "evidence": {
+        "status": "OK",
+        "formatted": "Compton, CA, USA",
+        "country": "US",
+        "state": "CA",
+        "latitude": 33.8959097,
+        "longitude": -118.2243901
+      },
+      "checked_at": "2026-10-17T04:20:12.342Z"
+    },
+    {
+      "key": "city-northridge",
+      "input": "Northridge, CA",
+      "kind": "alternate_city",
+      "evidence": {
+        "status": "OK",
+        "formatted": "Northridge, Los Angeles, CA, USA",
+        "country": "US",
+        "state": "CA",
+        "latitude": 34.2354576,
+        "longitude": -118.5361381
+      },
+      "checked_at": "2026-10-17T04:20:14.941Z"
+    },
+    {
+      "key": "city-lancaster",
+      "input": "Lancaster, CA",
+      "kind": "alternate_city",
+      "evidence": {
+        "status": "OK",
+        "formatted": "Lancaster, CA, USA",
+        "country": "US",
+        "state": "CA",
+        "latitude": 34.703947,
+        "longitude": -118.1481016
+      },
+      "checked_at": "2026-10-17T04:20:17.530Z"
+    }
+  ]
+}

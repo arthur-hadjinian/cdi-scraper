@@ -1,0 +1,1243 @@
+{
+  "enabled": true,
+  "approved_by_user_at": "2026-10-17T04:28:12.9256542Z",
+  "batch": "region-expansion-preview-20261016",
+  "initial": [
+    {
+      "id": "expansion:90095",
+      "input": "90095, CA",
+      "city": "Los Angeles, CA 90095, USA",
+      "latitude": 34.070264,
+      "longitude": -118.4440562,
+      "distanceMiles": 9.84829881600776,
+      "kind": "omitted_zip",
+      "sourceZip": "90095",
+      "nearest_searched_miles": 1.738990328745969,
+      "verified_at": "2026-10-17T04:19:22.574Z"
+    },
+    {
+      "id": "expansion:90506",
+      "input": "90506, CA",
+      "city": "Torrance, CA 90506, USA",
+      "latitude": 33.8844585,
+      "longitude": -118.329392,
+      "distanceMiles": 19.849961449961494,
+      "kind": "omitted_zip",
+      "sourceZip": "90506",
+      "nearest_searched_miles": 1.1844548418061505,
+      "verified_at": "2026-10-17T04:19:25.207Z"
+    },
+    {
+      "id": "expansion:91042",
+      "input": "91042, CA",
+      "city": "Tujunga, CA 91042, USA",
+      "latitude": 34.296676,
+      "longitude": -118.2292712,
+      "distanceMiles": 10.163289507874827,
+      "kind": "omitted_zip",
+      "sourceZip": "91042",
+      "nearest_searched_miles": 4.565189391530668,
+      "verified_at": "2026-10-17T04:19:27.825Z"
+    },
+    {
+      "id": "expansion:91759",
+      "input": "91759, CA",
+      "city": "Mt Baldy, CA 91759, USA",
+      "latitude": 34.2602336,
+      "longitude": -117.7138785,
+      "distanceMiles": 35.341573935544986,
+      "kind": "omitted_zip",
+      "sourceZip": "91759",
+      "nearest_searched_miles": 8.71828504153929,
+      "verified_at": "2026-10-17T04:19:30.449Z"
+    },
+    {
+      "id": "expansion:city-agua-dulce",
+      "input": "Agua Dulce, CA",
+      "city": "Agua Dulce, CA 91390, USA",
+      "latitude": 34.4963443,
+      "longitude": -118.3261969,
+      "distanceMiles": 22.431699839803336,
+      "kind": "alternate_city",
+      "sourceZip": "91390",
+      "nearest_searched_miles": 7.4731771158121845,
+      "verified_at": "2026-10-17T04:19:56.636Z"
+    },
+    {
+      "id": "expansion:city-acton",
+      "input": "Acton, CA",
+      "city": "Acton, CA, USA",
+      "latitude": 34.4717405,
+      "longitude": -118.1972271,
+      "distanceMiles": 21.94008884923903,
+      "kind": "alternate_city",
+      "sourceZip": null,
+      "nearest_searched_miles": 0.8160204369012719,
+      "verified_at": "2026-10-17T04:19:59.257Z"
+    },
+    {
+      "id": "expansion:city-mount-baldy",
+      "input": "Mount Baldy, CA",
+      "city": "Mt Baldy, CA 91759, USA",
+      "latitude": 34.2363809,
+      "longitude": -117.6589752,
+      "distanceMiles": 38.212673652572995,
+      "kind": "alternate_city",
+      "sourceZip": "91759",
+      "nearest_searched_miles": 5.815055254160732,
+      "verified_at": "2026-10-17T04:20:01.897Z"
+    },
+    {
+      "id": "expansion:city-northridge",
+      "input": "Northridge, CA",
+      "city": "Northridge, Los Angeles, CA, USA",
+      "latitude": 34.2354576,
+      "longitude": -118.5361381,
+      "distanceMiles": 12.94637896453461,
+      "kind": "alternate_city",
+      "sourceZip": null,
+      "nearest_searched_miles": 0.9230975813575725,
+      "verified_at": "2026-10-17T04:20:14.941Z"
+    },
+    {
+      "id": "expansion:city-lancaster",
+      "input": "Lancaster, CA",
+      "city": "Lancaster, CA, USA",
+      "latitude": 34.703947,
+      "longitude": -118.1481016,
+      "distanceMiles": 38.10319393716163,
+      "kind": "alternate_city",
+      "sourceZip": null,
+      "nearest_searched_miles": 0.9032530416968388,
+      "verified_at": "2026-10-17T04:20:17.53Z"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "expansion:90223",
+      "input": "90223, CA",
+      "city": "Compton, CA 90223, USA",
+      "latitude": 33.89989,
+      "longitude": -118.2199049,
+      "distanceMiles": 19.688025202246386,
+      "kind": "remaining_postal_candidate",
+      "sourceZip": "90223",
+      "nearest_searched_miles": 1.1687735048715306,
+      "verified_at": "2026-10-17T04:19:38.293Z"
+    },
+    {
+      "id": "expansion:91329",
+      "input": "91329, CA",
+      "city": "Northridge, CA 91329, USA",
+      "latitude": 34.2239055,
+      "longitude": -118.5024461,
+      "distanceMiles": 10.86545685040699,
+      "kind": "remaining_postal_candidate",
+      "sourceZip": "91329",
+      "nearest_searched_miles": 1.2217324968125582,
+      "verified_at": "2026-10-17T04:19:43.541Z"
+    },
+    {
+      "id": "expansion:93539",
+      "input": "93539, CA",
+      "city": "Lancaster, CA 93539, USA",
+      "latitude": 34.6824502,
+      "longitude": -118.1656706,
+      "distanceMiles": 36.41251144868015,
+      "kind": "remaining_postal_candidate",
+      "sourceZip": "93539",
+      "nearest_searched_miles": 1.1077842661492208,
+      "verified_at": "2026-10-17T04:19:46.169Z"
+    },
+    {
+      "id": "expansion:93586",
+      "input": "93586, CA",
+      "city": "Quartz Hill, CA 93586, USA",
+      "latitude": 34.65,
+      "longitude": -118.22,
+      "distanceMiles": 33.566198404714875,
+      "kind": "remaining_postal_candidate",
+      "sourceZip": "93586",
+      "nearest_searched_miles": 3.3953423744917446,
+      "verified_at": "2026-10-17T04:19:51.419Z"
+    },
+    {
+      "id": "midpoint:place:0617750",
+      "input": "Cypress, CA",
+      "city": "Cypress, CA, USA",
+      "latitude": 33.8169366,
+      "longitude": -118.0368507,
+      "distanceMiles": 29.491189895226285,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T04:38:03.732Z",
+      "reference_source": "census_place",
+      "planning_score": 436.1451269166656,
+      "example_pair": {
+        "a": "90623",
+        "b": "90630"
+      }
+    },
+    {
+      "id": "midpoint:place:0668308",
+      "input": "San Pasqual, CA",
+      "city": "San Pasqual, CA 91107, USA",
+      "latitude": 34.1378448,
+      "longitude": -118.0987702,
+      "distanceMiles": 13.038063857526826,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": "91107",
+      "verified_at": "2026-10-17T04:38:09.140Z",
+      "reference_source": "census_place",
+      "planning_score": 310.1242752182753,
+      "example_pair": {
+        "a": "91131",
+        "b": "91780"
+      }
+    },
+    {
+      "id": "midpoint:place:0670686",
+      "input": "Seal Beach, CA",
+      "city": "Seal Beach, CA, USA",
+      "latitude": 33.7414085,
+      "longitude": -118.1047682,
+      "distanceMiles": 32.25642154387555,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T04:38:19.539Z",
+      "reference_source": "census_place",
+      "planning_score": 272.91218774033786,
+      "example_pair": {
+        "a": "90743",
+        "b": "90721"
+      }
+    },
+    {
+      "id": "midpoint:place:0621096",
+      "input": "East San Gabriel, CA",
+      "city": "East San Gabriel, CA, USA",
+      "latitude": 34.121428,
+      "longitude": -118.0798956,
+      "distanceMiles": 14.33426809952646,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T04:38:24.829Z",
+      "reference_source": "census_place",
+      "planning_score": 272.4316578936391,
+      "example_pair": {
+        "a": "91776",
+        "b": "91780"
+      }
+    },
+    {
+      "id": "midpoint:place:0678148",
+      "input": "Temple City, CA",
+      "city": "Temple City, CA, USA",
+      "latitude": 34.1067574,
+      "longitude": -118.0608782,
+      "distanceMiles": 15.652762422336313,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T04:38:35.230Z",
+      "reference_source": "census_place",
+      "planning_score": 259.971164444732,
+      "example_pair": {
+        "a": "91797",
+        "b": "91775"
+      }
+    },
+    {
+      "id": "midpoint:place:0620984",
+      "input": "East Pasadena, CA",
+      "city": "East Pasadena, CA 91107, USA",
+      "latitude": 34.1382378,
+      "longitude": -118.0742249,
+      "distanceMiles": 14.416503854225445,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": "91107",
+      "verified_at": "2026-10-17T04:38:40.521Z",
+      "reference_source": "census_place",
+      "planning_score": 227.46108239198267,
+      "example_pair": {
+        "a": "91775",
+        "b": "91107"
+      }
+    },
+    {
+      "id": "midpoint:place:0621292",
+      "input": "East Whittier, CA",
+      "city": "East Whittier, CA 90604, USA",
+      "latitude": 33.9244577,
+      "longitude": -117.9889525,
+      "distanceMiles": 25.647039715908015,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": "90604",
+      "verified_at": "2026-10-17T04:38:45.897Z",
+      "reference_source": "census_place",
+      "planning_score": 213.90094953451327,
+      "example_pair": {
+        "a": "90603",
+        "b": "90631"
+      }
+    },
+    {
+      "id": "midpoint:place:0616532",
+      "input": "Costa Mesa, CA",
+      "city": "Costa Mesa, CA, USA",
+      "latitude": 33.6638439,
+      "longitude": -117.9047429,
+      "distanceMiles": 42.50506753235767,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T04:38:51.165Z",
+      "reference_source": "census_place",
+      "planning_score": 213.7274771773416,
+      "example_pair": {
+        "a": "92703",
+        "b": "92663"
+      }
+    },
+    {
+      "id": "midpoint:place:0647430",
+      "input": "Midway City, CA",
+      "city": "Midway City, CA, USA",
+      "latitude": 33.7446861,
+      "longitude": -117.9863236,
+      "distanceMiles": 35.2562363762056,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T04:38:56.521Z",
+      "reference_source": "census_place",
+      "planning_score": 204.09638148077684,
+      "example_pair": {
+        "a": "92844",
+        "b": "92683"
+      }
+    },
+    {
+      "id": "midpoint:place:0651820",
+      "input": "North El Monte, CA",
+      "city": "North El Monte, CA, USA",
+      "latitude": 34.1027861,
+      "longitude": -118.0242333,
+      "distanceMiles": 17.742702135666832,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T04:39:01.816Z",
+      "reference_source": "census_place",
+      "planning_score": 180.50507901363633,
+      "example_pair": {
+        "a": "91797",
+        "b": "91780"
+      }
+    },
+    {
+      "id": "midpoint:place:0603344",
+      "input": "Avocado Heights, CA",
+      "city": "Avocado Heights, CA, USA",
+      "latitude": 34.0361217,
+      "longitude": -117.9911765,
+      "distanceMiles": 21.174644868670686,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T04:39:07.181Z",
+      "reference_source": "census_place",
+      "planning_score": 177.32578015633294,
+      "example_pair": {
+        "a": "91733",
+        "b": "91746"
+      }
+    },
+    {
+      "id": "midpoint:place:0659451",
+      "input": "Rancho Cucamonga, CA",
+      "city": "Rancho Cucamonga, CA, USA",
+      "latitude": 34.1065201,
+      "longitude": -117.5934626,
+      "distanceMiles": 41.96846762210102,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T04:39:17.553Z",
+      "reference_source": "census_place",
+      "planning_score": 164.8289494826975,
+      "example_pair": {
+        "a": "91739",
+        "b": "91764"
+      }
+    },
+    {
+      "id": "midpoint:place:0646436",
+      "input": "Mayflower Village, CA",
+      "city": "Mayflower Village, CA, USA",
+      "latitude": 34.1150078,
+      "longitude": -118.0097884,
+      "distanceMiles": 18.33983460838504,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T04:39:28.015Z",
+      "reference_source": "census_place",
+      "planning_score": 163.11795106037957,
+      "example_pair": {
+        "a": "91733",
+        "b": "91016"
+      }
+    },
+    {
+      "id": "midpoint:place:0673167",
+      "input": "South Monrovia Island, CA",
+      "city": "South Monrovia Island, CA, USA",
+      "latitude": 34.1215969,
+      "longitude": -117.9980757,
+      "distanceMiles": 18.905356194157044,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T04:39:33.439Z",
+      "reference_source": "census_place",
+      "planning_score": 162.34926115258799,
+      "example_pair": {
+        "a": "91733",
+        "b": "91008"
+      }
+    },
+    {
+      "id": "midpoint:place:0684774",
+      "input": "West Puente Valley, CA",
+      "city": "West Puente Valley, CA, USA",
+      "latitude": 34.0561121,
+      "longitude": -117.9684985,
+      "distanceMiles": 21.80041737423772,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T04:39:54.134Z",
+      "reference_source": "census_place",
+      "planning_score": 116.92061995050544,
+      "example_pair": {
+        "a": "91797",
+        "b": "91746"
+      }
+    },
+    {
+      "id": "midpoint:place:0636826",
+      "input": "Irwindale, CA",
+      "city": "Irwindale, CA, USA",
+      "latitude": 34.1071068,
+      "longitude": -117.9341809,
+      "distanceMiles": 22.684628022295776,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T04:39:59.483Z",
+      "reference_source": "census_place",
+      "planning_score": 110.70094289483677,
+      "example_pair": {
+        "a": "91790",
+        "b": "91016"
+      }
+    },
+    {
+      "id": "midpoint:place:0663050",
+      "input": "Rossmoor, CA",
+      "city": "Rossmoor, CA 90720, USA",
+      "latitude": 33.7855722,
+      "longitude": -118.0850642,
+      "distanceMiles": 29.963044121578392,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": "90720",
+      "verified_at": "2026-10-17T04:40:17.132Z",
+      "reference_source": "census_place",
+      "planning_score": 104.55556324217642,
+      "example_pair": {
+        "a": "90630",
+        "b": "90804"
+      }
+    },
+    {
+      "id": "midpoint:place:0639304",
+      "input": "La Habra Heights, CA",
+      "city": "La Habra Heights, CA, USA",
+      "latitude": 33.95598040000001,
+      "longitude": -117.9581384,
+      "distanceMiles": 25.66207528428008,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T04:40:22.436Z",
+      "reference_source": "census_place",
+      "planning_score": 101.18781574031156,
+      "example_pair": {
+        "a": "92838",
+        "b": "91745"
+      }
+    },
+    {
+      "id": "midpoint:place:0603386",
+      "input": "Azusa, CA",
+      "city": "Azusa, CA, USA",
+      "latitude": 34.1336186,
+      "longitude": -117.9075627,
+      "distanceMiles": 23.905010355528407,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T04:40:27.721Z",
+      "reference_source": "census_place",
+      "planning_score": 97.32806807463636,
+      "example_pair": {
+        "a": "91008",
+        "b": "91741"
+      }
+    },
+    {
+      "id": "midpoint:place:0682815",
+      "input": "Vincent, CA",
+      "city": "Vincent, CA, USA",
+      "latitude": 34.0982802,
+      "longitude": -117.9227605,
+      "distanceMiles": 23.450817491528387,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T04:40:43.327Z",
+      "reference_source": "census_place",
+      "planning_score": 78.4737607380328,
+      "example_pair": {
+        "a": "91791",
+        "b": "91010"
+      }
+    },
+    {
+      "id": "midpoint:place:0673276",
+      "input": "South San Gabriel, CA",
+      "city": "South San Gabriel, CA 91770, USA",
+      "latitude": 34.0492126,
+      "longitude": -118.0949198,
+      "distanceMiles": 15.556954092693918,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": "91770",
+      "verified_at": "2026-10-17T04:40:48.653Z",
+      "reference_source": "census_place",
+      "planning_score": 74.2510214483263,
+      "example_pair": {
+        "a": "90101",
+        "b": "91733"
+      }
+    },
+    {
+      "id": "midpoint:place:0648648",
+      "input": "Monrovia, CA",
+      "city": "Monrovia, CA, USA",
+      "latitude": 34.1404022,
+      "longitude": -118.0095771,
+      "distanceMiles": 18.055991005341877,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T04:41:09.372Z",
+      "reference_source": "census_place",
+      "planning_score": 58.81688761667942,
+      "example_pair": {
+        "a": "91016",
+        "b": "91008"
+      }
+    },
+    {
+      "id": "midpoint:place:0612734",
+      "input": "Charter Oak, CA",
+      "city": "Charter Oak, CA, USA",
+      "latitude": 34.1030918,
+      "longitude": -117.8594264,
+      "distanceMiles": 26.937292518983526,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T04:41:14.716Z",
+      "reference_source": "census_place",
+      "planning_score": 54.70853597664186,
+      "example_pair": {
+        "a": "91750",
+        "b": "91724"
+      }
+    },
+    {
+      "id": "midpoint:place:0613560",
+      "input": "Citrus, CA",
+      "city": "Citrus, CA, USA",
+      "latitude": 34.1150082,
+      "longitude": -117.8917287,
+      "distanceMiles": 24.97690431125145,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T04:41:30.209Z",
+      "reference_source": "census_place",
+      "planning_score": 44.553291219853186,
+      "example_pair": {
+        "a": "91702",
+        "b": "91741"
+      }
+    },
+    {
+      "id": "midpoint:place:0682667",
+      "input": "View Park-Windsor Hills, CA",
+      "city": "View Park-Windsor Hills, CA, USA",
+      "latitude": 33.9942689,
+      "longitude": -118.344711,
+      "distanceMiles": 12.321660885115286,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T04:41:35.532Z",
+      "reference_source": "census_place",
+      "planning_score": 42.49645280519308,
+      "example_pair": {
+        "a": "90232",
+        "b": "90044"
+      }
+    },
+    {
+      "id": "midpoint:place:0684116",
+      "input": "West Athens, CA",
+      "city": "West Athens, CA, USA",
+      "latitude": 33.9239656,
+      "longitude": -118.3003546,
+      "distanceMiles": 17.166442654697345,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T04:41:51.020Z",
+      "reference_source": "census_place",
+      "planning_score": 37.086303993127764,
+      "example_pair": {
+        "a": "90250",
+        "b": "90002"
+      }
+    },
+    {
+      "id": "midpoint:place:0645400",
+      "input": "Manhattan Beach, CA",
+      "city": "Manhattan Beach, CA, USA",
+      "latitude": 33.8881489,
+      "longitude": -118.4092903,
+      "distanceMiles": 20.20378190748822,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T04:42:06.603Z",
+      "reference_source": "census_place",
+      "planning_score": 30.45941929399857,
+      "example_pair": {
+        "a": "90094",
+        "b": "90266"
+      }
+    },
+    {
+      "id": "midpoint:place:0672996",
+      "input": "South El Monte, CA",
+      "city": "South El Monte, CA 91733, USA",
+      "latitude": 34.0519548,
+      "longitude": -118.0467339,
+      "distanceMiles": 17.84387775736543,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": "91733",
+      "verified_at": "2026-10-17T04:42:17.156Z",
+      "reference_source": "census_place",
+      "planning_score": 26.62457631266317,
+      "example_pair": {
+        "a": "91733",
+        "b": "90660"
+      }
+    },
+    {
+      "id": "midpoint:place:0686832",
+      "input": "Yorba Linda, CA",
+      "city": "Yorba Linda, CA, USA",
+      "latitude": 33.88850350000001,
+      "longitude": -117.8132571,
+      "distanceMiles": 35.14505253373189,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T04:42:27.538Z",
+      "reference_source": "census_place",
+      "planning_score": 21.10352374553133,
+      "example_pair": {
+        "a": "92807",
+        "b": "92886"
+      }
+    },
+    {
+      "id": "midpoint:place:0616420",
+      "input": "Coronita, CA",
+      "city": "Coronita, CA 92882, USA",
+      "latitude": 33.8766913,
+      "longitude": -117.6156883,
+      "distanceMiles": 45.34905421510315,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": "92882",
+      "verified_at": "2026-10-17T04:42:38.009Z",
+      "reference_source": "census_place",
+      "planning_score": 19.421537534643704,
+      "example_pair": {
+        "a": "92887",
+        "b": "92860"
+      }
+    },
+    {
+      "id": "midpoint:place:0618352",
+      "input": "Del Aire, CA",
+      "city": "Del Aire, CA, USA",
+      "latitude": 33.9161251,
+      "longitude": -118.3695196,
+      "distanceMiles": 17.857579418725578,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T04:42:43.398Z",
+      "reference_source": "census_place",
+      "planning_score": 17.632160772833682,
+      "example_pair": {
+        "a": "90313",
+        "b": "90266"
+      }
+    },
+    {
+      "id": "midpoint:place:0613210",
+      "input": "Chino, CA",
+      "city": "Chino, CA, USA",
+      "latitude": 34.0136813,
+      "longitude": -117.6905621,
+      "distanceMiles": 37.804069755911534,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T04:42:48.692Z",
+      "reference_source": "census_place",
+      "planning_score": 16.172304474579178,
+      "example_pair": {
+        "a": "91710",
+        "b": "92880"
+      }
+    },
+    {
+      "id": "midpoint:place:0684592",
+      "input": "Westmont, CA",
+      "city": "Westmont, CA, USA",
+      "latitude": 33.9399781,
+      "longitude": -118.3046915,
+      "distanceMiles": 16.045255529777346,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T04:42:54.014Z",
+      "reference_source": "census_place",
+      "planning_score": 14.778009645717702,
+      "example_pair": {
+        "a": "90313",
+        "b": "90002"
+      }
+    },
+    {
+      "id": "midpoint:place:0684780",
+      "input": "West Rancho Dominguez, CA",
+      "city": "West Rancho Dominguez, CA, USA",
+      "latitude": 33.8939048,
+      "longitude": -118.2706282,
+      "distanceMiles": 19.427736820103483,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T04:42:59.367Z",
+      "reference_source": "census_place",
+      "planning_score": 13.11997145036208,
+      "example_pair": {
+        "a": "90221",
+        "b": "90044"
+      }
+    },
+    {
+      "id": "midpoint:place:0604938",
+      "input": "Bell Canyon, CA",
+      "city": "Bell Canyon, CA 91307, USA",
+      "latitude": 34.2046128,
+      "longitude": -118.6791701,
+      "distanceMiles": 20.477627696407566,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": "91307",
+      "verified_at": "2026-10-17T04:43:04.784Z",
+      "reference_source": "census_place",
+      "planning_score": 13.078718474087088,
+      "example_pair": {
+        "a": "91308",
+        "b": "93093"
+      }
+    },
+    {
+      "id": "midpoint:place:0617498",
+      "input": "Cudahy, CA",
+      "city": "Cudahy, CA 90201, USA",
+      "latitude": 33.9608646,
+      "longitude": -118.1857858,
+      "distanceMiles": 16.55240276538586,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": "90201",
+      "verified_at": "2026-10-17T04:43:15.167Z",
+      "reference_source": "census_place",
+      "planning_score": 8.685976398890746,
+      "example_pair": {
+        "a": "90002",
+        "b": "90040"
+      }
+    },
+    {
+      "id": "midpoint:place:0662644",
+      "input": "Rolling Hills Estates, CA",
+      "city": "Rolling Hills Estates, CA, USA",
+      "latitude": 33.7877943,
+      "longitude": -118.3581284,
+      "distanceMiles": 26.60143225018416,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T04:43:20.480Z",
+      "reference_source": "census_place",
+      "planning_score": 7.98835711806394,
+      "example_pair": {
+        "a": "90501",
+        "b": "90731"
+      }
+    },
+    {
+      "id": "midpoint:place:0660018",
+      "input": "Redondo Beach, CA",
+      "city": "Redondo Beach, CA, USA",
+      "latitude": 33.8491816,
+      "longitude": -118.3884078,
+      "distanceMiles": 22.595860890514395,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T04:43:26.089Z",
+      "reference_source": "census_place",
+      "planning_score": 5.306968663747464,
+      "example_pair": {
+        "a": "90501",
+        "b": "90266"
+      }
+    },
+    {
+      "id": "midpoint:place:0670140",
+      "input": "Santa Susana, CA",
+      "city": "Santa Susana, CA 93063, USA",
+      "latitude": 34.2624148,
+      "longitude": -118.6705467,
+      "distanceMiles": 20.817294077062584,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": "93063",
+      "verified_at": "2026-10-17T04:43:36.528Z",
+      "reference_source": "census_place",
+      "planning_score": 3.126246920049361,
+      "example_pair": {
+        "a": "93093",
+        "b": "91307"
+      }
+    },
+    {
+      "id": "midpoint:place:0682422",
+      "input": "Vernon, CA",
+      "city": "Vernon, CA, USA",
+      "latitude": 34.003903,
+      "longitude": -118.230073,
+      "distanceMiles": 12.75744526353283,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T05:06:36.312Z",
+      "reference_source": "census_place",
+      "planning_score": 566.3824422652378,
+      "example_pair": {
+        "a": "90023",
+        "b": "90255"
+      }
+    },
+    {
+      "id": "midpoint:place:0680000",
+      "input": "Torrance, CA",
+      "city": "Torrance, CA, USA",
+      "latitude": 33.8369217,
+      "longitude": -118.3407451,
+      "distanceMiles": 23.153273159373033,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T05:06:46.858Z",
+      "reference_source": "census_place",
+      "planning_score": 301.15183952927435,
+      "example_pair": {
+        "a": "90254",
+        "b": "90717"
+      }
+    },
+    {
+      "id": "midpoint:place:0673290",
+      "input": "South San Jose Hills, CA",
+      "city": "South San Jose Hills, CA, USA",
+      "latitude": 34.0098285,
+      "longitude": -117.9090408,
+      "distanceMiles": 26.1997652168356,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T05:06:52.337Z",
+      "reference_source": "census_place",
+      "planning_score": 297.24029493177954,
+      "example_pair": {
+        "a": "91714",
+        "b": "91789"
+      }
+    },
+    {
+      "id": "midpoint:place:0633518",
+      "input": "Hidden Hills, CA",
+      "city": "Hidden Hills, CA 91302, USA",
+      "latitude": 34.1648798,
+      "longitude": -118.6647537,
+      "distanceMiles": 19.5372885256111,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": "91302",
+      "verified_at": "2026-10-17T05:06:57.692Z",
+      "reference_source": "census_place",
+      "planning_score": 272.8015796586683,
+      "example_pair": {
+        "a": "91302",
+        "b": "91308"
+      }
+    },
+    {
+      "id": "midpoint:place:0662602",
+      "input": "Rolling Hills, CA",
+      "city": "Rolling Hills, CA 90274, USA",
+      "latitude": 33.7569615,
+      "longitude": -118.3539613,
+      "distanceMiles": 28.710501666065035,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": "90274",
+      "verified_at": "2026-10-17T05:07:23.595Z",
+      "reference_source": "census_place",
+      "planning_score": 156.19687155599786,
+      "example_pair": {
+        "a": "90274",
+        "b": "90275"
+      }
+    },
+    {
+      "id": "midpoint:place:0613756",
+      "input": "Claremont, CA",
+      "city": "Claremont, CA, USA",
+      "latitude": 34.096688,
+      "longitude": -117.7194007,
+      "distanceMiles": 34.91292828427231,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T05:07:29.076Z",
+      "reference_source": "census_place",
+      "planning_score": 146.39953270944932,
+      "example_pair": {
+        "a": "91711",
+        "b": "91767"
+      }
+    },
+    {
+      "id": "midpoint:place:0600394",
+      "input": "Agoura Hills, CA",
+      "city": "Agoura Hills, CA 91301, USA",
+      "latitude": 34.1533395,
+      "longitude": -118.7616764,
+      "distanceMiles": 25.106243534545854,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": "91301",
+      "verified_at": "2026-10-17T05:07:34.441Z",
+      "reference_source": "census_place",
+      "planning_score": 121.50441007603115,
+      "example_pair": {
+        "a": "91301",
+        "b": "91377"
+      }
+    },
+    {
+      "id": "midpoint:place:0669088",
+      "input": "Santa Clarita, CA",
+      "city": "Santa Clarita, CA, USA",
+      "latitude": 34.4131004,
+      "longitude": -118.5597386,
+      "distanceMiles": 21.4632530417274,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T05:07:39.976Z",
+      "reference_source": "census_place",
+      "planning_score": 107.3805425714313,
+      "example_pair": {
+        "a": "91386",
+        "b": "91382"
+      }
+    },
+    {
+      "id": "midpoint:place:0674130",
+      "input": "Stevenson Ranch, CA",
+      "city": "Stevenson Ranch, CA 91381, USA",
+      "latitude": 34.3931105,
+      "longitude": -118.5907538,
+      "distanceMiles": 21.62234713491839,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": "91381",
+      "verified_at": "2026-10-17T05:07:50.568Z",
+      "reference_source": "census_place",
+      "planning_score": 66.51951902898814,
+      "example_pair": {
+        "a": "91381",
+        "b": "91385"
+      }
+    },
+    {
+      "id": "midpoint:place:0611656",
+      "input": "Casa Conejo, CA",
+      "city": "Casa Conejo, CA 91320, USA",
+      "latitude": 34.1821527,
+      "longitude": -118.9439035,
+      "distanceMiles": 35.49367489720695,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": "91320",
+      "verified_at": "2026-10-17T05:07:55.928Z",
+      "reference_source": "census_place",
+      "planning_score": 64.66945719427036,
+      "example_pair": {
+        "a": "93012",
+        "b": "91361"
+      }
+    },
+    {
+      "id": "midpoint:place:0621230",
+      "input": "Eastvale, CA",
+      "city": "Eastvale, CA, USA",
+      "latitude": 33.9672152,
+      "longitude": -117.567051,
+      "distanceMiles": 45.52026547782952,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T05:08:11.650Z",
+      "reference_source": "census_place",
+      "planning_score": 54.946183008901606,
+      "example_pair": {
+        "a": "91708",
+        "b": "91752"
+      }
+    },
+    {
+      "id": "midpoint:place:0622370",
+      "input": "El Rio, CA",
+      "city": "El Rio, CA 93036, USA",
+      "latitude": 34.2407189,
+      "longitude": -119.159416,
+      "distanceMiles": 48.02612107184059,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": "93036",
+      "verified_at": "2026-10-17T05:08:17.032Z",
+      "reference_source": "census_place",
+      "planning_score": 46.74191129673459,
+      "example_pair": {
+        "a": "93004",
+        "b": "93036"
+      }
+    },
+    {
+      "id": "midpoint:place:0609598",
+      "input": "Calabasas, CA",
+      "city": "Calabasas, CA, USA",
+      "latitude": 34.1539731,
+      "longitude": -118.6473801,
+      "distanceMiles": 18.58000690648246,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": null,
+      "verified_at": "2026-10-17T05:08:22.486Z",
+      "reference_source": "census_place",
+      "planning_score": 37.94170396645775,
+      "example_pair": {
+        "a": "90290",
+        "b": "91376"
+      }
+    },
+    {
+      "id": "midpoint:place:0640830",
+      "input": "La Verne, CA",
+      "city": "La Verne, CA 91750, USA",
+      "latitude": 34.1010532,
+      "longitude": -117.7679299,
+      "distanceMiles": 32.12287854459048,
+      "kind": "verified_midpoint_candidate",
+      "sourceZip": "91750",
+      "verified_at": "2026-10-17T05:08:27.882Z",
+      "reference_source": "census_place",
+      "planning_score": 19.28282659390587,
+      "example_pair": {
+        "a": "91740",
+        "b": "91767"
+      }
+    }
+  ],
+  "maxAdditional": 100,
+  "maxPerParent": 3,
+  "maxDepth": 3,
+  "minSpacingMiles": 0.75,
+  "maxNearbyMiles": 5,
+  "held": [
+    {
+      "key": "90079",
+      "input": "90079, CA",
+      "reason": "Less than 0.75 miles from an already searched center",
+      "evidence": {
+        "status": "OK",
+        "formatted": "Los Angeles, CA 90079, USA",
+        "country": "US",
+        "state": "CA",
+        "postal": "90079",
+        "latitude": 34.0405313,
+        "longitude": -118.2554032
+      },
+      "nearest_miles": 0.36643894869900784
+    },
+    {
+      "key": "90089",
+      "input": "90089, CA",
+      "reason": "Less than 0.75 miles from an already searched center",
+      "evidence": {
+        "status": "OK",
+        "formatted": "Los Angeles, CA 90089, USA",
+        "country": "US",
+        "state": "CA",
+        "postal": "90089",
+        "latitude": 34.0220127,
+        "longitude": -118.2892046
+      },
+      "nearest_miles": 0.5244540308929002
+    },
+    {
+      "key": "93041",
+      "input": "93041, CA",
+      "reason": "Less than 0.75 miles from an already searched center",
+      "evidence": {
+        "status": "OK",
+        "formatted": "NAS Point Mugu, CA 93041, USA",
+        "country": "US",
+        "state": "CA",
+        "postal": "93041",
+        "latitude": 34.1451995,
+        "longitude": -119.1942983
+      },
+      "nearest_miles": 0
+    },
+    {
+      "key": "93243",
+      "input": "93243, CA",
+      "reason": "Actual geocoded center outside the 50-mile radius",
+      "evidence": {
+        "status": "OK",
+        "formatted": "Lebec, CA 93243, USA",
+        "country": "US",
+        "state": "CA",
+        "postal": "93243",
+        "latitude": 34.7936796,
+        "longitude": -118.8363756
+      },
+      "nearest_miles": 18.218168374940486
+    },
+    {
+      "key": "91328",
+      "input": "91328, CA",
+      "reason": "Less than 0.75 miles from an already searched center",
+      "evidence": {
+        "status": "OK",
+        "formatted": "Northridge, CA 91328, USA",
+        "country": "US",
+        "state": "CA",
+        "postal": "91328",
+        "latitude": 34.24,
+        "longitude": -118.54
+      },
+      "nearest_miles": 0.6139614821125218
+    },
+    {
+      "key": "93584",
+      "input": "93584, CA",
+      "reason": "Less than 0.75 miles from an already searched center",
+      "evidence": {
+        "status": "OK",
+        "formatted": "Lancaster, CA 93584, USA",
+        "country": "US",
+        "state": "CA",
+        "postal": "93584",
+        "latitude": 34.6988639,
+        "longitude": -118.1419282
+      },
+      "nearest_miles": 0.6846726186981831
+    },
+    {
+      "key": "90888",
+      "input": "90888, CA",
+      "reason": "Geocoder did not identify the requested ZIP",
+      "evidence": {
+        "status": "OK",
+        "formatted": "California, USA",
+        "country": "US",
+        "state": "CA",
+        "latitude": 36.778261,
+        "longitude": -119.4179324
+      },
+      "nearest_miles": 144.52376771654264
+    },
+    {
+      "key": "city-lebec",
+      "input": "Lebec, CA",
+      "reason": "Actual geocoded center outside the 50-mile radius",
+      "evidence": {
+        "status": "OK",
+        "formatted": "Lebec, CA, USA",
+        "country": "US",
+        "state": "CA",
+        "latitude": 34.8416435,
+        "longitude": -118.8648189
+      },
+      "nearest_miles": 21.18466427066191
+    },
+    {
+      "key": "city-tujunga",
+      "input": "Tujunga, CA",
+      "reason": "Less than 0.75 miles from an already searched center",
+      "evidence": {
+        "status": "OK",
+        "formatted": "Sunland, Los Angeles, CA 91040, USA",
+        "country": "US",
+        "state": "CA",
+        "postal": "91040",
+        "latitude": 34.2596694,
+        "longitude": -118.3114218
+      },
+      "nearest_miles": 0.7217440216622449
+    },
+    {
+      "key": "city-san-gabriel",
+      "input": "San Gabriel, CA",
+      "reason": "Less than 0.75 miles from an already searched center",
+      "evidence": {
+        "status": "OK",
+        "formatted": "San Gabriel, CA, USA",
+        "country": "US",
+        "state": "CA",
+        "latitude": 34.09611110000001,
+        "longitude": -118.1058333
+      },
+      "nearest_miles": 0.5623424285588339
+    },
+    {
+      "key": "city-compton",
+      "input": "Compton, CA",
+      "reason": "Duplicates another proposed center within 0.75 miles",
+      "evidence": {
+        "status": "OK",
+        "formatted": "Compton, CA, USA",
+        "country": "US",
+        "state": "CA",
+        "latitude": 33.8959097,
+        "longitude": -118.2243901
+      },
+      "nearest_miles": 1.2193419875507425
+    }
+  ],
+  "notes": [
+    "PREVIEW ONLY: no searches queued and no recurring task created.",
+    "The runtime reads only approved-expansion-plan.json, which does not exist before approval.",
+    "Three sibling follow-ups maximum per parent counting existing adaptive siblings; productive parents from all phases eligible.",
+    "Initial gap probes are separate from the bounded follow-up pool.",
+    "Candidate pool is finite and contains only newly verified centers, not every unverified postal ZIP.",
+    "Read-only geocoder checks verify locations; they do not establish that each probe will produce agents."
+  ],
+  "broader_expansion_approved_at": "2026-10-17T04:37:46.643Z"
+}

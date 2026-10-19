@@ -1,0 +1,78 @@
+{
+  "checked_at": "2026-10-17T04:24:17.823Z",
+  "mode": "In-memory simulation only; source database opened read-only",
+  "proposed_added": 13,
+  "proposed_tasks": [
+    {
+      "child_id": "expansion:90095",
+      "parent_id": null,
+      "depth": 0
+    },
+    {
+      "child_id": "expansion:90506",
+      "parent_id": null,
+      "depth": 0
+    },
+    {
+      "child_id": "expansion:91042",
+      "parent_id": null,
+      "depth": 0
+    },
+    {
+      "child_id": "expansion:91759",
+      "parent_id": null,
+      "depth": 0
+    },
+    {
+      "child_id": "expansion:city-agua-dulce",
+      "parent_id": null,
+      "depth": 0
+    },
+    {
+      "child_id": "expansion:city-acton",
+      "parent_id": null,
+      "depth": 0
+    },
+    {
+      "child_id": "expansion:city-mount-baldy",
+      "parent_id": null,
+      "depth": 0
+    },
+    {
+      "child_id": "expansion:city-northridge",
+      "parent_id": null,
+      "depth": 0
+    },
+    {
+      "child_id": "expansion:city-lancaster",
+      "parent_id": null,
+      "depth": 0
+    },
+    {
+      "child_id": "expansion:91329",
+      "parent_id": "91316",
+      "depth": 1
+    },
+    {
+      "child_id": "expansion:93586",
+      "parent_id": "93551",
+      "depth": 1
+    },
+    {
+      "child_id": "expansion:90223",
+      "parent_id": "90242",
+      "depth": 1
+    },
+    {
+      "child_id": "expansion:93539",
+      "parent_id": "93534",
+      "depth": 1
+    }
+  ],
+  "original_pending": {
+    "n": 0
+  },
+  "original_agents": {
+    "n": 67542
+  }
+}

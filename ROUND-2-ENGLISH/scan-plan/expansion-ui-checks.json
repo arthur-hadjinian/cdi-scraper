@@ -1,0 +1,38 @@
+[
+  {
+    "input": "91759, CA",
+    "status": "passed",
+    "offset_miles": 0,
+    "submitted_center": "34.2602336,-117.7138785",
+    "evidence": {
+      "status": "OK",
+      "country": "US",
+      "state": "CA",
+      "postal": "91759",
+      "formatted": "Mt Baldy, CA 91759, USA",
+      "latitude": 34.2602336,
+      "longitude": -117.7138785
+    },
+    "pagination": null,
+    "checked_at": "2026-10-17T04:23:26.174Z",
+    "note": "Bounded UI search check; no producer names/records saved and agent database untouched."
+  },
+  {
+    "input": "Agua Dulce, CA",
+    "status": "passed",
+    "offset_miles": 0,
+    "submitted_center": "34.4963443,-118.3261969",
+    "evidence": {
+      "status": "OK",
+      "country": "US",
+      "state": "CA",
+      "postal": "91390",
+      "formatted": "Agua Dulce, CA 91390, USA",
+      "latitude": 34.4963443,
+      "longitude": -118.3261969
+    },
+    "pagination": "                   1 -                    5 of                   21",
+    "checked_at": "2026-10-17T04:24:02.084Z",
+    "note": "Bounded UI search check; no producer names/records saved and agent database untouched."
+  }
+]

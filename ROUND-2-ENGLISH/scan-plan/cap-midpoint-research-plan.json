@@ -1,0 +1,892 @@
+{
+  "prepared_at": "2026-10-17T05:06:25.945Z",
+  "enabled": false,
+  "mode": "Research shortlist; candidate inputs need live verification. Broader validation/collection authorized by user October 16, 2026.",
+  "capped_centers": 500,
+  "verified_capped_centers": 496,
+  "historical_submitted_centers_verified": 232,
+  "current_reference_only_centers": 264,
+  "capped_centers_needing_coordinate_verification": 4,
+  "overlapping_verified_pairs": 10431,
+  "california_places_inside_radius": 202,
+  "unused_postal_references": 180,
+  "ranked_candidate_inputs": 55,
+  "spatially_deduplicated_inputs": 54,
+  "candidates": [
+    {
+      "id": "place:0630000",
+      "name": "Glendale",
+      "input": "Glendale, CA",
+      "latitude": 34.181393,
+      "longitude": -118.24583,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.3044356866133267,
+      "nearest_existing_id": "91208",
+      "nearby_midpoint_pairs": 137,
+      "example_pair": {
+        "a": "91203",
+        "b": "91020"
+      },
+      "score": 1195.6888356499992
+    },
+    {
+      "id": "place:0669154",
+      "name": "Santa Fe Springs",
+      "input": "Santa Fe Springs, CA",
+      "latitude": 33.933565,
+      "longitude": -118.062611,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.510964631940367,
+      "nearest_existing_id": "90670",
+      "nearby_midpoint_pairs": 86,
+      "example_pair": {
+        "a": "90239",
+        "b": "90637"
+      },
+      "score": 933.8218801093085
+    },
+    {
+      "id": "place:0600884",
+      "name": "Alhambra",
+      "input": "Alhambra, CA",
+      "latitude": 34.083571,
+      "longitude": -118.136444,
+      "kind": "census_place",
+      "nearest_existing_miles": 0.8668677339920162,
+      "nearest_existing_id": "91802",
+      "nearby_midpoint_pairs": 155,
+      "example_pair": {
+        "a": "91108",
+        "b": "91756"
+      },
+      "score": 816.8173958163552
+    },
+    {
+      "id": "place:0669000",
+      "name": "Santa Ana",
+      "input": "Santa Ana, CA",
+      "latitude": 33.736332,
+      "longitude": -117.8829,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.0799469874564496,
+      "nearest_existing_id": "92868",
+      "nearby_midpoint_pairs": 87,
+      "example_pair": {
+        "a": "92626",
+        "b": "92866"
+      },
+      "score": 758.0626887472041
+    },
+    {
+      "id": "place:0680854",
+      "name": "Tustin",
+      "input": "Tustin, CA",
+      "latitude": 33.731023,
+      "longitude": -117.810672,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.1604916638279792,
+      "nearest_existing_id": "92780",
+      "nearby_midpoint_pairs": 89,
+      "example_pair": {
+        "a": "92620",
+        "b": "92711"
+      },
+      "score": 748.3876375964307
+    },
+    {
+      "id": "place:0617568",
+      "name": "Culver City",
+      "input": "Culver City, CA",
+      "latitude": 34.00582,
+      "longitude": -118.396781,
+      "kind": "census_place",
+      "nearest_existing_miles": 0.8708750182688404,
+      "nearest_existing_id": "90230",
+      "nearby_midpoint_pairs": 130,
+      "example_pair": {
+        "a": "90230",
+        "b": "90066"
+      },
+      "score": 747.9030413634547
+    },
+    {
+      "id": "place:0644000",
+      "name": "Los Angeles",
+      "input": "Los Angeles, CA",
+      "latitude": 34.019394,
+      "longitude": -118.410825,
+      "kind": "census_place",
+      "nearest_existing_miles": 0.8122028966605711,
+      "nearest_existing_id": "90066",
+      "nearby_midpoint_pairs": 136,
+      "example_pair": {
+        "a": "90212",
+        "b": "90293"
+      },
+      "score": 696.957442722777
+    },
+    {
+      "id": "place:0636826",
+      "name": "Irwindale",
+      "input": "Irwindale, CA",
+      "latitude": 34.111855,
+      "longitude": -117.963614,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.7154622516296694,
+      "nearest_existing_id": "midpoint:place:0636826",
+      "nearby_midpoint_pairs": 55,
+      "example_pair": {
+        "a": "91790",
+        "b": "91016"
+      },
+      "score": 657.9428659467463
+    },
+    {
+      "id": "place:0620802",
+      "name": "East Los Angeles",
+      "input": "East Los Angeles, CA",
+      "latitude": 34.031506,
+      "longitude": -118.168567,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.0264632667120694,
+      "nearest_existing_id": "90101",
+      "nearby_midpoint_pairs": 133,
+      "example_pair": {
+        "a": "90023",
+        "b": "91756"
+      },
+      "score": 634.2405905493255
+    },
+    {
+      "id": "place:0628000",
+      "name": "Fullerton",
+      "input": "Fullerton, CA",
+      "latitude": 33.885716,
+      "longitude": -117.928025,
+      "kind": "census_place",
+      "nearest_existing_miles": 0.8718320012716915,
+      "nearest_existing_id": "92832",
+      "nearby_midpoint_pairs": 115,
+      "example_pair": {
+        "a": "90632",
+        "b": "92816"
+      },
+      "score": 607.7037004306482
+    },
+    {
+      "id": "place:0682422",
+      "name": "Vernon",
+      "input": "Vernon, CA",
+      "latitude": 34.001123,
+      "longitude": -118.210869,
+      "kind": "census_place",
+      "nearest_existing_miles": 0.8054429593386377,
+      "nearest_existing_id": "90058",
+      "nearby_midpoint_pairs": 141,
+      "example_pair": {
+        "a": "90023",
+        "b": "90255"
+      },
+      "score": 566.3824422652378
+    },
+    {
+      "id": "place:0604996",
+      "name": "Bell Gardens",
+      "input": "Bell Gardens, CA",
+      "latitude": 33.964379,
+      "longitude": -118.154437,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.2819870049197992,
+      "nearest_existing_id": "90201",
+      "nearby_midpoint_pairs": 75,
+      "example_pair": {
+        "a": "90270",
+        "b": "90239"
+      },
+      "score": 529.9726571633122
+    },
+    {
+      "id": "place:0670686",
+      "name": "Seal Beach",
+      "input": "Seal Beach, CA",
+      "latitude": 33.754399,
+      "longitude": -118.07132,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.944589160226937,
+      "nearest_existing_id": "90740",
+      "nearby_midpoint_pairs": 36,
+      "example_pair": {
+        "a": "90743",
+        "b": "90721"
+      },
+      "score": 481.06612330324003
+    },
+    {
+      "id": "place:0611530",
+      "name": "Carson",
+      "input": "Carson, CA",
+      "latitude": 33.840367,
+      "longitude": -118.249574,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.0728512569688464,
+      "nearest_existing_id": "90746",
+      "nearby_midpoint_pairs": 75,
+      "example_pair": {
+        "a": "90895",
+        "b": "90747"
+      },
+      "score": 479.38716169071074
+    },
+    {
+      "id": "place:0681638",
+      "name": "Valinda",
+      "input": "Valinda, CA",
+      "latitude": 34.040033,
+      "longitude": -117.930057,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.267754734523191,
+      "nearest_existing_id": "91744",
+      "nearby_midpoint_pairs": 40,
+      "example_pair": {
+        "a": "91714",
+        "b": "91791"
+      },
+      "score": 406.7885028069677
+    },
+    {
+      "id": "place:0656000",
+      "name": "Pasadena",
+      "input": "Pasadena, CA",
+      "latitude": 34.160602,
+      "longitude": -118.137954,
+      "kind": "census_place",
+      "nearest_existing_miles": 0.9655391965468462,
+      "nearest_existing_id": "91131",
+      "nearby_midpoint_pairs": 67,
+      "example_pair": {
+        "a": "91030",
+        "b": "91001"
+      },
+      "score": 375.27285488560227
+    },
+    {
+      "id": "place:0602000",
+      "name": "Anaheim",
+      "input": "Anaheim, CA",
+      "latitude": 33.855502,
+      "longitude": -117.758657,
+      "kind": "census_place",
+      "nearest_existing_miles": 2.1300356841833663,
+      "nearest_existing_id": "92817",
+      "nearby_midpoint_pairs": 26,
+      "example_pair": {
+        "a": "92887",
+        "b": "92885"
+      },
+      "score": 365.1552641865955
+    },
+    {
+      "id": "place:0662644",
+      "name": "Rolling Hills Estates",
+      "input": "Rolling Hills Estates, CA",
+      "latitude": 33.778668,
+      "longitude": -118.327464,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.2150006825886825,
+      "nearest_existing_id": "90717",
+      "nearby_midpoint_pairs": 42,
+      "example_pair": {
+        "a": "90732",
+        "b": "90505"
+      },
+      "score": 358.30462335025385
+    },
+    {
+      "id": "place:0643000",
+      "name": "Long Beach",
+      "input": "Long Beach, CA",
+      "latitude": 33.780791,
+      "longitude": -118.16818,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.008341773454307,
+      "nearest_existing_id": "90845",
+      "nearby_midpoint_pairs": 53,
+      "example_pair": {
+        "a": "90813",
+        "b": "90804"
+      },
+      "score": 348.18569772715176
+    },
+    {
+      "id": "place:0636000",
+      "name": "Huntington Beach",
+      "input": "Huntington Beach, CA",
+      "latitude": 33.698007,
+      "longitude": -118.003834,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.6839136948667994,
+      "nearest_existing_id": "92647",
+      "nearby_midpoint_pairs": 22,
+      "example_pair": {
+        "a": "92683",
+        "b": "92648"
+      },
+      "score": 318.1328715585419
+    },
+    {
+      "id": "place:0680000",
+      "name": "Torrance",
+      "input": "Torrance, CA",
+      "latitude": 33.830453,
+      "longitude": -118.356618,
+      "kind": "census_place",
+      "nearest_existing_miles": 0.7726994939946668,
+      "nearest_existing_id": "90503",
+      "nearby_midpoint_pairs": 47,
+      "example_pair": {
+        "a": "90254",
+        "b": "90717"
+      },
+      "score": 301.15183952927435
+    },
+    {
+      "id": "place:0673290",
+      "name": "South San Jose Hills",
+      "input": "South San Jose Hills, CA",
+      "latitude": 34.012332,
+      "longitude": -117.904363,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.4532631255151853,
+      "nearest_existing_id": "91792",
+      "nearby_midpoint_pairs": 22,
+      "example_pair": {
+        "a": "91714",
+        "b": "91789"
+      },
+      "score": 297.24029493177954
+    },
+    {
+      "id": "place:0684200",
+      "name": "West Covina",
+      "input": "West Covina, CA",
+      "latitude": 34.055941,
+      "longitude": -117.909937,
+      "kind": "census_place",
+      "nearest_existing_miles": 0.8217575330357827,
+      "nearest_existing_id": "91791",
+      "nearby_midpoint_pairs": 47,
+      "example_pair": {
+        "a": "91790",
+        "b": "91791"
+      },
+      "score": 285.05457053709523
+    },
+    {
+      "id": "place:0633518",
+      "name": "Hidden Hills",
+      "input": "Hidden Hills, CA",
+      "latitude": 34.163744,
+      "longitude": -118.66121,
+      "kind": "census_place",
+      "nearest_existing_miles": 2.6465416639974815,
+      "nearest_existing_id": "91302",
+      "nearby_midpoint_pairs": 12,
+      "example_pair": {
+        "a": "91302",
+        "b": "91308"
+      },
+      "score": 272.8015796586683
+    },
+    {
+      "id": "place:0636770",
+      "name": "Irvine",
+      "input": "Irvine, CA",
+      "latitude": 33.678399,
+      "longitude": -117.771254,
+      "kind": "census_place",
+      "nearest_existing_miles": 0.7657926261566578,
+      "nearest_existing_id": "92619",
+      "nearby_midpoint_pairs": 48,
+      "example_pair": {
+        "a": "92620",
+        "b": "92619"
+      },
+      "score": 237.10226565278816
+    },
+    {
+      "id": "place:0652379",
+      "name": "North Tustin",
+      "input": "North Tustin, CA",
+      "latitude": 33.763544,
+      "longitude": -117.794716,
+      "kind": "census_place",
+      "nearest_existing_miles": 0.7598174754958472,
+      "nearest_existing_id": "92705",
+      "nearby_midpoint_pairs": 43,
+      "example_pair": {
+        "a": "92620",
+        "b": "92864"
+      },
+      "score": 234.63617978091224
+    },
+    {
+      "id": "place:0645806",
+      "name": "Marina del Rey",
+      "input": "Marina del Rey, CA",
+      "latitude": 33.976373,
+      "longitude": -118.450888,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.0765904439540688,
+      "nearest_existing_id": "90292",
+      "nearby_midpoint_pairs": 31,
+      "example_pair": {
+        "a": "90094",
+        "b": "90292"
+      },
+      "score": 220.64541843579207
+    },
+    {
+      "id": "place:0636490",
+      "name": "Industry",
+      "input": "Industry, CA",
+      "latitude": 34.026232,
+      "longitude": -117.940327,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.0159629248625215,
+      "nearest_existing_id": "91744",
+      "nearby_midpoint_pairs": 25,
+      "example_pair": {
+        "a": "91791",
+        "b": "91745"
+      },
+      "score": 208.28354340062336
+    },
+    {
+      "id": "place:0683332",
+      "name": "Walnut",
+      "input": "Walnut, CA",
+      "latitude": 34.037195,
+      "longitude": -117.855606,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.5499339199923852,
+      "nearest_existing_id": "91788",
+      "nearby_midpoint_pairs": 18,
+      "example_pair": {
+        "a": "91765",
+        "b": "91724"
+      },
+      "score": 186.81317727724308
+    },
+    {
+      "id": "place:0608100",
+      "name": "Brea",
+      "input": "Brea, CA",
+      "latitude": 33.925178,
+      "longitude": -117.865111,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.5392436981321735,
+      "nearest_existing_id": "92821",
+      "nearby_midpoint_pairs": 16,
+      "example_pair": {
+        "a": "91748",
+        "b": "92870"
+      },
+      "score": 185.18466574788172
+    },
+    {
+      "zip": "90840",
+      "city": "Long Beach",
+      "latitude": 33.7843,
+      "longitude": -118.1157,
+      "distanceMiles": 29.28627843984169,
+      "id": "postal:90840",
+      "name": "Long Beach",
+      "input": "90840, CA",
+      "kind": "postal_reference",
+      "nearest_existing_miles": 0.8427097909917266,
+      "nearest_existing_id": "90815",
+      "nearby_midpoint_pairs": 41,
+      "example_pair": {
+        "a": "90721",
+        "b": "90804"
+      },
+      "score": 180.33445222303155
+    },
+    {
+      "id": "place:0672016",
+      "name": "Simi Valley",
+      "input": "Simi Valley, CA",
+      "latitude": 34.266887,
+      "longitude": -118.748458,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.8138446857061836,
+      "nearest_existing_id": "93062",
+      "nearby_midpoint_pairs": 6,
+      "example_pair": {
+        "a": "93065",
+        "b": "93093"
+      },
+      "score": 177.3024014153579
+    },
+    {
+      "id": "place:0659451",
+      "name": "Rancho Cucamonga",
+      "input": "Rancho Cucamonga, CA",
+      "latitude": 34.123321,
+      "longitude": -117.564227,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.6684302589018014,
+      "nearest_existing_id": "91729",
+      "nearby_midpoint_pairs": 11,
+      "example_pair": {
+        "a": "91739",
+        "b": "91764"
+      },
+      "score": 164.8289494826975
+    },
+    {
+      "id": "place:0662602",
+      "name": "Rolling Hills",
+      "input": "Rolling Hills, CA",
+      "latitude": 33.760016,
+      "longitude": -118.347164,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.3665908838824032,
+      "nearest_existing_id": "90274",
+      "nearby_midpoint_pairs": 17,
+      "example_pair": {
+        "a": "90274",
+        "b": "90275"
+      },
+      "score": 156.19687155599786
+    },
+    {
+      "id": "place:0648648",
+      "name": "Monrovia",
+      "input": "Monrovia, CA",
+      "latitude": 34.163984,
+      "longitude": -117.984646,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.0767177207186627,
+      "nearest_existing_id": "91008",
+      "nearby_midpoint_pairs": 20,
+      "example_pair": {
+        "a": "91016",
+        "b": "91008"
+      },
+      "score": 148.70632031958536
+    },
+    {
+      "id": "place:0613756",
+      "name": "Claremont",
+      "input": "Claremont, CA",
+      "latitude": 34.124925,
+      "longitude": -117.713923,
+      "kind": "census_place",
+      "nearest_existing_miles": 3.091730031661199,
+      "nearest_existing_id": "91786",
+      "nearby_midpoint_pairs": 4,
+      "example_pair": {
+        "a": "91711",
+        "b": "91767"
+      },
+      "score": 146.39953270944932
+    },
+    {
+      "id": "place:0653896",
+      "name": "Ontario",
+      "input": "Ontario, CA",
+      "latitude": 34.037648,
+      "longitude": -117.604433,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.1409108993361232,
+      "nearest_existing_id": "91761",
+      "nearby_midpoint_pairs": 16,
+      "example_pair": {
+        "a": "91762",
+        "b": "91752"
+      },
+      "score": 135.19115225615823
+    },
+    {
+      "id": "place:0600394",
+      "name": "Agoura Hills",
+      "input": "Agoura Hills, CA",
+      "latitude": 34.148942,
+      "longitude": -118.76393,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.501425879310016,
+      "nearest_existing_id": "91376",
+      "nearby_midpoint_pairs": 12,
+      "example_pair": {
+        "a": "91301",
+        "b": "91377"
+      },
+      "score": 121.50441007603115
+    },
+    {
+      "id": "place:0669088",
+      "name": "Santa Clarita",
+      "input": "Santa Clarita, CA",
+      "latitude": 34.414083,
+      "longitude": -118.494729,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.4478159943321431,
+      "nearest_existing_id": "91351",
+      "nearby_midpoint_pairs": 12,
+      "example_pair": {
+        "a": "91386",
+        "b": "91382"
+      },
+      "score": 107.3805425714313
+    },
+    {
+      "id": "place:0622412",
+      "name": "El Segundo",
+      "input": "El Segundo, CA",
+      "latitude": 33.910367,
+      "longitude": -118.425079,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.2157843974621891,
+      "nearest_existing_id": "90245",
+      "nearby_midpoint_pairs": 10,
+      "example_pair": {
+        "a": "90254",
+        "b": "90094"
+      },
+      "score": 102.36706699227817
+    },
+    {
+      "id": "place:0613210",
+      "name": "Chino",
+      "input": "Chino, CA",
+      "latitude": 33.978037,
+      "longitude": -117.657719,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.8442827158200612,
+      "nearest_existing_id": "91708",
+      "nearby_midpoint_pairs": 6,
+      "example_pair": {
+        "a": "91762",
+        "b": "91708"
+      },
+      "score": 72.46450299532952
+    },
+    {
+      "id": "place:0674130",
+      "name": "Stevenson Ranch",
+      "input": "Stevenson Ranch, CA",
+      "latitude": 34.38772,
+      "longitude": -118.584359,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.3978084123380008,
+      "nearest_existing_id": "91385",
+      "nearby_midpoint_pairs": 5,
+      "example_pair": {
+        "a": "91381",
+        "b": "91385"
+      },
+      "score": 66.51951902898814
+    },
+    {
+      "id": "place:0686832",
+      "name": "Yorba Linda",
+      "input": "Yorba Linda, CA",
+      "latitude": 33.889038,
+      "longitude": -117.77207,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.6057159256749503,
+      "nearest_existing_id": "92886",
+      "nearby_midpoint_pairs": 10,
+      "example_pair": {
+        "a": "92823",
+        "b": "92817"
+      },
+      "score": 66.39074238555041
+    },
+    {
+      "id": "place:0611656",
+      "name": "Casa Conejo",
+      "input": "Casa Conejo, CA",
+      "latitude": 34.184731,
+      "longitude": -118.944517,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.9998306407507866,
+      "nearest_existing_id": "91319",
+      "nearby_midpoint_pairs": 3,
+      "example_pair": {
+        "a": "93012",
+        "b": "91361"
+      },
+      "score": 64.66945719427036
+    },
+    {
+      "id": "place:0681344",
+      "name": "Upland",
+      "input": "Upland, CA",
+      "latitude": 34.116073,
+      "longitude": -117.659922,
+      "kind": "census_place",
+      "nearest_existing_miles": 0.8575155673643668,
+      "nearest_existing_id": "91785",
+      "nearby_midpoint_pairs": 9,
+      "example_pair": {
+        "a": "91763",
+        "b": "91701"
+      },
+      "score": 60.44758246739281
+    },
+    {
+      "id": "place:0633364",
+      "name": "Hermosa Beach",
+      "input": "Hermosa Beach, CA",
+      "latitude": 33.869819,
+      "longitude": -118.405296,
+      "kind": "census_place",
+      "nearest_existing_miles": 0.770308760721077,
+      "nearest_existing_id": "90254",
+      "nearby_midpoint_pairs": 11,
+      "example_pair": {
+        "a": "90245",
+        "b": "90277"
+      },
+      "score": 58.40847438244597
+    },
+    {
+      "id": "place:0666070",
+      "name": "San Dimas",
+      "input": "San Dimas, CA",
+      "latitude": 34.107957,
+      "longitude": -117.808529,
+      "kind": "census_place",
+      "nearest_existing_miles": 0.7871385706273458,
+      "nearest_existing_id": "91773",
+      "nearby_midpoint_pairs": 14,
+      "example_pair": {
+        "a": "91740",
+        "b": "91767"
+      },
+      "score": 55.84323696511726
+    },
+    {
+      "id": "place:0621230",
+      "name": "Eastvale",
+      "input": "Eastvale, CA",
+      "latitude": 33.963277,
+      "longitude": -117.582369,
+      "kind": "census_place",
+      "nearest_existing_miles": 3.84990318788331,
+      "nearest_existing_id": "91752",
+      "nearby_midpoint_pairs": 2,
+      "example_pair": {
+        "a": "91708",
+        "b": "91752"
+      },
+      "score": 54.946183008901606
+    },
+    {
+      "id": "place:0616350",
+      "name": "Corona",
+      "input": "Corona, CA",
+      "latitude": 33.861969,
+      "longitude": -117.565495,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.3090768489068525,
+      "nearest_existing_id": "92860",
+      "nearby_midpoint_pairs": 3,
+      "example_pair": {
+        "a": "92860",
+        "b": "92879"
+      },
+      "score": 47.5658495193371
+    },
+    {
+      "id": "place:0622370",
+      "name": "El Rio",
+      "input": "El Rio, CA",
+      "latitude": 34.245279,
+      "longitude": -119.156866,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.5630555420993415,
+      "nearest_existing_id": "93031",
+      "nearby_midpoint_pairs": 3,
+      "example_pair": {
+        "a": "93004",
+        "b": "93036"
+      },
+      "score": 46.74191129673459
+    },
+    {
+      "id": "place:0609598",
+      "name": "Calabasas",
+      "input": "Calabasas, CA",
+      "latitude": 34.134252,
+      "longitude": -118.666455,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.0766606208365908,
+      "nearest_existing_id": "91302",
+      "nearby_midpoint_pairs": 6,
+      "example_pair": {
+        "a": "90290",
+        "b": "91376"
+      },
+      "score": 37.94170396645775
+    },
+    {
+      "id": "place:0624680",
+      "name": "Fontana",
+      "input": "Fontana, CA",
+      "latitude": 34.108956,
+      "longitude": -117.462888,
+      "kind": "census_place",
+      "nearest_existing_miles": 1.5957575481004178,
+      "nearest_existing_id": "92336",
+      "nearby_midpoint_pairs": 3,
+      "example_pair": {
+        "a": "91739",
+        "b": "92335"
+      },
+      "score": 32.76339749519949
+    },
+    {
+      "id": "place:0684438",
+      "name": "Westlake Village",
+      "input": "Westlake Village, CA",
+      "latitude": 34.136675,
+      "longitude": -118.817367,
+      "kind": "census_place",
+      "nearest_existing_miles": 0.8951748677889145,
+      "nearest_existing_id": "91363",
+      "nearby_midpoint_pairs": 6,
+      "example_pair": {
+        "a": "91301",
+        "b": "91359"
+      },
+      "score": 31.42376738390671
+    },
+    {
+      "id": "place:0640830",
+      "name": "La Verne",
+      "input": "La Verne, CA",
+      "latitude": 34.120521,
+      "longitude": -117.769928,
+      "kind": "census_place",
+      "nearest_existing_miles": 2.9691551268837064,
+      "nearest_existing_id": "91767",
+      "nearby_midpoint_pairs": 2,
+      "example_pair": {
+        "a": "91740",
+        "b": "91767"
+      },
+      "score": 19.28282659390587
+    }
+  ],
+  "steps": [
+    "Validate shortlisted ZIP/city inputs through CDI; reject broad-state, duplicate-center, wrong-location and outside-radius resolutions.",
+    "After approval, queue the highest-scoring verified position between capped circles, updating scores after each completed probe.",
+    "Use current marginal unique yield for continuation; assess all phases and multiple sides of capped clusters.",
+    "Keep finite batches, sibling/depth limits, unique-coordinate deduplication and persistent skipped-location handling.",
+    "A midpoint is a planning target only: submit a supported ZIP/city query, never assume arbitrary coordinates or smaller radii are supported."
+  ],
+  "source": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2020_Gazetteer/2020_gaz_place_06.txt"
+}

@@ -1,0 +1,48 @@
+{
+  "url": "https://cdicloud.insurance.ca.gov/cal/IndividualNameSearch",
+  "text": "Skip to Main Content\nCA.gov\nHome\n Settings\nHome\nLicense Number\nIndividual Name Search\nBusiness Name Search\nEnforcement Actions\n Individual Name Search\n\nEnter the name of the licensee to retrieve the details for that particular license.\n\nLast Name\nFirst Name\nSearch Clear\n Glossary of Terms Disclaimer Hints\nSearch Results\nNo data\nBack to Top\nCopyright © State of California\nVersion: 2026.10.7.641",
+  "inputs": [
+    {
+      "tag": "INPUT",
+      "name": "SearchLastName",
+      "type": "text",
+      "id": "SearchLastName"
+    },
+    {
+      "tag": "INPUT",
+      "name": "SearchFirstName",
+      "type": "text",
+      "id": "SearchFirstName"
+    },
+    {
+      "tag": "INPUT",
+      "name": "__RequestVerificationToken",
+      "type": "hidden",
+      "id": ""
+    },
+    {
+      "tag": "INPUT",
+      "name": "SearchLicNbr",
+      "type": "hidden",
+      "id": "SearchLicNbr"
+    },
+    {
+      "tag": "INPUT",
+      "name": "SearchIndvId",
+      "type": "hidden",
+      "id": "SearchIndvId"
+    },
+    {
+      "tag": "INPUT",
+      "name": "SearchType",
+      "type": "hidden",
+      "id": "SearchType"
+    },
+    {
+      "tag": "INPUT",
+      "name": "__RequestVerificationToken",
+      "type": "hidden",
+      "id": ""
+    }
+  ]
+}

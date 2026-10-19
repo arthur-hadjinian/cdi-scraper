@@ -258,6 +258,9 @@ export type CsvAgent = {
 };
 
 export function allAgents(db: DatabaseSync): CsvAgent[] {
+  // Alternate city searches have task IDs, not postal ZIPs. Keep source_zips postal-only.
+  const hasSourceMap=!!db.prepare("SELECT 1 FROM sqlite_master WHERE type='table' AND name='search_sources'").get();
+  const zipExpression=hasSourceMap?`CASE WHEN EXISTS(SELECT 1 FROM search_sources q WHERE q.search_id=z.zip) THEN (SELECT source_zip FROM search_sources q WHERE q.search_id=z.zip) ELSE z.zip END`:'z.zip';
   return db.prepare(`
     SELECT
       a.name,
@@ -268,7 +271,7 @@ export function allAgents(db: DatabaseSync): CsvAgent[] {
       COALESCE(a.license_url, '') AS license_url,
       COALESCE(a.directions_url, '') AS directions_url,
       COALESCE((
-        SELECT group_concat(z.zip, ' ')
+        SELECT group_concat(${zipExpression}, ' ')
         FROM agent_zips z
         WHERE z.license_number = a.license_number
       ), '') AS source_zips,

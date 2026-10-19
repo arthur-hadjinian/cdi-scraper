@@ -57,7 +57,14 @@ def atomic_write(path: Path, value):
             json.dump(value, handle, indent=2, ensure_ascii=False)
             handle.flush()
             os.fsync(handle.fileno())
-        os.replace(temp_name, path)
+        for replace_attempt in range(8):
+            try:
+                os.replace(temp_name, path)
+                break
+            except PermissionError:
+                if replace_attempt == 7:
+                    raise
+                time.sleep(min(8, 0.5 * (2 ** replace_attempt)))
     finally:
         if os.path.exists(temp_name):
             os.unlink(temp_name)
@@ -232,7 +239,12 @@ def load_source_rows():
 
 def load_research():
     result = {}
-    for path in [ROOT / "exports/test-batch-50/agency-research.json", ROOT / "exports/test-batch-50/screening-validation-agency-research.json"]:
+    for path in [
+        ROOT / "exports/test-batch-50/agency-research.json",
+        ROOT / "exports/test-batch-50/screening-validation-agency-research.json",
+        ROOT / "exports/next-fifty-test/agency-research.json",
+        ROOT / "exports/full-batch/agency-research.json",
+    ]:
         if path.exists():
             result.update(json.loads(path.read_text(encoding="utf-8")))
     return result

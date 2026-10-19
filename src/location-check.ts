@@ -2,9 +2,11 @@ import type { Page } from 'playwright';
 import { milesBetween } from './grid.js';
 import {createRequire} from 'node:module';
 import {readFileSync} from 'node:fs';
+import { expansionReference } from './collection-expansion.js';
 const zipcodes=createRequire(import.meta.url)('zipcodes');
 const overrides=JSON.parse(readFileSync(new URL('../docs/search-location-overrides.json',import.meta.url),'utf8')) as Record<string,{latitude?:number;longitude?:number;inputs:string[]}>;
 export function locationReference(zip:string):{latitude:number;longitude:number} {
+  const expansion=expansionReference(zip);if(expansion)return {latitude:expansion.latitude,longitude:expansion.longitude};
   const original=zipcodes.lookup(zip);
   if(!original)throw new Error(`Unknown ZIP ${zip}`);
   const override=overrides[zip];
@@ -17,6 +19,7 @@ export function qualifiedZip(zip: string): string {
   return `${zip}, CA`;
 }
 export function locationInputs(zip:string):string[] {
+  const expansion=expansionReference(zip);if(expansion)return [expansion.input];
   if(overrides[zip])return overrides[zip].inputs;
   const expected=zipcodes.lookup(zip);
   if(!expected)throw new Error(`Unknown ZIP ${zip}`);

@@ -30,6 +30,9 @@ export function queueAdaptiveRecovery(db:DatabaseSync,originZip:string,radius:nu
   if(!policy.enabled)return 0;
   if(!Number.isInteger(policy.maxAdditional)||policy.maxAdditional<1||policy.maxAdditional>200||!Number.isInteger(policy.maxDepth)||policy.maxDepth<1||policy.maxDepth>5||!(policy.maxNearbyMiles>0&&policy.maxNearbyMiles<=7.5)||!(policy.minSpacingMiles>=0.75))throw new Error('Invalid adaptive recovery limits');
   adaptiveTables(db);
+  const unhandled=db.prepare(`SELECT 1 FROM searches s JOIN planned_searches p ON p.zip=s.zip
+    WHERE p.batch=? AND s.status='truncated' AND NOT EXISTS(SELECT 1 FROM adaptive_decisions a WHERE a.parent_zip=s.zip) LIMIT 1`).get(policy.batch);
+  if(!unhandled)return 0;
   const excluded=new Set(existsSync('scan-plan/removed-coordinate-centers.json')?JSON.parse(readFileSync('scan-plan/removed-coordinate-centers.json','utf8')).map((p:any)=>p.zip):[]);
   const candidates=buildGrid(originZip,radius,0).filter(p=>!excluded.has(p.zip)&&p.distanceMiles<=radius);
   const known=db.prepare(`SELECT s.zip,s.latitude,s.longitude,s.status,
